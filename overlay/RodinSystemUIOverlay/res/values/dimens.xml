@@ -15,4 +15,7 @@
          relies on this value will not be sized correctly. -->
     <item format="float" name="pixel_pitch" type="dimen">56.95</item>
 
+    <!-- UDFPS animation size and offset -->
+    <dimen name="udfps_animation_size">200dp</dimen> <!-- ~556 px -->
+    <integer name="udfps_animation_offset">20</integer> <!-- ~55.6 px -->
 </resources>
