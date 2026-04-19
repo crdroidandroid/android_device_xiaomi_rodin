@@ -781,6 +781,12 @@
          the highest resolution so that it can be scaled correctly in each resolution. -->
     <string name="config_mainDisplayShape">M20 0h1040s20 0 20 20v2360s0 20 -20 20h-1040s-20 0 -20 -20v-2360s0 -20 20 -20</string>
 
+    <!-- Flag indicating whether the surface flinger has limited
+         alpha compositing functionality in hardware.  If set, the window
+         manager will disable alpha trasformation in animations where notAdd commentMore actions
+         strictly needed. -->
+    <bool name="config_sf_limitedAlpha">false</bool>
+
     <!-- Whether to enable fp unlock when screen turns off on udfps devices -->
     <bool name="config_screen_off_udfps_enabled">true</bool>
 
