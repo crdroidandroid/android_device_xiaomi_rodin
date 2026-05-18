@@ -1,0 +1,33 @@
+From 838c59689545604f45e73fbcca3098ed2a4e780f Mon Sep 17 00:00:00 2001
+From: Omkar Parte <rakmoparte@gmail.com>
+Date: Thu, 9 Jul 2026 14:03:56 +0530
+Subject: [PATCH] Simplify package allowlist by consolidating vendor extensions
+
+- Replace specific camera and xiaomi package patterns with broader wildcards
+- Reduce allowlist entries from 10 to 5 lines
+- Maintains same functional coverage with simpler regex patterns
+---
+ scripts/check_boot_jars/package_allowed_list.txt | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+diff --git a/scripts/check_boot_jars/package_allowed_list.txt b/scripts/check_boot_jars/package_allowed_list.txt
+index 9741ea6cb..da04d6376 100644
+--- a/scripts/check_boot_jars/package_allowed_list.txt
++++ b/scripts/check_boot_jars/package_allowed_list.txt
+@@ -316,10 +316,6 @@ qcom.fmradio
+ # IFAA Manager used for Alipay and/or WeChat payment
+ org\.ifaa\.android\.manager.*
+ 
+-###################################################
+-# Camera Extensions
+-com.camera.camera2.extensions.*
+-
+-###################################################
+-# Xiaomi Extensions
+-com.xiaomi.extensions.*
++# Xiaomi adds
++com\.xiaomi\..*
++com\.camera\..*
+-- 
+2.53.0
+

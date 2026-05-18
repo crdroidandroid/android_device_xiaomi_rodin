@@ -1,0 +1,269 @@
+From 92549f3b3ed77c98ca4bc7316bfd2f0662ac11f9 Mon Sep 17 00:00:00 2001
+From: rio004 <riyon336@gmail.com>
+Date: Sun, 22 Feb 2026 21:16:58 +0000
+Subject: [PATCH] Add L2CAP and A2DP offload coex mechanism for MTK
+
+Co-authored-by: nift4 <nift4@protonmail.com>
+Change-Id: I7047fa496f60843e664e4b34f12e1c27f492a4ba
+---
+ system/bta/av/bta_av_aact.cc              | 48 +++++++++++++++++--
+ system/bta/av/bta_av_int.h                |  1 +
+ system/stack/include/l2cap_av_interface.h | 25 ++++++++++
+ system/stack/l2cap/l2c_int.h              |  4 ++
+ system/stack/l2cap/l2c_link.cc            | 57 ++++++++++++++++++++++-
+ 5 files changed, 131 insertions(+), 4 deletions(-)
+ create mode 100644 system/stack/include/l2cap_av_interface.h
+
+diff --git a/system/bta/av/bta_av_aact.cc b/system/bta/av/bta_av_aact.cc
+index 7cf03c3a5e..a97f4b8e4f 100644
+--- a/system/bta/av/bta_av_aact.cc
++++ b/system/bta/av/bta_av_aact.cc
+@@ -80,6 +80,7 @@
+ #include "stack/include/btm_log_history.h"
+ #include "stack/include/btm_status.h"
+ #include "stack/include/l2cap_interface.h"
++#include "stack/include/l2cap_av_interface.h"
+ #include "storage/config_keys.h"
+ 
+ using namespace bluetooth;
+@@ -3060,6 +3061,11 @@ static void offload_vendor_callback(tBTM_VSC_CMPL* param) {
+       case VS_HCI_A2DP_OFFLOAD_STOP:
+       case VS_HCI_A2DP_OFFLOAD_STOP_V2:
+         log::verbose("VS_HCI_STOP_A2DP_MEDIA successful");
++        l2c_link_set_br_coex_buf_cap(0, base::BindOnce([](bool success) {
++          if (!success) {
++            log::error("failed resetting coex buffer cap");
++          }
++        }));
+         break;
+       case VS_HCI_A2DP_OFFLOAD_START:
+       case VS_HCI_A2DP_OFFLOAD_START_V2:
+@@ -3077,15 +3083,38 @@ static void offload_vendor_callback(tBTM_VSC_CMPL* param) {
+     }
+   } else {
+     log::verbose("Offload failed for subopcode= {}", sub_opcode);
++    if (param->opcode == VS_HCI_A2DP_OFFLOAD_ENABLE_COEX)
++      return;
+     if (param->opcode != VS_HCI_A2DP_OFFLOAD_STOP && param->opcode != VS_HCI_A2DP_OFFLOAD_STOP_V2) {
+       bta_av_cb.offload_start_pending_hndl = BTA_AV_INVALID_HANDLE;
+       (*bta_av_cb.p_cback)(BTA_AV_OFFLOAD_START_RSP_EVT, &value);
++    } else {
++      l2c_link_set_br_coex_buf_cap(0, base::BindOnce([](bool success) {
++        if (!success) {
++          log::error("failed resetting coex buffer cap");
++        }
++      }));
+     }
+   }
+ }
+ 
++/*
++ * How many ACL buffers should be reserved for A2DP offload
++ * Recommend ~30–40% of total controller ACL buffers (e.g. 8 total -> 2–3).
++ */
++#define COEX_BUFFER_COUNT_MIN 0
++#define COEX_BUFFER_COUNT_MAX 10
++#define COEX_BUFFER_COUNT_DEFAULT 5
++static uint16_t bta_av_get_coex_buffer_count() {
++  int val = osi_property_get_int32(
++      "persist.bluetooth.a2dp_offload.coex_buf_count",
++      COEX_BUFFER_COUNT_DEFAULT);
++  val = std::clamp(val, COEX_BUFFER_COUNT_MIN, COEX_BUFFER_COUNT_MAX);
++  return static_cast<uint16_t>(val);
++}
++
+ static void bta_av_vendor_offload_start(tBTA_AV_SCB* p_scb, tBT_A2DP_OFFLOAD* offload_start) {
+-  uint8_t param[sizeof(tBT_A2DP_OFFLOAD)];
++  uint8_t* param = reinterpret_cast<uint8_t*>(osi_malloc(sizeof(tBT_A2DP_OFFLOAD)));
+   log::verbose("");
+ 
+   uint8_t* p_param = param;
+@@ -3111,8 +3140,21 @@ static void bta_av_vendor_offload_start(tBTA_AV_SCB* p_scb, tBT_A2DP_OFFLOAD* of
+           offload_start->codec_type, offload_start->sample_rate, offload_start->bits_per_sample,
+           offload_start->ch_mode, offload_start->encoded_audio_bitrate, offload_start->acl_hdl,
+           offload_start->l2c_rcid, offload_start->mtu);
+-  get_btm_client_interface().vendor.BTM_VendorSpecificCommand(HCI_CONTROLLER_A2DP, p_param - param,
+-                                                              param, offload_vendor_callback);
++  uint16_t coex_buf_count = bta_av_get_coex_buffer_count();
++  l2c_link_set_br_coex_buf_cap(coex_buf_count, base::BindOnce([](uint8_t* param, uint8_t* p_param,
++                                                                 uint16_t coex_buf_count, bool success) {
++    if (!success) {
++      log::error("failed setting coex buffer cap");
++    }
++    if (osi_property_get_bool("persist.bluetooth.a2dp_offload.mtk_coex", false)) {
++      uint8_t mtk_param[] = {VS_HCI_A2DP_OFFLOAD_ENABLE_COEX, static_cast<uint8_t>(coex_buf_count)};
++      get_btm_client_interface().vendor.BTM_VendorSpecificCommand(HCI_CONTROLLER_A2DP, sizeof(mtk_param),
++                                                                  mtk_param, offload_vendor_callback);
++    }
++    get_btm_client_interface().vendor.BTM_VendorSpecificCommand(HCI_CONTROLLER_A2DP, p_param - param,
++                                                                param, offload_vendor_callback);
++    osi_free(param);
++  }, param, p_param, coex_buf_count));
+ }
+ 
+ static void bta_av_vendor_offload_start_v2(tBTA_AV_SCB* p_scb, A2dpCodecConfigExt* offload_codec) {
+diff --git a/system/bta/av/bta_av_int.h b/system/bta/av/bta_av_int.h
+index a2c2dacc47..da01124909 100644
+--- a/system/bta/av/bta_av_int.h
++++ b/system/bta/av/bta_av_int.h
+@@ -658,6 +658,7 @@ constexpr uint8_t kEnablingAttemptsCountMaximum = 5;
+ #define VS_HCI_A2DP_OFFLOAD_STOP 0x02
+ #define VS_HCI_A2DP_OFFLOAD_START_V2 0x03
+ #define VS_HCI_A2DP_OFFLOAD_STOP_V2 0x04
++#define VS_HCI_A2DP_OFFLOAD_ENABLE_COEX 0xA0
+ 
+ /*****************************************************************************
+  *  Global data
+diff --git a/system/stack/include/l2cap_av_interface.h b/system/stack/include/l2cap_av_interface.h
+new file mode 100644
+index 0000000000..8cd7e5342a
+--- /dev/null
++++ b/system/stack/include/l2cap_av_interface.h
+@@ -0,0 +1,25 @@
++/*
++ *  Copyright 2025 LineageOS
++ *
++ *  Licensed under the Apache License, Version 2.0 (the "License");
++ *  you may not use this file except in compliance with the License.
++ *  You may obtain a copy of the License at:
++ *
++ *  http://www.apache.org/licenses/LICENSE-2.0
++ *
++ *  Unless required by applicable law or agreed to in writing, software
++ *  distributed under the License is distributed on an "AS IS" BASIS,
++ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ *  See the License for the specific language governing permissions and
++ *  limitations under the License.
++ *
++ */
++
++#pragma once
++
++#include <cstdint>
++#include <base/functional/callback.h>
++// This header contains functions for BTA advanced audio/video to invoke
++
++using tL2C_COEX_READY = base::OnceCallback<void(bool)>;
++void l2c_link_set_br_coex_buf_cap(uint16_t bufs_to_disable, tL2C_COEX_READY cb);
+diff --git a/system/stack/l2cap/l2c_int.h b/system/stack/l2cap/l2c_int.h
+index 4132da36e2..facc7e1082 100644
+--- a/system/stack/l2cap/l2c_int.h
++++ b/system/stack/l2cap/l2c_int.h
+@@ -40,6 +40,7 @@
+ #include "stack/include/btm_sec_api_types.h"
+ #include "stack/include/hci_error_code.h"
+ #include "stack/include/l2cap_interface.h"
++#include "stack/include/l2cap_av_interface.h"
+ #include "stack/l2cap/internal/l2c_api.h"
+ 
+ #define L2CAP_MIN_MTU 48 /* Minimum acceptable MTU is 48 bytes */
+@@ -615,7 +616,10 @@ struct tL2C_CB {
+ 
+   bool disallow_switch;     /* false, to allow switch at create conn */
+   uint16_t num_lm_acl_bufs; /* # of ACL buffers on controller */
++  uint16_t full_num_lm_acl_bufs; /* # of ACL buffers on controller, not substracting buffers needed for A2DP offload coex on MTK */
+   uint16_t idle_timeout;    /* Idle timeout */
++  uint16_t pending_acks_until_coex_cb;
++  tL2C_COEX_READY coex_cb;
+ 
+   tL2C_LCB* p_cur_hcit_lcb; /* Current HCI Transport buffer */
+   uint16_t num_used_lcbs;   /* Number of active link control blocks */
+diff --git a/system/stack/l2cap/l2c_link.cc b/system/stack/l2cap/l2c_link.cc
+index c67bd1a53d..b7570c1670 100644
+--- a/system/stack/l2cap/l2c_link.cc
++++ b/system/stack/l2cap/l2c_link.cc
+@@ -35,6 +35,7 @@
+ #include "device/include/device_iot_config.h"
+ #include "internal_include/bt_target.h"
+ #include "osi/include/allocator.h"
++#include "osi/include/properties.h"
+ #include "stack/btm/btm_int_types.h"
+ #include "stack/btm/btm_sco.h"
+ #include "stack/btm/btm_sec.h"
+@@ -46,6 +47,7 @@
+ #include "stack/include/btm_status.h"
+ #include "stack/include/hci_error_code.h"
+ #include "stack/include/l2cap_acl_interface.h"
++#include "stack/include/l2cap_av_interface.h"
+ #include "stack/include/l2cap_controller_interface.h"
+ #include "stack/include/l2cap_hci_link_interface.h"
+ #include "stack/include/l2cap_security_interface.h"
+@@ -683,6 +685,7 @@ void l2c_link_adjust_chnl_allocation(void) {
+ }
+ 
+ void l2c_link_init(const uint16_t acl_buffer_count_classic) {
++  l2cb.full_num_lm_acl_bufs = acl_buffer_count_classic;
+   l2cb.num_lm_acl_bufs = acl_buffer_count_classic;
+   l2cb.controller_xmit_window = acl_buffer_count_classic;
+ }
+@@ -748,6 +751,48 @@ void l2c_pin_code_request(const RawAddress& bd_addr) {
+   }
+ }
+ 
++/*******************************************************************************
++ *
++ * Function         l2c_link_set_br_coex_buf_cap
++ *
++ * Description      This function is called to limit amount of buffers used,
++ *                  in order for L2CAP to coexist with A2DP offload on MTK.
++ *
++ * Returns          void
++ *
++ ******************************************************************************/
++void l2c_link_set_br_coex_buf_cap(uint16_t bufs_to_disable, tL2C_COEX_READY cb) {
++  if (!osi_property_get_bool("persist.bluetooth.a2dp_offload.mtk_coex", false)) {
++    std::move(cb).Run(/* success= */ true);
++    return;
++  }
++
++  uint16_t new_bufs_count = l2cb.full_num_lm_acl_bufs - bufs_to_disable;
++  uint16_t pending_acks = l2cb.num_lm_acl_bufs - l2cb.controller_xmit_window + l2cb.pending_acks_until_coex_cb;
++
++  log::info(
++      "coex buf cap: total={} reserving={} available={} pending_acks={} xmit_window={}",
++      l2cb.full_num_lm_acl_bufs, bufs_to_disable, new_bufs_count,
++      pending_acks, l2cb.controller_xmit_window);
++
++  if (l2cb.pending_acks_until_coex_cb > 0) {
++    std::move(l2cb.coex_cb).Run(/* success= */ false);
++  }
++  l2cb.num_lm_acl_bufs = new_bufs_count;
++  if (pending_acks > new_bufs_count) {
++    l2cb.controller_xmit_window = 0;
++    l2cb.pending_acks_until_coex_cb = pending_acks - new_bufs_count;
++    l2cb.coex_cb = std::move(cb);
++  } else {
++    l2cb.controller_xmit_window = new_bufs_count - pending_acks;
++    l2cb.pending_acks_until_coex_cb = 0;
++  }
++  l2c_link_adjust_allocation();
++  if (pending_acks <= new_bufs_count) {
++    std::move(cb).Run(/* success= */ true);
++  }
++}
++
+ /*******************************************************************************
+  *
+  * Function         l2c_link_check_send_pkts
+@@ -1025,7 +1070,17 @@ void l2c_packets_completed(uint16_t handle, uint16_t num_sent) {
+ 
+   switch (p_lcb->transport) {
+     case BT_TRANSPORT_BR_EDR:
+-      l2cb.controller_xmit_window += num_sent;
++      if (l2cb.pending_acks_until_coex_cb > 0) {
++        if (l2cb.pending_acks_until_coex_cb > num_sent) {
++          l2cb.pending_acks_until_coex_cb -= num_sent;
++        } else {
++          l2cb.controller_xmit_window += num_sent - l2cb.pending_acks_until_coex_cb;
++          l2cb.pending_acks_until_coex_cb = 0;
++          std::move(l2cb.coex_cb).Run(/* success= */ true);
++        }
++      } else {
++        l2cb.controller_xmit_window += num_sent;
++      }
+       if (p_lcb->is_round_robin_scheduling()) {
+         l2cb.update_outstanding_classic_packets(num_sent);
+       }
+-- 
+2.53.0
+

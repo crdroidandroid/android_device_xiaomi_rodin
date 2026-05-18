@@ -1,0 +1,27 @@
+From 44407978582646f64d14a653ab1f90402e76a858 Mon Sep 17 00:00:00 2001
+From: Omkar Parte <rakmoparte@gmail.com>
+Date: Tue, 7 Apr 2026 02:07:41 +0530
+Subject: [PATCH] Android RIL
+
+Change-Id: I4ad8c2a67291d24a325f9ec2eead2a9209437f47
+---
+ reference-ril/Android.bp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/reference-ril/Android.bp b/reference-ril/Android.bp
+index 9abd997..cc5396a 100644
+--- a/reference-ril/Android.bp
++++ b/reference-ril/Android.bp
+@@ -38,6 +38,9 @@ cc_library_shared {
+         "misc.c",
+         "at_tok.c",
+     ],
++    header_libs: [
++        "ril_headers",
++    ],
+     shared_libs: [
+         "liblog",
+         "libcutils",
+-- 
+2.53.0
+

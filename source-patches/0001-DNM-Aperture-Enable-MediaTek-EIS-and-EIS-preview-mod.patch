@@ -1,0 +1,64 @@
+From e15ae29246295a84ae77616e391b8baa29757869 Mon Sep 17 00:00:00 2001
+From: Mashopy <eliasgheeraert@gmail.com>
+Date: Sat, 14 Feb 2026 19:51:47 +0100
+Subject: [PATCH] [DNM] Aperture: Enable MediaTek EIS and EIS preview mode for
+ video recording
+
+MediaTek devices need to pass those parameters in order to actually enable EIS on viewfinder and video recording.
+
+Todo: Test on BraX3 and Nothing Phone (2a)
+---
+ .../ext/CaptureRequestOptionsBuilder.kt       | 23 ++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+
+diff --git a/app/src/main/java/org/lineageos/aperture/ext/CaptureRequestOptionsBuilder.kt b/app/src/main/java/org/lineageos/aperture/ext/CaptureRequestOptionsBuilder.kt
+index 28ccf0c..a80d48f 100644
+--- a/app/src/main/java/org/lineageos/aperture/ext/CaptureRequestOptionsBuilder.kt
++++ b/app/src/main/java/org/lineageos/aperture/ext/CaptureRequestOptionsBuilder.kt
+@@ -23,6 +23,14 @@ private val FPS60_MTK_KEY_SESSION_PARAMETER = CaptureRequest.Key<Int>(
+     "com.mediatek.streamingfeature.hfpsMode", Int::class.java
+ )
+ 
++private val EIS_MTK_KEY_SESSION_PARAMETER = CaptureRequest.Key<Int>(
++    "com.mediatek.eisfeature.eismode", Int::class.java
++)
++
++private val EIS_PREVIEW_MTK_KEY_SESSION_PARAMETER = CaptureRequest.Key<Int>(
++    "com.mediatek.eisfeature.previeweis", Int::class.java
++)
++
+ @androidx.camera.camera2.interop.ExperimentalCamera2Interop
+ fun <ValueT> CaptureRequestOptions.Builder.setOrClearCaptureRequestOption(
+     key: CaptureRequest.Key<ValueT>,
+@@ -49,7 +57,8 @@ fun CaptureRequestOptions.Builder.setFrameRate(
+ @androidx.camera.camera2.interop.ExperimentalCamera2Interop
+ fun CaptureRequestOptions.Builder.setVideoStabilizationMode(
+     videoStabilizationMode: VideoStabilizationMode?
+-) = setOrClearCaptureRequestOption(
++) = apply {
++    setOrClearCaptureRequestOption(
+     CaptureRequest.CONTROL_VIDEO_STABILIZATION_MODE,
+     when (videoStabilizationMode) {
+         VideoStabilizationMode.OFF -> CameraMetadata.CONTROL_VIDEO_STABILIZATION_MODE_OFF
+@@ -64,6 +73,18 @@ fun CaptureRequestOptions.Builder.setVideoStabilizationMode(
+         null -> null
+     }
+ )
++    // Enable MediaTek EIS mode and EIS preview mode if needed
++    setOrClearCaptureRequestOption(EIS_MTK_KEY_SESSION_PARAMETER, when (videoStabilizationMode) {
++        VideoStabilizationMode.OFF -> 0
++        VideoStabilizationMode.ON, VideoStabilizationMode.ON_PREVIEW -> 1
++        null -> null
++    })
++    setOrClearCaptureRequestOption(EIS_PREVIEW_MTK_KEY_SESSION_PARAMETER, when (videoStabilizationMode) {
++        VideoStabilizationMode.OFF, VideoStabilizationMode.ON -> 0
++        VideoStabilizationMode.ON_PREVIEW -> 1
++        null -> null
++    })
++}
+ 
+ @androidx.camera.camera2.interop.ExperimentalCamera2Interop
+ fun CaptureRequestOptions.Builder.setEdgeMode(
+-- 
+2.53.0
+
