@@ -122,10 +122,12 @@ blob_fixups: blob_fixups_user_type = {
         'odm/lib64/libsre.so',
         'odm/lib64/libtruetone.so',
         'odm/lib64/libvideomode.so',
-        'vendor/bin/mnld',
         'vendor/lib64/mt6899/libaalservice.so',
         'vendor/lib64/mt6899/libpqconfig.so'
     ): blob_fixup()
+        .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
+    'vendor/bin/mnld': blob_fixup()
+        .replace_needed('libmnl.so', 'libmnl_mtk.so')
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
     'odm/lib64/hw/displayfeature.default.so': blob_fixup()
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so')
