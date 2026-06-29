@@ -210,14 +210,17 @@ blob_fixups: blob_fixups_user_type = {
     (
         'vendor/bin/hw/android.hardware.media.c2-mediatek-64b',
         'vendor/bin/hw/vendor.dolby.media.c2-default-service-dax',
-        'vendor/bin/hw/vendor.dolby.media.c2-service-vision',
         'vendor/lib64/c2.dolby.client.so',
-        'vendor/lib64/libcodec2_mtk_vdec.so',
-        'vendor/lib64/libcodec2_mtk_venc.so'
     ): blob_fixup()
         .replace_needed('libcodec2_aidl.so', 'libcodec2_aidl_prebuilt.so'),
     'vendor/bin/hw/vendor.dolby.media.c2-service-vision': blob_fixup()
         .replace_needed('libcodec2_aidl.so', 'libcodec2_aidl_prebuilt.so'),
+    (
+        'vendor/lib64/libcodec2_mtk_venc.so',
+        'vendor/lib64/libcodec2_mtk_vdec.so',
+    ): blob_fixup()
+        .replace_needed('libcodec2_aidl.so', 'libcodec2_aidl_prebuilt.so')
+        .replace_needed('libformatter.so', 'libformatter_mtk.so'),
     'vendor/bin/hw/android.hardware.security.keymint@3.0-service.mitee': blob_fixup()
         .replace_needed('lib_android_keymaster_keymint_utils.so', 'lib_android_keymaster_keymint_utils_V3.so')
         .replace_needed('libkeymint.so', 'libkeymint_V3.so'),
