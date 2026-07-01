@@ -34,6 +34,7 @@ namespace_imports = [
     'hardware/mediatek',
     'hardware/mediatek/libmtkperf_client',
     'hardware/xiaomi',
+    'vendor/mediatek/ims'
 ]
 
 
@@ -91,7 +92,6 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.mediatek.hardware.apuware.utils-V1-ndk',
         'vendor.mediatek.hardware.apuware.utils@2.0',
         'vendor.mediatek.hardware.neuropilot.agent-V1-ndk',
-        'vendor.mediatek.hardware.videotelephony-V1-ndk'
     ): lib_fixup_vendor_suffix,
 }
 
@@ -185,10 +185,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libkeymint_support.so', 'libkeymint_support_V3.so'),
     'system_ext/bin/hw/android.hardware.audio.parameter_parser.service': blob_fixup()
         .replace_needed('av-audio-types-aidl-ndk.so', 'av-audio-types-aidl-V3-ndk.so'),
-    'system_ext/lib64/libimsma.so': blob_fixup()
-        .replace_needed('libsink.so', 'libsink-mtk.so'),
-    'system_ext/priv-app/ImsService/ImsService.apk': blob_fixup()
-        .apktool_patch('blob-patches/ImsService'),
     'vendor/bin/hw/android.hardware.audio.service-aidl.mediatek': blob_fixup()
         .replace_needed('android.media.audio.common.types-V5-ndk.so', 'android.media.audio.common.types-V3-ndk.so')
         .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
