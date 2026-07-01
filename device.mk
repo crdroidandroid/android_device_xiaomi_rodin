@@ -246,7 +246,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/com.android.se.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.se.xml
 
 PRODUCT_COPY_FILES += \
-    hardware/nxp/keymint/KM300/res/hal_uuid_map_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/hal_uuid_map_rodin.xml
+    hardware/nxp/keymint/pixel/KM300/res/hal_uuid_map_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/hal_uuid_map_rodin.xml
 
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore_V3.xml
