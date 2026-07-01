@@ -402,6 +402,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek/wlan/wifi_hal \
+    hardware/nxp/keymint/pixel \
+    hardware/nxp/weaver/pixel \
     hardware/xiaomi
 
 # Sensors
