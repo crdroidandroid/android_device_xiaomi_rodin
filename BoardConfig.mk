@@ -23,7 +23,7 @@ TARGET_SCREEN_DENSITY := 480
 TARGET_USES_VULKAN := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN += hardware/nxp/keymint/KM300/res/config.fs
+TARGET_FS_CONFIG_GEN += hardware/nxp/keymint/pixel/KM300/res/config.fs
 
 # Lights
 TARGET_LIGHT_HAL_SCAN_FOR_BACKLIGHT_DEVICES := true
