@@ -45,6 +45,7 @@ BOARD_BOOTCONFIG += androidboot.hypervisor.protected_vm.supported=1
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += kasan=off
 BOARD_KERNEL_CMDLINE += rcupdate.rcu_expedited=1 rcutree.enable_rcu_lazy
+BOARD_KERNEL_CMDLINE += cma=512M
 
 BOARD_INIT_BOOT_HEADER_VERSION := 4
 
