@@ -846,6 +846,7 @@ vendor/lib64/libcom.xiaomi.hwadapter.decoupleutil.so;SYMLINK=odm/lib64/temp/libc
 vendor/lib64/libcom.xiaomi.hwadapter.postprocinterface.so;SYMLINK=odm/lib64/temp/libcom.xiaomi.hwadapter.postprocinterface.so
 vendor/lib64/libmicamera_adapter.so;SYMLINK=odm/lib64/temp/libmicamera_adapter.so
 vendor/lib64/libcom.xiaomi.ionutils.so
+vendor/lib64/android.frameworks.displayservice@1.0.so
 
 # Camera-arcsoft
 odm/lib64/libarc.ion.so
