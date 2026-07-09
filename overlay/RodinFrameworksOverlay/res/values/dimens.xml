@@ -4,26 +4,50 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <!-- The default height of the status bar used in {@link SystemBarUtils#getStatusBarHeight} to
-         calculate the status bar height. -->
-    <dimen name="status_bar_height_default">40dp</dimen>
 
-    <!-- Height of the status bar in portrait.
-         Do not read this dimen directly. Use {@link SystemBarUtils#getStatusBarHeight} instead.
-         -->
-    <dimen name="status_bar_height_portrait">@dimen/status_bar_height_default</dimen>
+    <!-- Content padding inside elements that are placed near rounded corners to prevent clipping -->
+    <dimen name="rounded_corner_content_padding">24.0dp</dimen>
 
-    <!-- Default radius of the software rounded corners. -->
-    <dimen name="rounded_corner_radius">96px</dimen>
+    <!-- Minimum height of a notification in the notification shade -->
+    <dimen name="notification_min_height">106.0dp</dimen>
 
-    <!-- Radius of the software rounded corners at the top of the display in its natural
-        orientation. If zero, the value of rounded_corner_radius is used. -->
-    <dimen name="rounded_corner_radius_top">96px</dimen>
+    <!-- General radius used for screen corners if top and bottom are not specified separately -->
+    <dimen name="rounded_corner_radius">38.0dp</dimen>
 
-    <!-- Radius of the software rounded corners at the bottom of the display in its natural
-        orientation. If zero, the value of rounded_corner_radius is used. -->
-    <dimen name="rounded_corner_radius_bottom">96px</dimen>
+    <!-- Specific radius used for the bottom-left and bottom-right screen corners -->
+    <dimen name="rounded_corner_radius_bottom">38.0dp</dimen>
 
-    <!-- Default paddings for content around the corners. -->
-    <dimen name="rounded_corner_content_padding">14dp</dimen>
+    <!-- Specific radius used for the top-left and top-right screen corners -->
+    <dimen name="rounded_corner_radius_top">38.0dp</dimen>
+
+    <!-- Active status bar height, referencing the portrait value by default -->
+    <item type="dimen" name="status_bar_height">@dimen/status_bar_height_portrait</item>
+
+    <!-- Default fallback height for the status bar in case orientation heights are not specified -->
+    <dimen name="status_bar_height_default">40.0dp</dimen>
+
+    <!-- Height of the status bar when the device is in landscape orientation -->
+    <item type="dimen" name="status_bar_height_landscape">@dimen/status_bar_height_portrait</item>
+
+    <!-- Height of the status bar when the device is in portrait orientation -->
+    <dimen name="status_bar_height_portrait">40.0dp</dimen>
+
+    <!-- Vertical offset applied to toast notifications from the bottom of the screen -->
+    <dimen name="toast_y_offset">8.0dp</dimen>
+
+    <!-- Rate at which screen brightness changes when transitions are fast (e.g., waking the device or turning off) -->
+    <dimen name="config_brightnessRampRateFast">0.41590282</dimen>
+
+    <!-- Screen brightness level when the screen is dimmed (e.g., shortly before it turns off automatically) -->
+    <dimen name="config_screenBrightnessDimFloat">8.54597E-4</dimen>
+
+    <!-- Default screen brightness level when the device is first booted or reset -->
+    <dimen name="config_screenBrightnessSettingDefaultFloat">0.07496032</dimen>
+
+    <!-- Maximum allowed display brightness value (represented as a float between 0.0 and 1.0) -->
+    <dimen name="config_screenBrightnessSettingMaximumFloat">1.0</dimen>
+
+    <!-- Minimum allowed display brightness value (represented as a float between 0.0 and 1.0) -->
+    <dimen name="config_screenBrightnessSettingMinimumFloat">8.54597E-4</dimen>
+
 </resources>

@@ -21,4 +21,418 @@
     <integer-array name="non_removable_euicc_slots">
         <item>1</item>
     </integer-array>
+
+    <!-- An array of device capabilities defined by GSMA SGP.22 v2.0.
+         The first item is the capability name that the device supports. The second item is the
+         major version. The minor and revision versions are default to 0s.
+         The device capabilities and their definition in the spec are:
+             gsm : gsmSupportedRelease
+             utran : utranSupportedRelease
+             cdma1x : cdma2000onexSupportedRelease
+             hrpd : cdma2000hrpdSupportedRelease
+             ehrpd : cdma2000ehrpdSupportedRelease
+             eutran : eutranSupportedRelease
+             nfc : contactlessSupportedRelease
+             crl : rspCrlSupportedVersion
+             nrepc : nrEpcSupportedRelease
+             nr5gc : nr5gcSupportedRelease
+             eutran5gc : eutran5gcSupportedRelease
+    -->
+    <string-array name="config_telephonyEuiccDeviceCapabilities" translatable="false">
+        <item>gsm,11</item>
+        <item>utran,9</item>
+        <item>eutran,15</item>
+        <item>nrepc,16</item>
+        <item>nr5gc,16</item>
+        <item>eutran5gc,16</item>
+    </string-array>
+
+    <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
+         The N entries of this array define N + 1 control points as follows:
+         (1-based arrays)
+
+         Point 1:            (0, value[1]):             lux <= 0
+         Point 2:     (level[1], value[2]):  0        < lux <= level[1]
+         Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
+         ...
+         Point N+1: (level[N], value[N+1]):  level[N] < lux
+
+         The control points must be strictly increasing.  Each control point
+         corresponds to an entry in the brightness backlight values arrays.
+         For example, if lux == level[1] (first element of the levels array)
+         then the brightness will be determined by value[2] (second element
+         of the brightness values array).
+
+         Spline interpolation is used to determine the auto-brightness
+         backlight values for lux levels between these control points.
+
+         Must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+        <item>90</item>
+        <item>95</item>
+        <item>100</item>
+        <item>120</item>
+        <item>140</item>
+        <item>160</item>
+        <item>180</item>
+        <item>200</item>
+        <item>220</item>
+        <item>240</item>
+        <item>260</item>
+        <item>280</item>
+        <item>300</item>
+        <item>320</item>
+        <item>340</item>
+        <item>360</item>
+        <item>380</item>
+        <item>400</item>
+        <item>420</item>
+        <item>440</item>
+        <item>460</item>
+        <item>480</item>
+        <item>500</item>
+        <item>600</item>
+        <item>700</item>
+        <item>900</item>
+        <item>1100</item>
+        <item>1300</item>
+        <item>1500</item>
+        <item>1700</item>
+        <item>1900</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+        <item>4500</item>
+        <item>5000</item>
+        <item>5500</item>
+        <item>6000</item>
+        <item>6500</item>
+        <item>7000</item>
+        <item>7500</item>
+        <item>8000</item>
+        <item>8500</item>
+        <item>9000</item>
+        <item>9500</item>
+        <item>10000</item>
+        <item>10500</item>
+        <item>11000</item>
+        <item>11500</item>
+        <item>12000</item>
+        <item>12500</item>
+        <item>13000</item>
+        <item>13500</item>
+        <item>14000</item>
+        <item>14500</item>
+        <item>15000</item>
+        <item>16000</item>
+        <item>17000</item>
+        <item>18000</item>
+        <item>19000</item>
+        <item>20000</item>
+        <item>21000</item>
+        <item>22000</item>
+        <item>23000</item>
+        <item>24000</item>
+        <item>25000</item>
+        <item>26000</item>
+        <item>27000</item>
+        <item>28000</item>
+        <item>29000</item>
+        <item>30000</item>
+        <item>35000</item>
+        <item>40000</item>
+        <item>45000</item>
+        <item>50000</item>
+        <item>55000</item>
+        <item>60000</item>
+        <item>65000</item>
+        <item>70000</item>
+        <item>75000</item>
+        <item>80000</item>
+        <item>85000</item>
+        <item>90000</item>
+        <item>95000</item>
+        <item>100000</item>
+    </integer-array>
+
+    <!-- Array of desired screen brightness in nits corresponding to the lux values
+         in the config_autoBrightnessLevels array. The display brightness is defined as the measured
+         brightness of an all-white image.
+
+         If this is defined then:
+            - config_autoBrightnessLcdBacklightValues should not be defined
+            - config_screenBrightnessNits must be defined
+            - config_screenBrightnessBacklight must be defined
+
+         This array should have size one greater than the size of the config_autoBrightnessLevels
+         array. The brightness values must be non-negative and non-decreasing. This must be
+         overridden in platform specific overlays -->
+    <array name="config_autoBrightnessDisplayValuesNits">
+        <item>2.5</item>      <!-- lux ≤ 0 -->
+        <item>4.6</item>      <!-- 0 < lux ≤ 1 -->
+        <item>7.1</item>      <!-- 1 < lux ≤ 2 -->
+        <item>9.6</item>      <!-- 2 < lux ≤ 3 -->
+        <item>12.1</item>     <!-- 3 < lux ≤ 4 -->
+        <item>14.7</item>     <!-- 4 < lux ≤ 5 -->
+        <item>17.2</item>     <!-- 5 < lux ≤ 6 -->
+        <item>18.5</item>     <!-- 6 < lux ≤ 7 -->
+        <item>19.2</item>     <!-- 7 < lux ≤ 8 -->
+        <item>20.1</item>     <!-- 8 < lux ≤ 9 -->
+        <item>21.0</item>     <!-- 9 < lux ≤ 10 -->
+        <item>22.0</item>     <!-- 10 < lux ≤ 11 -->
+        <item>22.9</item>     <!-- 11 < lux ≤ 12 -->
+        <item>24.0</item>     <!-- 12 < lux ≤ 13 -->
+        <item>25.1</item>     <!-- 13 < lux ≤ 14 -->
+        <item>26.2</item>     <!-- 14 < lux ≤ 15 -->
+        <item>27.5</item>     <!-- 15 < lux ≤ 16 -->
+        <item>28.7</item>     <!-- 16 < lux ≤ 17 -->
+        <item>30.0</item>     <!-- 17 < lux ≤ 18 -->
+        <item>31.4</item>     <!-- 18 < lux ≤ 19 -->
+        <item>33.2</item>     <!-- 19 < lux ≤ 20 -->
+        <item>34.3</item>     <!-- 20 < lux ≤ 21 -->
+        <item>35.8</item>     <!-- 21 < lux ≤ 22 -->
+        <item>37.4</item>     <!-- 22 < lux ≤ 23 -->
+        <item>39.5</item>     <!-- 23 < lux ≤ 24 -->
+        <item>40.7</item>     <!-- 24 < lux ≤ 25 -->
+        <item>42.4</item>     <!-- 25 < lux ≤ 26 -->
+        <item>44.2</item>     <!-- 26 < lux ≤ 27 -->
+        <item>46.0</item>     <!-- 27 < lux ≤ 28 -->
+        <item>47.9</item>     <!-- 28 < lux ≤ 29 -->
+        <item>49.9</item>     <!-- 29 < lux ≤ 30 -->
+        <item>50.2</item>     <!-- 30 < lux ≤ 35 -->
+        <item>50.4</item>     <!-- 35 < lux ≤ 40 -->
+        <item>50.7</item>     <!-- 40 < lux ≤ 45 -->
+        <item>51.0</item>     <!-- 45 < lux ≤ 50 -->
+        <item>51.2</item>     <!-- 50 < lux ≤ 55 -->
+        <item>51.5</item>     <!-- 55 < lux ≤ 60 -->
+        <item>51.8</item>     <!-- 60 < lux ≤ 65 -->
+        <item>52.0</item>     <!-- 65 < lux ≤ 70 -->
+        <item>52.3</item>     <!-- 70 < lux ≤ 75 -->
+        <item>52.6</item>     <!-- 75 < lux ≤ 80 -->
+        <item>52.8</item>     <!-- 80 < lux ≤ 85 -->
+        <item>53.1</item>     <!-- 85 < lux ≤ 90 -->
+        <item>53.4</item>     <!-- 90 < lux ≤ 95 -->
+        <item>53.6</item>     <!-- 95 < lux ≤ 100 -->
+        <item>54.5</item>     <!-- 100 < lux ≤ 120 -->
+        <item>55.4</item>     <!-- 120 < lux ≤ 140 -->
+        <item>56.2</item>     <!-- 140 < lux ≤ 160 -->
+        <item>57.2</item>     <!-- 160 < lux ≤ 180 -->
+        <item>58.0</item>     <!-- 180 < lux ≤ 200 -->
+        <item>58.9</item>     <!-- 200 < lux ≤ 220 -->
+        <item>59.7</item>     <!-- 220 < lux ≤ 240 -->
+        <item>60.6</item>     <!-- 240 < lux ≤ 260 -->
+        <item>61.5</item>     <!-- 260 < lux ≤ 280 -->
+        <item>62.3</item>     <!-- 280 < lux ≤ 300 -->
+        <item>63.2</item>     <!-- 300 < lux ≤ 320 -->
+        <item>64.1</item>     <!-- 320 < lux ≤ 340 -->
+        <item>65.0</item>     <!-- 340 < lux ≤ 360 -->
+        <item>65.8</item>     <!-- 360 < lux ≤ 380 -->
+        <item>66.8</item>     <!-- 380 < lux ≤ 400 -->
+        <item>67.6</item>     <!-- 400 < lux ≤ 420 -->
+        <item>68.5</item>     <!-- 420 < lux ≤ 440 -->
+        <item>69.3</item>     <!-- 440 < lux ≤ 460 -->
+        <item>70.3</item>     <!-- 460 < lux ≤ 480 -->
+        <item>71.2</item>     <!-- 480 < lux ≤ 500 -->
+        <item>75.7</item>     <!-- 500 < lux ≤ 600 -->
+        <item>81.5</item>     <!-- 600 < lux ≤ 700 -->
+        <item>93.1</item>     <!-- 700 < lux ≤ 900 -->
+        <item>105.2</item>    <!-- 900 < lux ≤ 1100 -->
+        <item>118.1</item>    <!-- 1100 < lux ≤ 1300 -->
+        <item>131.2</item>    <!-- 1300 < lux ≤ 1500 -->
+        <item>144.6</item>    <!-- 1500 < lux ≤ 1700 -->
+        <item>158.3</item>    <!-- 1700 < lux ≤ 1900 -->
+        <item>165.2</item>    <!-- 1900 < lux ≤ 2000 -->
+        <item>220.4</item>    <!-- 2000 < lux ≤ 2500 (blend start) -->
+        <item>284.3</item>    <!-- 2500 < lux ≤ 3000 -->
+        <item>320.6</item>    <!-- 3000 < lux ≤ 3500 -->
+        <item>359.0</item>    <!-- 3500 < lux ≤ 4000 -->
+        <item>399.5</item>    <!-- 4000 < lux ≤ 4500 -->
+        <item>442.0</item>    <!-- 4500 < lux ≤ 5000 -->
+        <item>486.5</item>    <!-- 5000 < lux ≤ 5500 (blend end, matches original) -->
+        <item>504.22</item>   <!-- 5500 < lux ≤ 6000 (original values follow) -->
+        <item>521.93</item>
+        <item>539.63</item>
+        <item>557.34</item>
+        <item>575.04</item>
+        <item>592.75</item>
+        <item>610.46</item>
+        <item>628.16</item>
+        <item>645.87</item>
+        <item>663.58</item>
+        <item>681.28</item>
+        <item>698.99</item>
+        <item>716.7</item>
+        <item>734.4</item>
+        <item>752.11</item>
+        <item>769.82</item>
+        <item>787.52</item>
+        <item>805.23</item>
+        <item>822.94</item>
+        <item>858.35</item>
+        <item>893.76</item>
+        <item>929.17</item>
+        <item>964.59</item>
+        <item>1000.0</item>
+        <item>1005.0</item>
+        <item>1010.0</item>
+        <item>1015.0</item>
+        <item>1020.0</item>
+        <item>1025.0</item>
+        <item>1030.0</item>
+        <item>1035.0</item>
+        <item>1040.0</item>
+        <item>1045.0</item>
+        <item>1050.0</item>
+        <item>1065.0</item>
+        <item>1075.0</item>
+        <item>1085.0</item>
+        <item>1090.0</item>
+        <item>1100.0</item>
+        <item>1120.0</item>
+        <item>1140.0</item>
+        <item>1160.0</item>
+        <item>1185.0</item>
+        <item>1200.0</item>
+        <item>1225.0</item>
+        <item>1250.0</item>
+        <item>1270.0</item>
+        <item>1300.0</item>
+    </array>
+
+     <!-- An array describing the screen's backlight values corresponding to the brightness
+          values in the config_screenBrightnessNits array.
+          This array should be equal in size to config_screenBrightnessBacklight. -->
+     <array name="config_screenBrightnessBacklight">
+          <item>1</item>
+          <item>255</item>
+     </array>
+
+     <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
+          values in the config_screenBrightnessBacklight array.  On OLED displays these  values
+          should be measured with an all white image while the display is in the fully on state.
+          Note that this value should *not* reflect the maximum brightness value for any high
+          brightness modes but only the maximum brightness value obtainable in a sustainable manner.
+          This array should be equal in size to config_screenBrightnessBacklight -->
+     <array name="config_screenBrightnessNits">
+          <item>2.5</item>
+          <item>1000</item>
+     </array>
+
+    <!-- Array of ambient lux threshold values. This is used for determining hysteresis constraint
+         values by calculating the index to use for lookup and then setting the constraint value
+         to the corresponding value of the array. The new brightening hysteresis constraint value
+         is the n-th element of config_ambientBrighteningThresholds, and the new darkening
+         hysteresis constraint value is the n-th element of config_ambientDarkeningThresholds.
+
+         The (zero-based) index is calculated as follows: (MAX is the largest index of the array)
+         condition                       calculated index
+         value < level[0]                0
+         level[n] <= value < level[n+1]  n+1
+         level[MAX] <= value             MAX+1 -->
+    <integer-array name="config_ambientThresholdLevels">
+        <item>2</item>
+        <item>10</item>
+        <item>30</item>
+        <item>100</item>
+        <item>800</item>
+        <item>2000</item>
+        <item>4000</item>
+    </integer-array>
+
+    <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
+         percent. The length of this array is assumed to be one greater than
+         config_ambientThresholdLevels. The brightening threshold is calculated as
+         lux * (1.0f + CONSTRAINT_VALUE). When the current lux is higher than this threshold,
+         the screen brightness is recalculated. See the config_ambientThresholdLevels
+         description for how the constraint value is chosen. -->
+    <integer-array name="config_ambientBrighteningThresholds">
+        <item>2</item>
+        <item>6</item>
+        <item>10</item>
+        <item>30</item>
+        <item>100</item>
+        <item>400</item>
+        <item>600</item>
+        <item>1000</item>
+    </integer-array>
+
+    <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
+         percent. The length of this array is assumed to be one greater than
+         config_ambientThresholdLevels. The darkening threshold is calculated as
+         lux * (1.0f - CONSTRAINT_VALUE). When the current lux is lower than this threshold,
+         the screen brightness is recalculated. See the config_ambientThresholdLevels
+         description for how the constraint value is chosen. -->
+    <integer-array name="config_ambientDarkeningThresholds">
+        <item>800</item>
+        <item>800</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+        <item>500</item>
+    </integer-array>
+
+    <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
+         percent. The length of this array is assumed to be one greater than
+         config_screenThresholdLevels. The brightening threshold is calculated as
+         screenBrightness * (1.0f + CONSTRAINT_VALUE). When the new screen brightness is higher
+         than this threshold, it is applied. See the config_screenThresholdLevels description for
+         how the constraint value is chosen. -->
+    <integer-array name="config_screenBrighteningThresholds">
+        <item>0</item>
+    </integer-array>
+
+    <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
+         percent. The length of this array is assumed to be one greater than
+         config_screenThresholdLevels. The darkening threshold is calculated as
+         screenBrightness * (1.0f - CONSTRAINT_VALUE). When the new screen brightness is lower than
+         this threshold, it is applied. See the config_screenThresholdLevels description for how
+         the constraint value is chosen. -->
+    <integer-array name="config_screenDarkeningThresholds">
+        <item>0</item>
+    </integer-array>
 </resources>

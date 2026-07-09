@@ -17,13 +17,16 @@
     <bool name="config_adaptive_sleep_available">true</bool>
 
     <!-- Fast brightness animation ramp rate in brightness units per second-->
-    <integer name="config_brightness_ramp_rate_fast">64</integer>
+    <integer name="config_brightness_ramp_rate_fast">4932</integer>
 
     <!-- Slow brightness animation ramp rate in brightness units per second-->
-    <integer name="config_brightness_ramp_rate_slow">64</integer>
+    <integer name="config_brightness_ramp_rate_slow">3932</integer>
 
-    <integer name="config_screenBrightnessRampIncreaseMaxMillis">4000</integer>
-    <integer name="config_screenBrightnessRampDecreaseMaxMillis">4000</integer>
+    <!-- Disable screen brightness adjustments while in Doze/Ambient Display mode -->
+    <bool name="config_brightWhenDozing">false</bool>
+
+    <!-- Whether to reset the ambient lux value after the light sensor has finished warming up -->
+    <bool name="config_autoBrightnessResetAmbientLuxAfterWarmUp">false</bool>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
@@ -46,572 +49,26 @@
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
-    <integer name="config_shutdownBatteryTemperature">580</integer>
+    <integer name="config_shutdownBatteryTemperature">520</integer>
 
-    <!-- Minimum screen brightness setting allowed by power manager.
-         -2 is invalid so setting will resort to int value specified above.
-         Set this to 0.0 to allow screen to go to minimal brightness.
-         The user is forbidden from setting the brightness below this level. -->
-    <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.002380662</item>
-
-    <!-- Maximum screen brightness allowed by the power manager.
-         -2 is invalid so setting will resort to int value specified above.
-         Set this to 1.0 for maximum brightness range.
-         The user is forbidden from setting the brightness above this level. -->
-    <item name="config_screenBrightnessSettingMaximumFloat" format="float" type="dimen">1</item>
-
-    <!-- Default screen brightness setting set.
-         -2 is invalid so setting will resort to int value specified above.
-         Must be in the range specified by minimum and maximum. -->
-    <item name="config_screenBrightnessSettingDefaultFloat" format="float" type="dimen">0.075</item>
 
     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
          for debouncing the light sensor.  Different constants are used to debounce the light sensor
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">1800</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">2500</integer>
+    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">1000</integer>
 
     <!-- The maximum range of gamma adjustment possible using the screen
          auto-brightness adjustment setting. -->
     <fraction name="config_autoBrightnessAdjustmentMaxGamma">100%</fraction>
 
-    <!-- Screen brightness used to dim the screen when the user activity
-         timeout expires.  May be less than the minimum allowed brightness setting
-         that can be set by the user. -->
-    <item name="config_screenBrightnessDimFloat" format="float" type="dimen">0.4</item>
 
     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
          For this time after the screen turns on, the Power Manager
          will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">50</integer>
-
-    <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
-         The N entries of this array define N + 1 control points as follows:
-         (1-based arrays)
-
-         Point 1:            (0, value[1]):             lux <= 0
-         Point 2:     (level[1], value[2]):  0        < lux <= level[1]
-         Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
-         ...
-         Point N+1: (level[N], value[N+1]):  level[N] < lux
-
-         The control points must be strictly increasing.  Each control point
-         corresponds to an entry in the brightness backlight values arrays.
-         For example, if lux == level[1] (first element of the levels array)
-         then the brightness will be determined by value[2] (second element
-         of the brightness values array).
-
-         Spline interpolation is used to determine the auto-brightness
-         backlight values for lux levels between these control points.
-
-         Must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLevels">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
-        <item>21</item>
-        <item>22</item>
-        <item>23</item>
-        <item>24</item>
-        <item>25</item>
-        <item>26</item>
-        <item>27</item>
-        <item>28</item>
-        <item>29</item>
-        <item>30</item>
-        <item>35</item>
-        <item>40</item>
-        <item>45</item>
-        <item>50</item>
-        <item>55</item>
-        <item>60</item>
-        <item>65</item>
-        <item>70</item>
-        <item>75</item>
-        <item>80</item>
-        <item>85</item>
-        <item>90</item>
-        <item>95</item>
-        <item>100</item>
-        <item>120</item>
-        <item>140</item>
-        <item>160</item>
-        <item>180</item>
-        <item>200</item>
-        <item>220</item>
-        <item>240</item>
-        <item>260</item>
-        <item>280</item>
-        <item>300</item>
-        <item>320</item>
-        <item>340</item>
-        <item>360</item>
-        <item>380</item>
-        <item>400</item>
-        <item>420</item>
-        <item>440</item>
-        <item>460</item>
-        <item>480</item>
-        <item>500</item>
-        <item>600</item>
-        <item>700</item>
-        <item>900</item>
-        <item>1100</item>
-        <item>1300</item>
-        <item>1500</item>
-        <item>1700</item>
-        <item>1900</item>
-        <item>2000</item>
-        <item>2500</item>
-        <item>3000</item>
-        <item>3500</item>
-        <item>4000</item>
-        <item>4500</item>
-        <item>5000</item>
-        <item>5500</item>
-        <item>6000</item>
-        <item>6500</item>
-        <item>7000</item>
-        <item>7500</item>
-        <item>8000</item>
-        <item>8500</item>
-        <item>9000</item>
-        <item>9500</item>
-        <item>10000</item>
-        <item>10500</item>
-        <item>11000</item>
-        <item>11500</item>
-        <item>12000</item>
-        <item>12500</item>
-        <item>13000</item>
-        <item>13500</item>
-        <item>14000</item>
-        <item>14500</item>
-        <item>15000</item>
-        <item>16000</item>
-        <item>17000</item>
-        <item>18000</item>
-        <item>19000</item>
-        <item>20000</item>
-        <item>21000</item>
-        <item>22000</item>
-        <item>23000</item>
-        <item>24000</item>
-        <item>25000</item>
-        <item>26000</item>
-        <item>27000</item>
-        <item>28000</item>
-        <item>29000</item>
-        <item>30000</item>
-        <item>35000</item>
-        <item>40000</item>
-        <item>45000</item>
-        <item>50000</item>
-        <item>55000</item>
-        <item>60000</item>
-        <item>64000</item>
-        <item>70000</item>
-        <item>75000</item>
-        <item>80000</item>
-        <item>85000</item>
-        <item>90000</item>
-        <item>95000</item>
-        <item>100000</item>
-    </integer-array>
-
-    <!-- Array of output values for LCD backlight corresponding to the lux values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         The brightness values must be between 0 and 255 and be non-decreasing.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>40</item>
-        <item>108</item>
-        <item>177</item>
-        <item>246</item>
-        <item>314</item>
-        <item>383</item>
-        <item>452</item>
-        <item>488</item>
-        <item>509</item>
-        <item>533</item>
-        <item>557</item>
-        <item>583</item>
-        <item>610</item>
-        <item>639</item>
-        <item>669</item>
-        <item>700</item>
-        <item>733</item>
-        <item>768</item>
-        <item>804</item>
-        <item>841</item>
-        <item>890</item>
-        <item>920</item>
-        <item>962</item>
-        <item>1005</item>
-        <item>1062</item>
-        <item>1095</item>
-        <item>1143</item>
-        <item>1192</item>
-        <item>1237</item>
-        <item>1294</item>
-        <item>1347</item>
-        <item>1355</item>
-        <item>1362</item>
-        <item>1370</item>
-        <item>1377</item>
-        <item>1384</item>
-        <item>1391</item>
-        <item>1399</item>
-        <item>1406</item>
-        <item>1414</item>
-        <item>1421</item>
-        <item>1428</item>
-        <item>1435</item>
-        <item>1442</item>
-        <item>1449</item>
-        <item>1473</item>
-        <item>1497</item>
-        <item>1521</item>
-        <item>1546</item>
-        <item>1569</item>
-        <item>1593</item>
-        <item>1617</item>
-        <item>1640</item>
-        <item>1664</item>
-        <item>1688</item>
-        <item>1712</item>
-        <item>1736</item>
-        <item>1760</item>
-        <item>1784</item>
-        <item>1809</item>
-        <item>1832</item>
-        <item>1855</item>
-        <item>1880</item>
-        <item>1905</item>
-        <item>1929</item>
-        <item>2053</item>
-        <item>2212</item>
-        <item>2529</item>
-        <item>2861</item>
-        <item>3213</item>
-        <item>3572</item>
-        <item>3940</item>
-        <item>4314</item>
-        <item>4504</item>
-        <item>5488</item>
-        <item>6516</item>
-        <item>6823</item>
-        <item>7096</item>
-        <item>7370</item>
-        <item>7644</item>
-        <item>7917</item>
-        <item>8191</item>
-        <item>8396</item>
-        <item>8601</item>
-        <item>8805</item>
-        <item>9010</item>
-        <item>9215</item>
-        <item>9420</item>
-        <item>9625</item>
-        <item>9829</item>
-        <item>10034</item>
-        <item>10239</item>
-        <item>10444</item>
-        <item>10649</item>
-        <item>10853</item>
-        <item>11058</item>
-        <item>11263</item>
-        <item>11468</item>
-        <item>11775</item>
-        <item>12082</item>
-        <item>12389</item>
-        <item>12697</item>
-        <item>13004</item>
-        <item>13311</item>
-        <item>13721</item>
-        <item>13754</item>
-        <item>13787</item>
-        <item>13821</item>
-        <item>13854</item>
-        <item>13888</item>
-        <item>13920</item>
-        <item>13954</item>
-        <item>13987</item>
-        <item>14021</item>
-        <item>14053</item>
-        <item>14220</item>
-        <item>14386</item>
-        <item>14553</item>
-        <item>14719</item>
-        <item>14886</item>
-        <item>15052</item>
-        <item>15219</item>
-        <item>15385</item>
-        <item>15552</item>
-        <item>15717</item>
-        <item>15884</item>
-        <item>16050</item>
-        <item>16217</item>
-        <item>16383</item>
-    </integer-array>
-
-    <!-- Array of desired screen brightness in nits corresponding to the lux values
-         in the config_autoBrightnessLevels array. The display brightness is defined as the measured
-         brightness of an all-white image.
-
-         If this is defined then:
-            - config_autoBrightnessLcdBacklightValues should not be defined
-            - config_screenBrightnessNits must be defined
-            - config_screenBrightnessBacklight must be defined
-
-         This array should have size one greater than the size of the config_autoBrightnessLevels
-         array. The brightness values must be non-negative and non-decreasing. This must be
-         overridden in platform specific overlays -->
-    <array name="config_autoBrightnessDisplayValuesNits">
-        <item>1.00</item>
-        <item>2.18</item>
-        <item>3.52</item>
-        <item>4.85</item>
-        <item>6.20</item>
-        <item>7.53</item>
-        <item>8.87</item>
-        <item>10.20</item>
-        <item>11.53</item>
-        <item>12.87</item>
-        <item>14.20</item>
-        <item>15.55</item>
-        <item>16.88</item>
-        <item>18.22</item>
-        <item>19.55</item>
-        <item>20.88</item>
-        <item>22.22</item>
-        <item>23.55</item>
-        <item>24.90</item>
-        <item>26.23</item>
-        <item>27.57</item>
-        <item>28.90</item>
-        <item>30.23</item>
-        <item>31.57</item>
-        <item>32.90</item>
-        <item>34.25</item>
-        <item>35.58</item>
-        <item>36.92</item>
-        <item>38.25</item>
-        <item>39.58</item>
-        <item>40.92</item>
-        <item>42.25</item>
-        <item>43.60</item>
-        <item>44.93</item>
-        <item>46.27</item>
-        <item>47.60</item>
-        <item>48.93</item>
-        <item>50.27</item>
-        <item>51.60</item>
-        <item>52.95</item>
-        <item>54.28</item>
-        <item>55.62</item>
-        <item>56.95</item>
-        <item>58.28</item>
-        <item>59.62</item>
-        <item>60.95</item>
-        <item>62.30</item>
-        <item>63.63</item>
-        <item>64.97</item>
-        <item>66.30</item>
-        <item>67.63</item>
-        <item>68.97</item>
-        <item>70.30</item>
-        <item>71.65</item>
-        <item>72.98</item>
-        <item>74.32</item>
-        <item>75.65</item>
-        <item>76.98</item>
-        <item>78.32</item>
-        <item>79.65</item>
-        <item>81.00</item>
-        <item>82.33</item>
-        <item>83.67</item>
-        <item>85.00</item>
-        <item>93.50</item>
-        <item>102.00</item>
-        <item>110.50</item>
-        <item>119.00</item>
-        <item>127.50</item>
-        <item>136.00</item>
-        <item>144.50</item>
-        <item>153.00</item>
-        <item>161.50</item>
-        <item>170.00</item>
-        <item>178.50</item>
-        <item>187.00</item>
-        <item>195.50</item>
-        <item>204.00</item>
-        <item>212.50</item>
-        <item>221.00</item>
-        <item>229.50</item>
-        <item>238.00</item>
-        <item>246.50</item>
-        <item>255.00</item>
-        <item>272.00</item>
-        <item>289.00</item>
-        <item>306.00</item>
-        <item>323.00</item>
-        <item>340.00</item>
-        <item>357.00</item>
-        <item>440.00</item>
-        <item>460.00</item>
-        <item>480.00</item>
-        <item>500.00</item>
-        <item>520.00</item>
-        <item>540.00</item>
-        <item>560.00</item>
-        <item>580.00</item>
-        <item>600.00</item>
-        <item>620.00</item>
-        <item>640.00</item>
-        <item>660.00</item>
-        <item>680.00</item>
-        <item>700.00</item>
-        <item>710.00</item>
-        <item>720.00</item>
-        <item>730.00</item>
-        <item>740.00</item>
-        <item>750.00</item>
-        <item>760.00</item>
-        <item>770.00</item>
-        <item>780.00</item>
-        <item>790.00</item>
-        <item>800.00</item>
-        <item>810.00</item>
-        <item>820.00</item>
-        <item>830.00</item>
-        <item>840.00</item>
-        <item>850.00</item>
-        <item>860.00</item>
-        <item>870.00</item>
-        <item>880.00</item>
-        <item>890.00</item>
-        <item>900.00</item>
-        <item>1000.00</item>
-        <item>1050.00</item>
-        <item>1100.00</item>
-        <item>1150.00</item>
-        <item>1250.00</item>
-    </array>
-
-     <!-- An array describing the screen's backlight values corresponding to the brightness
-          values in the config_screenBrightnessNits array.
-          This array should be equal in size to config_screenBrightnessBacklight. -->
-     <array name="config_screenBrightnessBacklight">
-          <item>1</item>
-          <item>255</item>
-     </array>
-
-     <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
-          values in the config_screenBrightnessBacklight array.  On OLED displays these  values
-          should be measured with an all white image while the display is in the fully on state.
-          Note that this value should *not* reflect the maximum brightness value for any high
-          brightness modes but only the maximum brightness value obtainable in a sustainable manner.
-          This array should be equal in size to config_screenBrightnessBacklight -->
-     <array name="config_screenBrightnessNits">
-          <item>2.5</item>
-          <item>1000</item>
-     </array>
-
-    <!-- Array of ambient lux threshold values. This is used for determining hysteresis constraint
-         values by calculating the index to use for lookup and then setting the constraint value
-         to the corresponding value of the array. The new brightening hysteresis constraint value
-         is the n-th element of config_ambientBrighteningThresholds, and the new darkening
-         hysteresis constraint value is the n-th element of config_ambientDarkeningThresholds.
-
-         The (zero-based) index is calculated as follows: (MAX is the largest index of the array)
-         condition                       calculated index
-         value < level[0]                0
-         level[n] <= value < level[n+1]  n+1
-         level[MAX] <= value             MAX+1 -->
-    <integer-array name="config_ambientThresholdLevels">
-        <item>2</item>
-        <item>10</item>
-        <item>30</item>
-        <item>100</item>
-        <item>800</item>
-        <item>2000</item>
-        <item>4000</item>
-    </integer-array>
-
-    <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
-         percent. The length of this array is assumed to be one greater than
-         config_ambientThresholdLevels. The brightening threshold is calculated as
-         lux * (1.0f + CONSTRAINT_VALUE). When the current lux is higher than this threshold,
-         the screen brightness is recalculated. See the config_ambientThresholdLevels
-         description for how the constraint value is chosen. -->
-    <integer-array name="config_ambientBrighteningThresholds">
-        <item>2</item>
-        <item>6</item>
-        <item>10</item>
-        <item>30</item>
-        <item>100</item>
-        <item>400</item>
-        <item>600</item>
-        <item>1000</item>
-    </integer-array>
-
-    <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
-         percent. The length of this array is assumed to be one greater than
-         config_ambientThresholdLevels. The darkening threshold is calculated as
-         lux * (1.0f - CONSTRAINT_VALUE). When the current lux is lower than this threshold,
-         the screen brightness is recalculated. See the config_ambientThresholdLevels
-         description for how the constraint value is chosen. -->
-    <integer-array name="config_ambientDarkeningThresholds">
-        <item>800</item>
-        <item>800</item>
-        <item>500</item>
-        <item>500</item>
-        <item>500</item>
-        <item>500</item>
-        <item>500</item>
-        <item>500</item>
-    </integer-array>
-
-    <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
-         percent. The length of this array is assumed to be one greater than
-         config_screenThresholdLevels. The brightening threshold is calculated as
-         screenBrightness * (1.0f + CONSTRAINT_VALUE). When the new screen brightness is higher
-         than this threshold, it is applied. See the config_screenThresholdLevels description for
-         how the constraint value is chosen. -->
-    <integer-array name="config_screenBrighteningThresholds">
-        <item>0</item>
-    </integer-array>
-
-    <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
-         percent. The length of this array is assumed to be one greater than
-         config_screenThresholdLevels. The darkening threshold is calculated as
-         screenBrightness * (1.0f - CONSTRAINT_VALUE). When the new screen brightness is lower than
-         this threshold, it is applied. See the config_screenThresholdLevels description for how
-         the constraint value is chosen. -->
-    <integer-array name="config_screenDarkeningThresholds">
-        <item>0</item>
-    </integer-array>
 
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
@@ -681,31 +138,6 @@
          on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
 
-    <!-- An array of device capabilities defined by GSMA SGP.22 v2.0.
-         The first item is the capability name that the device supports. The second item is the
-         major version. The minor and revision versions are default to 0s.
-         The device capabilities and their definition in the spec are:
-             gsm : gsmSupportedRelease
-             utran : utranSupportedRelease
-             cdma1x : cdma2000onexSupportedRelease
-             hrpd : cdma2000hrpdSupportedRelease
-             ehrpd : cdma2000ehrpdSupportedRelease
-             eutran : eutranSupportedRelease
-             nfc : contactlessSupportedRelease
-             crl : rspCrlSupportedVersion
-             nrepc : nrEpcSupportedRelease
-             nr5gc : nr5gcSupportedRelease
-             eutran5gc : eutran5gcSupportedRelease
-    -->
-    <string-array name="config_telephonyEuiccDeviceCapabilities" translatable="false">
-        <item>gsm,11</item>
-        <item>utran,9</item>
-        <item>eutran,15</item>
-        <item>nrepc,16</item>
-        <item>nr5gc,16</item>
-        <item>eutran5gc,16</item>
-    </string-array>
-
     <!-- Number of physical SIM slots on the device. This includes both eSIM and pSIM slots, and
          is not necessarily the same as the number of phones/logical modems supported by the device.
          For example, a multi-sim device can have 2 phones/logical modems, but 3 physical slots,
@@ -756,13 +188,13 @@
          If a non-zero value is set for config_defaultPeakRefreshRate, then
          config_defaultRefreshRate may be set to 0, in which case the value set for
          config_defaultPeakRefreshRate will act as the default frame rate. -->
-    <integer name="config_defaultRefreshRate">121</integer>
+    <integer name="config_defaultRefreshRate">0</integer>
 
     <!-- The default peak refresh rate for a given device. Change this value if you want to prevent
          the framework from using higher refresh rates, even if display modes with higher refresh
          rates are available from hardware composer. Only has an effect if the value is
          non-zero. -->
-    <integer name="config_defaultPeakRefreshRate">121</integer>
+    <integer name="config_defaultPeakRefreshRate">120</integer>
 
     <!-- Whether or not wcg (wide color gamut) should be enabled on this device,
          we only enabled it while the device has ability of mixed color spaces composition -->
@@ -797,6 +229,7 @@
     <!-- Preferred max refresh rate at AOD & Ambient Display, if supported by the display. -->
     <integer name="config_aodMaxRefreshRate">60</integer>
 
+    <!-- Whether the device should enter Doze mode immediately after the screen turns off -->
     <bool name="config_dozeAfterScreenOff">true</bool>
 
     <!-- Auto-brightness sensor type string -->
