@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+
+     Privileged-app permission whitelist for com.xiaomi.settings (XiaomiParts).
+     This app runs as android.uid.system (sharedUserId="android.uid.system").
+
+     All permissions declared here must also appear in AndroidManifest.xml.
+     Any <uses-permission> NOT listed here will be silently denied at runtime
+     on a userdebug/user build even if declared in the manifest.
+-->
+<permissions>
+    <privapp-permissions package="com.xiaomi.settings">
+
+        <!-- ── Battery / Charging ───────────────────────────────────────── -->
+        <!--
+             BATTERY_STATS:
+               Required by ChargingMonitor for direct BatteryManager.isCharging()
+               calls and registerReceiver(null, ACTION_BATTERY_CHANGED) sticky
+               reads. android.uid.system holds this implicitly at runtime, but
+               the privapp whitelist validator on user/userdebug ROM builds
+               requires an explicit entry here or it logs a fatal warning and
+               the runtime grant can be silently withheld on strict builds.
+        -->
+        <permission name="android.permission.BATTERY_STATS"/>
+
+        <!-- ── Thermal ─────────────────────────────────────────────────── -->
+        <!--
+             PACKAGE_USAGE_STATS:
+               Required by ThermalUtils / ThermalService to detect the
+               foreground app via UsageStatsManager fallback paths and
+               LauncherApps queries.
+        -->
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+
+        <!--
+             GET_TASKS:
+               Required by ThermalService to call
+               ActivityTaskManager.getService().focusedRootTaskInfo and
+               to register/unregister the TaskStackListener.
+        -->
+        <permission name="android.permission.GET_TASKS"/>
+
+        <!-- ── Display ─────────────────────────────────────────────────── -->
+        <!--
+             ACCESS_SURFACE_FLINGER:
+               Required by BootCompletedReceiver to call
+               DisplayManager.overrideHdrTypes() which goes through
+               SurfaceFlinger. Also needed by ColorService for display
+               pipeline interactions.
+        -->
+        <permission name="android.permission.ACCESS_SURFACE_FLINGER"/>
+
+        <!--
+             WRITE_SETTINGS:
+               Required by DisplayColoursScreen to write
+               Settings.System.DISPLAY_COLOR_MODE via
+               Settings.System.putIntForUser().
+        -->
+        <permission name="android.permission.WRITE_SETTINGS"/>
+
+        <!-- ── System settings / services ──────────────────────────────── -->
+        <!--
+             WRITE_SECURE_SETTINGS:
+               Required to persist touch sampling rate state and other
+               secure settings. Granted via privapp because normal apps
+               cannot hold this.
+        -->
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+
+        <!--
+             INTERACT_ACROSS_USERS_FULL:
+               Required by startServiceAsUser(UserHandle.CURRENT) calls
+               in BootCompletedReceiver and ThermalUtils to start services
+               in the correct user context on multi-user builds.
+        -->
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+
+    </privapp-permissions>
+</permissions>

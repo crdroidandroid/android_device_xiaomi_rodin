@@ -2,19 +2,66 @@
 // SPDX-FileCopyrightText: The LineageOS Project
 // SPDX-License-Identifier: Apache-2.0
 //
+// XiaomiParts — modernized Settings extension using Jetpack Compose.
+//
 
 android_app {
     name: "XiaomiParts",
     certificate: "platform",
-    defaults: ["SettingsLibDefaults"],
     srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
     platform_apis: true,
     privileged: true,
     system_ext_specific: true,
+
     static_libs: [
-        "androidx.core_core",
-        "androidx.preference_preference",
+        // Xiaomi vendor AIDL interfaces
         "org.lineageos.settings.resources",
         "vendor.xiaomi.hardware.displayfeature_aidl-V2-java",
+        "vendor.xiaomi.hw.touchfeature-V1-java",
+
+        // AndroidX core — androidx.core.os.postDelayed (ColorService)
+        "androidx.core_core",
+        "androidx.core_core-ktx",
+
+        // Compose runtime + UI core
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.runtime_runtime-saveable",
+        "androidx.compose.ui_ui",
+        "androidx.compose.ui_ui-graphics",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.foundation_foundation-layout",
+        "androidx.compose.animation_animation",
+
+        // Material3 + Material icons
+        "androidx.compose.material3_material3",
+        "androidx.compose.material_material-icons-core",
+        "androidx.compose.material_material-icons-extended",
+
+        // MDC-Android — DynamicColors for wallpaper-based theming
+        "com.google.android.material_material",
+
+        // Activity integration for setContent
+        "androidx.activity_activity-compose",
+
+        // Navigation-Compose
+        "androidx.navigation_navigation-compose",
+
+        // AndroidX preference
+        "androidx.preference_preference",
+
+        // SettingsLib
+        "SettingsLib",
     ],
+
+    required: [
+        "privapp_whitelist_com.xiaomi.settings.xml",
+    ],
+}
+
+prebuilt_etc {
+    name: "privapp_whitelist_com.xiaomi.settings.xml",
+    src: "permissions/privapp_whitelist_com.xiaomi.settings.xml",
+    sub_dir: "permissions",
+    system_ext_specific: true,
 }

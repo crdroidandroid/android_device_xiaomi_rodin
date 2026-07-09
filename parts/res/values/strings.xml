@@ -1,14 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: The LineageOS Project
+     Copyright (C) 2023 Paranoid Android
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <!-- App Name -->
     <string name="app_name">Xiaomi Parts</string>
 
-    <!-- Fingerprint settings -->
-    <string name="fingerprint_settings_title">Additional in-screen fingerprint settings</string>
-    <string name="fingerprint_calibration_title">In-screen Fingerprint calibration</string>
-    <string name="fingerprint_calibration_summary">Launch Jiiov FactoryTest app for calibrating the optical fingerprint sensor</string>
+    <!-- ── Xiaomi Parts Hub ────────────────────────────────────── -->
+    <string name="xiaomi_parts_title">Xiaomi Parts</string>
+    <string name="xiaomi_parts_summary">Display, Thermal &amp; Touch</string>
+    <string name="xiaomi_parts_category_diagnostics">Diagnostics</string>
+
+    <!-- ── HomeScreen category headers ─────────────────────── -->
+    <string name="display_category">Display</string>
+    <string name="performance_category">Performance</string>
+
+    <!-- ── Common UI ───────────────────────────────────────── -->
+    <string name="dismiss">Dismiss</string>
+    <string name="cancel">Cancel</string>
+    <string name="navigate_up">Navigate up</string>
+
+    <!-- ── Display Colours ────────────────────────────────── -->
+    <string name="display_colours_title">Display colours</string>
+    <string name="display_colours_summary">Colour mode and temperature</string>
+    <string name="display_colours_description">Adjust the colour mode and white balance of your display for a more natural or vivid appearance.</string>
+    <string name="color_mode_vivid">Vivid</string>
+    <string name="color_mode_saturated">Saturated</string>
+    <string name="color_mode_standard">Standard</string>
+    <string name="color_mode_original">Original</string>
+    <string name="color_mode_p3">DCI-P3</string>
+    <string name="color_mode_srgb">sRGB</string>
+    <string name="display_colours_failed">Failed to apply colour mode</string>
+    <string name="color_mode_vivid_summary">Boosted colours and contrast</string>
+    <string name="color_mode_saturated_summary">Rich colours for everyday use</string>
+    <string name="color_mode_standard_summary">Factory-calibrated, true-to-life</string>
+    <string name="color_mode_original_summary">Original wide-gamut tuning</string>
+    <string name="color_mode_p3_summary">DCI-P3 cinema colour space</string>
+    <string name="color_mode_srgb_summary">Accurate sRGB for web and design</string>
+
+    <!-- ── Screen Resolution ──────────────────────────────── -->
+    <string name="screen_resolution_title">Screen resolution</string>
+    <string name="screen_resolution_home_summary">Change display resolution</string>
+    <string name="screen_resolution_description">Selecting a higher resolution makes the display sharper, but uses more battery. Lower resolutions reduce battery usage.</string>
+    <string name="screen_resolution_failed">Failed to apply resolution</string>
+    <string name="screen_resolution_1440p">2560 × 1440 (QHD+)</string>
+    <string name="screen_resolution_1440p_summary">Sharpest — higher battery use</string>
+    <string name="screen_resolution_1220p">2712 × 1220 (Native)</string>
+    <string name="screen_resolution_1220p_summary">Native panel resolution</string>
+    <string name="screen_resolution_1080p">2400 × 1080 (FHD+)</string>
+    <string name="screen_resolution_1080p_summary">Balanced sharpness and battery</string>
+    <string name="screen_resolution_720p">1600 × 720 (HD+)</string>
+    <string name="screen_resolution_720p_summary">Best battery life</string>
+    <string name="screen_resolution_dialog_title">Change resolution?</string>
+    <string name="screen_resolution_restart_hint_body">After applying, System UI restart is recommended. Avoid changing display size in Device Display settings, it may conflict.</string>
+    <string name="screen_resolution_dialog_confirm">Apply</string>
+    <string name="screen_resolution_dialog_cancel">Cancel</string>
+
+    <!-- ── Thermal Management ───────────────────────────────── -->
+    <string name="thermal_title">Thermal management</string>
+    <string name="thermal_summary">Per-app performance and temperature</string>
+    <string name="thermal_enable_title">Thermal profiles</string>
+    <string name="thermal_enable_summary">Apply thermal profiles per app and while charging</string>
+    <string name="thermal_global_label">Global profile</string>
+    <string name="thermal_global_profile_title">Active profile</string>
+    <string name="thermal_per_app_label">Per-app profiles</string>
+    <string name="thermal_select_profile">Select profile</string>
+    <string name="thermal_apply">Apply</string>
+    <string name="thermal_no_apps">No apps configured yet</string>
+    <string name="thermal_failed_toast">Thermal operation failed</string>
+    <string name="thermal_charging_toast_connected">Charging profile active</string>
+    <string name="thermal_charging_toast_disconnected">Per-app profiles resumed</string>
+    <string name="thermal_charging_banner_body">Per-app profiles are paused while charging</string>
+    <string name="thermal_reset_title">Reset all profiles</string>
+    <string name="thermal_reset_summary">Restore all per-app profiles to their defaults</string>
+    <string name="thermal_reset_confirm">Reset</string>
+    <string name="thermal_reset_confirm_body">All per-app thermal overrides will be cleared and profiles will revert to their automatically detected defaults.</string>
+    <string name="thermal_add_app">Add app</string>
+    <string name="thermal_search_apps">Search apps</string>
+    <string name="thermal_default">Default</string>
+    <string name="thermal_nolimits">No limits</string>
+    <string name="thermal_navigation">Navigation</string>
+    <string name="thermal_dialer">Dialer</string>
+    <string name="thermal_video_call">Video call</string>
+    <string name="thermal_camera">Camera</string>
+    <string name="thermal_video">Video</string>
+    <string name="thermal_video_4k">Video 4K</string>
+    <string name="thermal_gaming">Gaming</string>
+    <string name="thermal_gaming_heavy">Gaming (heavy)</string>
+    <string name="thermal_gaming_competitive">Gaming (competitive)</string>
+    <string name="thermal_yuanshen">Yuanshen</string>
+    <string name="thermal_charge">Charging</string>
+
+    <!-- ── Touch Boost ───────────────────────────────────────── -->
+    <string name="touch_boost_title">Touch boost</string>
+    <string name="touch_boost_summary">Faster touch response</string>
+    <string name="touch_boost_description">Raises the touch controller polling rate, reducing tap-to-response latency. May slightly increase power draw during active use.</string>
+    <string name="touch_boost_failed">Touch boost failed to apply</string>
+
+    <!-- ── Diagnostics ─────────────────────────────────────── -->
+    <string name="fingerprint_calibration_title">Fingerprint calibration</string>
+    <string name="fingerprint_calibration_summary">Recalibrate the fingerprint sensor</string>
+    <string name="fingerprint_calibration_not_found">Fingerprint calibration not available</string>
+    <string name="speaker_calibration_title">Speaker calibration</string>
+    <string name="speaker_calibration_summary">CIT speaker self-calibration test</string>
+    <string name="speaker_calibration_not_found">Speaker calibration not available</string>
 </resources>
