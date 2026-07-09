@@ -145,8 +145,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libpqxmlparser.so',
         'vendor/lib64/librt_extamp_intf.so',
         'vendor/lib64/libsilkybrightnesscore.so',
-        'vendor/lib64/libxlog.so',
-        'vendor/lib64/mt6899/lib3a.custom.ae.flow.so',
         'vendor/lib64/mt6899/libmmlpqImpl.so'
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
@@ -279,7 +277,7 @@ blob_fixups: blob_fixups_user_type = {
 module = ExtractUtilsModule(
     'rodin',
     'xiaomi',
-    #add_firmware_proprietary_file=True,
+    add_firmware_proprietary_file=True,
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
