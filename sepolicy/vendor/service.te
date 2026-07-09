@@ -16,8 +16,5 @@ type hal_mlipay_service, protected_service, service_manager_type, hal_service_ty
 # MTD service
 type hal_mtdservice_service, protected_service, service_manager_type, hal_service_type;
 
-# TouchFeature
-type hal_touchfeature_xiaomi_service, protected_service, service_manager_type, hal_service_type;
-
 # Sensors
 type vendor_hal_citsensorservice_xiaomi_service, protected_service, service_manager_type, hal_service_type;

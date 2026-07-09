@@ -8,7 +8,22 @@ allow parts_app activity_task_service:service_manager find;
 allow parts_app audio_service:service_manager find;
 allow parts_app netstats_service:service_manager find;
 allow parts_app vendor_hal_displayfeature_service:service_manager find;
+allow parts_app hal_touchfeature_xiaomi_service:service_manager find;
+allow parts_app batterystats_service:service_manager find;
+allow parts_app gpu_service:service_manager find;
+allow parts_app voiceinteraction_service:service_manager find;
+allow parts_app autofill_service:service_manager find;
+allow parts_app protolog_configuration_service:service_manager find;
+allow parts_app sensitive_content_protection_service:service_manager find;
+allow parts_app uimode_service:service_manager find;
+allow parts_app clipboard_service:service_manager find;
+allow parts_app batteryproperties_service:service_manager find;
+allow parts_app telecom_service:service_manager find;
+allow parts_app vibrator_manager_service:service_manager find;
+allow parts_app thermal_service:service_manager find;
+
 binder_call(parts_app, vendor_hal_displayfeature_default)
+binder_call(parts_app, hal_touchfeature_xiaomi_default)
 
 allow parts_app system_app_data_file:dir create_dir_perms;
 allow parts_app system_app_data_file:file create_file_perms;
