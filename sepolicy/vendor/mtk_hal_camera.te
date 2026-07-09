@@ -10,6 +10,7 @@ allow mtk_hal_camera vendor_data_file:dir create_dir_perms;
 allow mtk_hal_camera vendor_data_file:file create_file_perms;
 allow mtk_hal_camera vendor_default_prop:file read;
 allow mtk_hal_camera camera_config_prop:file read;
+allow mtk_hal_camera camera_config_prop:file open;
 r_dir_file(mtk_hal_camera, persist_data_file)
 rw_dir_file(mtk_hal_camera, sysfs_therm)
 r_dir_file(mtk_hal_camera, vendor_bin_crossbuild_file)
@@ -23,3 +24,7 @@ allowxperm mtk_hal_camera hal_graphics_allocator_default_tmpfs:file ioctl { 0x62
 allow mtk_hal_camera hal_graphics_allocator_default:fd use;
 allow mtk_hal_camera vendor_camera_data_file:dir { create rw_dir_perms };
 allow mtk_hal_camera vendor_camera_data_file:file create_file_perms;
+
+allow mtk_hal_camera vendor_thermal_prop:file read;
+allow mtk_hal_camera graphics_config_prop:file read;
+allow mtk_hal_camera system_data_file:dir search;
