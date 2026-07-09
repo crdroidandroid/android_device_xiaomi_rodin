@@ -25,6 +25,12 @@ genfscon sysfs /devices/virtual/touch/touch_dev/fod_press_status      u:object_r
 # Memory
 genfscon proc /mv    u:object_r:procfs_memory:s0
 
+# Gpu Boost
+genfscon sysfs /devices/platform/soc/13000000.mali/devfreq/13000000.mali/min_freq   u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/soc/13000000.mali/devfreq/13000000.mali/max_freq   u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/soc/13000000.mali/power/control                    u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/soc/13000000.mali/dvfs_period                      u:object_r:sysfs_gpu:s0
+
 # TouchFeature
 genfscon proc /tp_fw_version                       u:object_r:vendor_proc_tp_file:s0
 genfscon proc /tp_lockdown_info                    u:object_r:vendor_proc_tp_lockdown:s0
