@@ -12,3 +12,6 @@ allow vendor_init migt_dev:chr_file getattr;
 # batteryantiaging
 get_prop(vendor_init, vendor_batteryantiaging_prop)
 set_prop(vendor_init, vendor_batteryantiaging_prop)
+
+# CIT App
+set_prop(vendor_init, vendor_audio_cit_prop)

@@ -16,6 +16,9 @@ type vendor_camera_data_file, data_file_type, file_type;
 
 # CIT
 type vendor_audio_data_file, data_file_type, file_type;
+type sysfs_fsm_re25, fs_type, sysfs_type;
+type sysfs_fsm_f0, fs_type, sysfs_type;
+type fs16xx_device, dev_type;
 
 # Diag
 type minidump_data_file, data_file_type, file_type;

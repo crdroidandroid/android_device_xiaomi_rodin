@@ -29,3 +29,6 @@ vendor_internal_prop(vendor_hal_citsensorservice_xiaomi_prop)
 
 # US proximity
 vendor_restricted_prop(vendor_us_proximity_prop)
+
+# CIT audio tests
+system_public_prop(vendor_audio_cit_prop)

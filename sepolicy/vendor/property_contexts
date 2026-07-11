@@ -13,6 +13,8 @@ vendor.camera.               u:object_r:vendor_mtk_camera_prop:s0
 persist.vendor.cameraid.totalnum u:object_r:vendor_mtk_camera_prop:s0
 persist.vendor.EnableP3ColorSpace  u:object_r:vendor_mtk_camera_prop:s0
 
+# CIT App
+vendor.audio.cit.spkcal.copy   u:object_r:vendor_audio_cit_prop:s0
 
 # DisplayFeature
 persist.vendor.dc_backlight.enable                u:object_r:vendor_displayfeature_prop:s0

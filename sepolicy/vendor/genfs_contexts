@@ -1,5 +1,7 @@
 # Audio
 genfscon sysfs /kernel/smartpa/smartpa_type    u:object_r:sysfs_chip_vendor:s0
+genfscon sysfs /class/fs16xx/fsm_re25 u:object_r:sysfs_fsm_re25:s0
+genfscon sysfs /class/fs16xx/fsm_f0 u:object_r:sysfs_fsm_f0:s0
 
 # Backlight
 genfscon sysfs /class/backlight		u:object_r:sysfs_leds:s0
@@ -112,3 +114,6 @@ genfscon sysfs /devices/platform/soc/11281000.i2c/i2c-11/11-0055/power_supply/bm
 genfscon sysfs /devices/platform/soc/11283000.i2c/i2c-13/13-0061/power_supply/cp_master/wakeup44                                      u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1e000000.adspsys/wakeup                                                                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1f800000.mmlsys-config/wakeup                                                                    u:object_r:sysfs_wakeup:s0
+
+# Xiaomi Parts App
+genfscon sysfs /devices/virtual/thermal/thermal_message/sconfig u:object_r:sysfs_therm:s0
