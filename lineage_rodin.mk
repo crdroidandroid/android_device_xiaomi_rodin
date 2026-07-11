@@ -9,6 +9,13 @@ $(call inherit-product, device/xiaomi/rodin/device.mk)
 # Inherit from the LineageOS configuration.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+#crDroid flags
+IS_PHONE := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_BLUR := true
+TARGET_HAS_UDFPS := true
+
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := rodin
 PRODUCT_MANUFACTURER := Xiaomi

@@ -4,7 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <dimen name="keyguard_indication_margin_bottom">165.0dp</dimen>
+    <dimen name="keyguard_indication_margin_bottom">55px</dimen>
 
     <!-- Location on the screen of the center of the physical power button. This is a reasonable
     default that should be overridden by device-specific overlays. -->
@@ -14,7 +14,4 @@
          relies on this value will not be sized correctly. -->
     <item format="float" name="pixel_pitch" type="dimen">56.95</item>
 
-     <!-- 2. The Music / Now Playing Info (Middle layer) -->
-    <!-- Pushes song name/artist above the unlock text -->
-    <dimen name="ambient_indication_margin_bottom">185.0dp</dimen>
 </resources>
