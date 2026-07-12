@@ -131,6 +131,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/camerax-vendor-extensions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/camerax-vendor-extensions.xml
 
+# Chipinfo
+PRODUCT_PACKAGES += \
+    chipinfo
+
 # ConsumerIR
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.example
