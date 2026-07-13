@@ -7,6 +7,9 @@
     <!-- Enable auxiliary cameras selector. -->
     <bool name="config_enableAuxCameras">true</bool>
 
+    <!-- Enable video stabilization if supported. -->
+    <bool name="config_enableVideoStabilization">false</bool>
+
     <!-- An array of triplets made of (camera ID, qualities, frame rates).
          These video modes will be added to the available
          quality/frame rate combinations of a camera device.
