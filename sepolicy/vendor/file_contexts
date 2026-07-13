@@ -1,5 +1,4 @@
 # Audio
-/data/vendor/audio(/.*)?       u:object_r:mtk_audiohal_data_file:s0
 /dev/socket/audio_hw_socket    u:object_r:audio_socket:s0
 /dev/fs16xx                    u:object_r:fs16xx_device:s0
 

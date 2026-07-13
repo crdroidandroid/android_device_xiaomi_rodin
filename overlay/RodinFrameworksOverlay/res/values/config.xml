@@ -231,10 +231,7 @@
     <!-- Whether the device supports Smart Pixels -->
     <bool name="config_supportSmartPixels">true</bool>
 	
-	<!-- Whether to enable fp unlock when screen turns off on udfps devices -->
-    <bool name="config_screen_off_udfps_enabled">true</bool>
-	
-	<!-- If AOD can show an ambient version of the wallpaper -->
-	<bool name="config_dozeSupportsAodWallpaper">true</bool>
+    <!-- If AOD can show an ambient version of the wallpaper -->
+    <bool name="config_dozeSupportsAodWallpaper">true</bool>
 	
 </resources>
