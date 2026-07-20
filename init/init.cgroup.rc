@@ -1,9 +1,9 @@
 on early-init
-    # Boot perf: set vendor modules ready, PELT multiplier=1, clamp RT to 0
-    setprop vendor.all.modules.ready 1
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 1000000
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 1000000
-    write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 1000000
+    # boot perf. tune
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 2000000
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 2500000
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 2700000
+
     write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 4000000000
 
 on charger
@@ -12,29 +12,34 @@ on charger
     write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 0
     write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 0
 
+on post-fs
+    # Dalvik configuration
+    setprop dalvik.vm.dex2oat-threads 6
+    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5
+
 on post-fs-data
-    chown system system /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/governor
-    chmod 0660 /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/governor
-    chown system system /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/min_freq
-    chmod 0660 /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/min_freq
-    chown system system /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/max_freq
-    chmod 0660 /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/max_freq
-    chown system system /sys/devices/platform/soc/13000000.mali/power/control
-    chmod 0660 /sys/devices/platform/soc/13000000.mali/power/control
-    chown system system /sys/kernel/ged/hal/gpu_boost_level
-    chmod 0660 /sys/kernel/ged/hal/gpu_boost_level
-    chown system system /sys/kernel/ged/hal/fw_idle
-    chmod 0660 /sys/kernel/ged/hal/fw_idle
-    chown system system /sys/devices/platform/soc/13000000.mali/dvfs_period
-    chmod 0660 /sys/devices/platform/soc/13000000.mali/dvfs_period
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_governor schedutil
+    write /proc/sys/kernel/sched_pelt_multiplier 4
+    write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
 
-    chown system system /sys/class/devfreq/mtk-dvfsrc-devfreq/governor
-    chmod 0660 /sys/class/devfreq/mtk-dvfsrc-devfreq/governor
-    chown system system /sys/devices/platform/soc/1c00f000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/governor
-    chmod 0660 /sys/devices/platform/soc/1c00f000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/governor
-    chown system system /sys/devices/platform/soc/1c00f000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq
-    chmod 0660 /sys/devices/platform/soc/1c00f000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq
+    chown system system /sys/devices/virtual/thermal/thermal_message/sconfig
+    chmod 0660 /sys/devices/virtual/thermal/thermal_message/sconfig
 
+    # boot perf. tune
+    write /dev/cpuctl/system/cpu.uclamp.min 100
+    write /dev/cpuctl/system/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/system-background/cpu.uclamp.min 100
+    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/foreground/cpu.uclamp.min 100
+    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/top-app/cpu.uclamp.min 100
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/background/cpu.uclamp.min 100
+    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 1
+
+on boot
     chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
     chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
     chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
@@ -42,180 +47,31 @@ on post-fs-data
     chown system system /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
     chmod 0660 /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
 
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
-    chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
-    chown system system /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq
-    chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq
-    chown system system /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq
-
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/up_rate_limit_us
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/up_rate_limit_us
-    chown system system /sys/devices/system/cpu/cpufreq/policy4/sugov_ext/up_rate_limit_us
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy4/sugov_ext/up_rate_limit_us
-    chown system system /sys/devices/system/cpu/cpufreq/policy7/sugov_ext/up_rate_limit_us
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy7/sugov_ext/up_rate_limit_us
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/down_rate_limit_us
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/down_rate_limit_us
-    chown system system /sys/devices/system/cpu/cpufreq/policy4/sugov_ext/down_rate_limit_us
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy4/sugov_ext/down_rate_limit_us
-    chown system system /sys/devices/system/cpu/cpufreq/policy7/sugov_ext/down_rate_limit_us
-    chmod 0660 /sys/devices/system/cpu/cpufreq/policy7/sugov_ext/down_rate_limit_us
-
-    chown system system /sys/devices/virtual/thermal/thermal_message/sconfig
-    chmod 0660 /sys/devices/virtual/thermal/thermal_message/sconfig
-
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor sugov_ext
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor sugov_ext
-    write /sys/devices/system/cpu/cpufreq/policy7/scaling_governor sugov_ext
-    write /proc/sys/kernel/sched_pelt_multiplier 4
-    write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
-
-    # CPU sets
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/foreground_window/cpus 0-7
-    write /dev/cpuset/background/cpus 0-3
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/restricted/cpus 0-3
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/camera-daemon/cpus 0-7
-
-    # VM memory
-    write /proc/sys/vm/dirty_expire_centisecs 3000
-    write /proc/sys/vm/dirty_background_ratio 10
-    write /proc/sys/vm/min_free_kbytes 27386
-    write /proc/sys/vm/lowmem_reserve_ratio "0 0 0"
-    write /sys/kernel/mm/transparent_hugepage/enabled "never"
-    write /proc/sys/vm/kswapd_threads 1
-
-    # boot perf. tune
-    write /dev/cpuctl/rt/cpu.uclamp.min 100
-    write /dev/cpuctl/rt/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/system-background/cpu.uclamp.min 100
-    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground/cpu.uclamp.min 100
-    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground_window/cpu.uclamp.min 100
-    write /dev/cpuctl/foreground_window/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/top-app/cpu.uclamp.min 100
-    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/background/cpu.uclamp.min 100
-    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/system/cpu.uclamp.min 100
-    write /dev/cpuctl/system/cpu.uclamp.latency_sensitive 1
-
 on property:sys.boot_completed=1
-    setprop vendor.powerhal.init 1
-    setprop vendor.powerhal.boot_complete 1
-
-    write /proc/sys/kernel/sched_pelt_multiplier 1
-    write /proc/sys/kernel/sched_util_clamp_min_rt_default 226
-    write /proc/sys/vm/watermark_scale_factor 200
-    write /sys/kernel/debug/sched/migration_cost_ns 400000
-    write /sys/devices/system/cpu/cpuidle/current_governor teo
-    write /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/governor simple_ondemand
-    write /sys/devices/platform/soc/13000000.mali/power/control auto
-    write /sys/devices/system/cpu/cpuqos/cpuqos_boot_complete 1
-    
-    write /sys/class/devfreq/mtk-dvfsrc-devfreq/governor userspace
-    write /sys/devices/platform/soc/1c00f000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/governor userspace
-    
-    write /sys/kernel/ged/hal/dcs_mode 1
-    write /sys/kernel/ged/hal/fw_idle 0
-
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor sugov_ext
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor sugov_ext
-    write /sys/devices/system/cpu/cpufreq/policy7/scaling_governor sugov_ext
-
-    write /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/up_rate_limit_us 300
-    write /sys/devices/system/cpu/cpufreq/policy4/sugov_ext/up_rate_limit_us 300
-    write /sys/devices/system/cpu/cpufreq/policy7/sugov_ext/up_rate_limit_us 300
-    write /sys/devices/system/cpu/cpufreq/policy0/sugov_ext/down_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy4/sugov_ext/down_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy7/sugov_ext/down_rate_limit_us 500
-
+    # restore boot perf. tune
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 0
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 0
     write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 0
     write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 0
 
-    # rt
-    write /dev/cpuctl/rt/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/rt/cpu.uclamp.max max
-    write /dev/cpuctl/rt/cpu.uclamp.min 0
-    write /dev/cpuctl/rt/cpu.shares 20480
-
-    # system
-    write /dev/cpuctl/system/cpu.uclamp.latency_sensitive 0
-    write /dev/cpuctl/system/cpu.uclamp.max max
     write /dev/cpuctl/system/cpu.uclamp.min 0
-    write /dev/cpuctl/system/cpu.shares 20480
-
-    # system-background
-    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
-    write /dev/cpuctl/system-background/cpu.uclamp.max 40
+    write /dev/cpuctl/system/cpu.uclamp.latency_sensitive 0
     write /dev/cpuctl/system-background/cpu.uclamp.min 0
-    write /dev/cpuctl/system-background/cpu.shares 1024
-
-    # background
-    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
-    write /dev/cpuctl/background/cpu.uclamp.max 40
-    write /dev/cpuctl/background/cpu.uclamp.min 0
-    write /dev/cpuctl/background/cpu.shares 1024
-
-    # foreground
-    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 0
-    write /dev/cpuctl/foreground/cpu.uclamp.max 95
+    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
     write /dev/cpuctl/foreground/cpu.uclamp.min 0
-    write /dev/cpuctl/foreground/cpu.shares 20480
-
-    # foreground_window
-    write /dev/cpuctl/foreground_window/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground_window/cpu.uclamp.max max
-    write /dev/cpuctl/foreground_window/cpu.uclamp.min 0
-    write /dev/cpuctl/foreground_window/cpu.shares 20480
-
-    # top-app
-    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/top-app/cpu.uclamp.max max
+    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 0
     write /dev/cpuctl/top-app/cpu.uclamp.min 0
-    write /dev/cpuctl/top-app/cpu.shares 20480
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 0
+    write /dev/cpuctl/background/cpu.uclamp.min 0
+    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
 
-    # nnapi-hal
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.max max
-    write /dev/cpuctl/nnapi-hal/cpu.uclamp.min 0
-    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
+    write /sys/kernel/debug/sched/migration_cost_ns 200000
 
-    # camera-daemon
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
-    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 0
-    write /dev/cpuctl/camera-daemon/cpu.shares 20480
+    # start cpuqos
+    write /sys/devices/system/cpu/cpuqos/cpuqos_boot_complete 1
 
-    # dex2oat
-    write /dev/cpuctl/dex2oat/cpu.uclamp.latency_sensitive 0
-    write /dev/cpuctl/dex2oat/cpu.uclamp.max 60
-    write /dev/cpuctl/dex2oat/cpu.uclamp.min 0
-    write /dev/cpuctl/dex2oat/cpu.shares 512
+    # Set thermal mode to mgame
+    write /sys/devices/virtual/thermal/thermal_message/sconfig 19
 
-    # display, audio, touch
-    write /dev/cpuctl/display/cpu.shares 4096
-    write /dev/cpuctl/audio/cpu.shares 4096
-    write /dev/cpuctl/touch/cpu.shares 4096
-
-service vendor.gralloc-v2 /vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
-    class hal animation
-    user system
-    group graphics drmrpc
-    capabilities SYS_NICE
-    onrestart restart surfaceflinger
-    onrestart restart vendor.hwcomposer
-    onrestart restart camerahalserver
-    task_profiles ProcessCapacityHigh HighPerformance
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
