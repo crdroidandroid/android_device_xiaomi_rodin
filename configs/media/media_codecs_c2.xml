@@ -293,7 +293,7 @@
             <Feature name="can-swap-width-height"/>
         </MediaCodec>
         <MediaCodec name="c2.android.av1.decoder" type="video/av01" update="true">
-            <Limit name="size" min="2x2" max="4096x2176" />
+            <Limit name="size" min="2x2" max="1920x1080" />
             <Limit name="alignment" value="1x1" />
             <Limit name="block-size" value="16x16" />
             <Limit name="block-count" range="1-16384" />
