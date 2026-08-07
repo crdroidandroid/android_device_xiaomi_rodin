@@ -104,7 +104,7 @@ blob_fixups: blob_fixups_user_type = {
         'odm/lib64/hw/displayfeature.default.so'
     ): blob_fixup()
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so')
-        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl': blob_fixup()
         .add_needed('libui_shim.so'),
     (
@@ -147,7 +147,7 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libsilkybrightnesscore.so',
         'vendor/lib64/mt6899/libmmlpqImpl.so'
     ): blob_fixup()
-        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     (
         'odm/lib64/libmt_mitee.so',
         'odm/lib64/libgoogleid.so',
@@ -205,12 +205,12 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('.*writepid.*\n', ''),
     'vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V5-ndk.so', 'android.media.audio.common.types-V3-ndk.so')
-        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'vendor/lib64/hw/android.hardware.soundtrigger3-impl.so': blob_fixup()
         .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
     'vendor/lib64/hw/hwcomposer.mtk_common.so': blob_fixup()
         .add_needed('libprocessgroup_shim.so')
-        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     (
         'vendor/lib64/mt6899/libmtkcam_taskmgr.so',
         'vendor/lib64/mt6899/libcam.hal3a.so',
@@ -248,7 +248,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libmicamera_hal_core.so': blob_fixup()
         .call(blob_fixup_graphic_buffer_size)
         .add_needed('libprocessgroup_shim.so')
-        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'vendor/lib64/libultrahdr_rodin.so': blob_fixup()
         .replace_needed('libjpegencoder.so', 'libjpegencoder_rodin.so')
         .replace_needed('libjpegdecoder.so', 'libjpegdecoder_rodin.so'),
