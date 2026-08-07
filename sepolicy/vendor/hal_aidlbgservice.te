@@ -1,15 +1,50 @@
-type hal_aidlbgservice_service, hal_service_type, protected_service, service_manager_type;
-
-binder_call(hal_aidlbgservice, platform_app)
+hal_server_domain(hal_camera_default, hal_aidlbgservice)
+hal_client_domain(platform_app, hal_aidlbgservice)
+hal_client_domain(priv_app, hal_aidlbgservice)
+hal_client_domain(system_app, hal_aidlbgservice)
+hal_client_domain(system_server, hal_aidlbgservice)
 
 allow hal_aidlbgservice_client hal_aidlbgservice_server:binder { call transfer };
-allow hal_aidlbgservice_client hal_aidlbgservice_server:binder transfer;
-allow hal_aidlbgservice_client hal_aidlbgservice_server:fd *;
-allow hal_aidlbgservice_client hal_aidlbgservice_service:service_manager find;
 allow hal_aidlbgservice_server hal_aidlbgservice_client:binder transfer;
+allow hal_aidlbgservice_client hal_aidlbgservice_server:fd use;
 allow hal_aidlbgservice_server hal_aidlbgservice_client:binder { call transfer };
-allow hal_aidlbgservice_server hal_aidlbgservice_client:fd *;
+allow hal_aidlbgservice_client hal_aidlbgservice_server:binder transfer;
+allow hal_aidlbgservice_server hal_aidlbgservice_client:fd use;
+allow hal_aidlbgservice_client hal_aidlbgservice_service:service_manager find;
+
+allow platform_app hal_aidlbgservice_service:service_manager find;
+allow platform_app hal_aidlbgservice:binder { call transfer };
+allow hal_aidlbgservice platform_app:binder transfer;
+allow platform_app hal_aidlbgservice:fd use;
+allow hal_aidlbgservice platform_app:binder { call transfer };
+allow platform_app hal_aidlbgservice:binder transfer;
+allow hal_aidlbgservice platform_app:fd use;
+
+allow priv_app hal_aidlbgservice_service:service_manager find;
+allow priv_app hal_aidlbgservice:binder { call transfer };
+allow hal_aidlbgservice priv_app:binder transfer;
+allow priv_app hal_aidlbgservice:fd use;
+allow hal_aidlbgservice priv_app:binder { call transfer };
+allow priv_app hal_aidlbgservice:binder transfer;
+allow hal_aidlbgservice priv_app:fd use;
+
+allow system_app hal_aidlbgservice_service:service_manager find;
+allow system_app hal_aidlbgservice:binder { call transfer };
+allow hal_aidlbgservice system_app:binder transfer;
+allow system_app hal_aidlbgservice:fd use;
+allow hal_aidlbgservice system_app:binder { call transfer };
+allow system_app hal_aidlbgservice:binder transfer;
+allow hal_aidlbgservice system_app:fd use;
+
+allow system_server hal_aidlbgservice_service:service_manager find;
+allow system_server hal_aidlbgservice:binder { call transfer };
 allow hal_aidlbgservice system_server:binder transfer;
+allow system_server hal_aidlbgservice:fd use;
 allow hal_aidlbgservice system_server:binder { call transfer };
-allow hal_aidlbgservice system_server:fd *;
-add_service(hal_aidlbgservice_server, hal_aidlbgservice_service)
+allow system_server hal_aidlbgservice:binder transfer;
+allow hal_aidlbgservice system_server:fd use;
+
+allow hal_camera_client hal_aidlbgservice_service:service_manager find;
+allow hal_camera_server hal_aidlbgservice_service:service_manager { add find };
+
+neverallow { domain -hal_camera_server } hal_aidlbgservice_service:service_manager add;

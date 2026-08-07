@@ -17,7 +17,6 @@ r_dir_file(mtk_hal_camera, vendor_bin_crossbuild_file)
 
 # Memecam wb_avail_buf
 allow mtk_hal_camera sysfs:file r_file_perms;
-allow mtk_hal_camera hal_aidlbgservice_service:service_manager find;
 dontaudit mtk_hal_camera default_prop:file { read write };
 allow mtk_hal_camera hal_graphics_allocator_default_tmpfs:file ioctl;
 allowxperm mtk_hal_camera hal_graphics_allocator_default_tmpfs:file ioctl { 0x6201 };
