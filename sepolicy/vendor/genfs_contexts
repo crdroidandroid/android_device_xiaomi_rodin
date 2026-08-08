@@ -108,6 +108,17 @@ genfscon sysfs /devices/platform/soc/11281000.i2c/i2c-11/11-0055/power_supply/bm
 genfscon sysfs /devices/platform/soc/11283000.i2c/i2c-13/13-0061/power_supply/cp_master/wakeup44                                      u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1e000000.adspsys/wakeup                                                                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1f800000.mmlsys-config/wakeup                                                                    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11280000.i2c/i2c-10/10-0055/power_supply/bms/wakeup24                                            u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/mtk-mst-hvdiv-chg/wakeup30                                                      u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/mtk-slv-hvdiv-chg/wakeup31                                                      u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/usb/wakeup32                                                                    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f01000.i2c/i2c-5/5-0034/11f01000.i2c:mt6375@34:chg/power_supply/primary_chg/wakeup33           u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f01000.i2c/i2c-5/5-0034/11f01000.i2c:mt6375@34:tcpc/tcpc/type_c_port0/wakeup34                 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11280000.i2c/i2c-10/10-006f/power_supply/cp_master/wakeup42                                      u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f01000.i2c/i2c-5/5-0034/11f01000.i2c:mt6375@34:mtk-gauge/power_supply/mt6375-gauge/wakeup43    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/battery-manager/power_supply/battery/wakeup46                                                        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11b70000.i2c/i2c-2/2-0036/wakeup155                                                              u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/goodix_ts.0/wakeup171                                                                                u:object_r:sysfs_wakeup:s0
 
 # Xiaomi Parts App
 genfscon sysfs /devices/virtual/thermal/thermal_message/sconfig u:object_r:sysfs_therm:s0
