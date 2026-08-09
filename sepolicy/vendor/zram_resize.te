@@ -1,0 +1,56 @@
+# Dedicated domain for the zram (swap) resize helper spawned by init from
+# init.zram_resize.rc (Xiaomi Parts dynamic swap size).
+#
+# The helper is a shell script in /vendor/bin (zram_resize_exec) whose
+# shebang interpreter is /system/bin/sh. Following the proven MTK pattern
+# (init_insmod_sh): the script itself is the entrypoint (vendor_file_type,
+# required by neverallow { domain -coredomain } {file_type -vendor_file_type}
+# :file entrypoint) and the interpreter only needs "execute" on shell_exec
+# (exempted by the -shell_exec exception in the full_treble neverallows).
+#
+# vendor_init cannot be used: it is neverallowed to execute programs
+# without transitioning to another domain (system/sepolicy/private/
+# vendor_init.te), so init execs straight into this domain instead.
+
+type zram_resize, domain;
+type zram_resize_exec, exec_type, file_type, vendor_file_type;
+typeattribute zram_resize vendor_executes_system_violators;
+typeattribute zram_resize data_between_core_and_vendor_violators;
+
+init_daemon_domain(zram_resize)
+
+# Shebang interpreter of the script (/system/bin/sh)
+allow zram_resize shell_exec:file execute;
+
+# toybox applets (sed/cat/mkswap/swapon/swapoff)
+allow zram_resize toolbox_exec:file { execute execute_no_trans };
+
+# getprop lives at /system/bin/getprop (system_file)
+allow zram_resize system_file:file { execute execute_no_trans };
+
+# /system path traversal for the interpreter and the applets
+allow zram_resize system_file:dir search;
+allow zram_resize system_file:lnk_file read;
+
+# zram control nodes (/sys/block/zram0 -> /sys/devices/virtual/block/zram0)
+allow zram_resize sysfs:dir search;
+allow zram_resize sysfs:lnk_file read;
+allow zram_resize sysfs_zram:dir r_dir_perms;
+allow zram_resize sysfs_zram:file rw_file_perms;
+
+# /dev/block/zram0 for mkswap/swapon (labeled swap_block_device by the MTK
+# vendor file_contexts; keep ram_device for any other zram device)
+allow zram_resize swap_block_device:blk_file rw_file_perms;
+allow zram_resize ram_device:blk_file rw_file_perms;
+
+# /proc/meminfo for total RAM
+allow zram_resize proc:dir search;
+allow zram_resize proc_meminfo:file r_file_perms;
+
+# Debug log written by the resize helper (/data/local/tmp/zram_resize.log)
+allow zram_resize zram_resize_log_file:dir rw_dir_perms;
+allow zram_resize zram_resize_log_file:file create_file_perms;
+
+# NOTE: persist.sys.zram_size_percent is read by the script through the
+# property area. Property reads are not SELinux-checked (only writes via
+# property_service are), so no get_prop rules are needed here.

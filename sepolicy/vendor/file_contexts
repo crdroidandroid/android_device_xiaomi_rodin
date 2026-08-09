@@ -97,6 +97,9 @@
 # Vibrator
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service    u:object_r:hal_vibrator_default_exec:s0
 
+# Dynamic zram (swap) resize helper for Xiaomi Parts
+/vendor/bin/zram_resize\.sh    u:object_r:zram_resize_exec:s0
+/data/local/tmp/zram_resize\.log    u:object_r:zram_resize_log_file:s0
 
 # Misc 
 /dev/audioswitch(/.*)?              u:object_r:audioswitch_device:s0

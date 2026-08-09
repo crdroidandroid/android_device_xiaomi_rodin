@@ -50,3 +50,6 @@ type sysfs_tp_virtual_prox, sysfs_type, fs_type;
 
 # XiaomiParts CPU controls
 type vendor_sysfs_cpu_control, fs_type, sysfs_type;
+
+# zram resize
+type zram_resize_log_file, data_file_type, file_type, core_data_file_type;
