@@ -263,8 +263,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libcamera2ndk_vendor.so': blob_fixup()
         .replace_needed('android.frameworks.cameraservice.service-V2-ndk.so', 'android.frameworks.cameraservice.service-V3-ndk.so')
         .replace_needed('android.frameworks.cameraservice.device-V2-ndk', 'android.frameworks.cameraservice.device-V3-ndk'),
-    'vendor/lib64/libdlbdsservice.so': blob_fixup()
-        .replace_needed("libstagefright_foundation.so", "libstagefright_foundation-v33.so"),
     'vendor/etc/init/android.hardware.audio.service-aidl.mediatek.rc': blob_fixup()
         .regex_replace(
             'onrestart restart audioserver',
