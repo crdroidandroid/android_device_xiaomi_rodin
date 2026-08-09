@@ -1335,3 +1335,7 @@ service vendor.fingerprint-default /vendor/bin/hw/android.hardware.biometrics.fi
     capabilities SYS_NICE
     shutdown critical
     socket fpsensor_socket stream 0777 system system
+
+# Dynamic zram (swap) size for Xiaomi Parts. Imported last so that the
+# resize helper runs after the stock swapon_all zram setup.
+import ${ro.vendor.rc}init.zram_resize.rc

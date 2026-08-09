@@ -1,0 +1,8 @@
+# Dynamic zram (swap) size for Xiaomi Parts.
+#
+# Fires once at boot (after swapon_all, since this file is imported at the
+# end of init.mt6899.rc) and on every change of persist.sys.zram_size_percent
+# made by the app, re-creating the zram0 swap device at the requested size.
+
+on property:persist.sys.zram_size_percent=* && property:sys.boot_completed=1
+    exec u:r:zram_resize:s0 -- /vendor/bin/zram_resize.sh

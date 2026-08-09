@@ -125,3 +125,16 @@ sh_binary {
     src: "init.insmod.sh",
     vendor: true,
 }
+
+sh_binary {
+    name: "zram_resize.sh",
+    src: "zram_resize.sh",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.zram_resize.rc",
+    src: "init.zram_resize.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
