@@ -7,3 +7,6 @@ ro.vendor.imeisv=21
 ro.mi.os.version.code=3
 ro.mi.os.version.incremental=OS3.0.300.0.WOJMIXM
 ro.product.marketname=Poco X7 Pro
+
+# Memtag
+persist.arm64.memtag.default=off
