@@ -239,6 +239,7 @@ blob_fixups: blob_fixups_user_type = {
         .call(blob_fixup_graphic_buffer_size)
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     ( 
+     'odm/lib64/camera/plugins/capture/com.xiaomi.plugin.filter.so',
      'vendor/lib64/libcom.xiaomi.grallocutils.so','vendor/lib64/libmialgoengine.so'): blob_fixup()
         .call(blob_fixup_graphic_buffer_size),
     'vendor/lib64/libkeymint_V3.so': blob_fixup()
