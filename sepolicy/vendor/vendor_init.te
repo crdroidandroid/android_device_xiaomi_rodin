@@ -3,6 +3,8 @@ set_prop(vendor_init, vendor_batterysecret_prop)
 set_prop(vendor_init, vendor_displayfeature_prop)
 set_prop(vendor_init, vendor_fingerprint_prop)
 set_prop(vendor_init, vendor_touchfeature_prop)
+set_prop(vendor_init, exported_system_prop)
+set_prop(vendor_init, vendor_us_proximity_prop)
 
 allow vendor_init minidump_data_file:dir create_dir_perms;
 allow vendor_init minidump_data_file:file create_file_perms;
