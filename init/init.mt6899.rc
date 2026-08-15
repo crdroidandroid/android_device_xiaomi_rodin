@@ -925,6 +925,7 @@ on post-fs-data
 
     #Create dir for dolby
     mkdir /data/vendor/dolby 0770 media media
+    mkdir /data/vendor/multimedia 0775 system system
 
     #blocktag driver node
     chown system system /proc/blocktag/eara_io_boost

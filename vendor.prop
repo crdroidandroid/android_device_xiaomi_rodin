@@ -21,17 +21,16 @@ persist.vendor.audiohal.p2w_dump_on=0
 persist.vendor.audiohal.pcm_mixer_dump_on=0
 persist.vendor.speech.usb.offload=true
 ro.audio.monitorRotation=true
-ro.audio.spatializer_enabled=true
-ro.config.media_vol_default=20
-ro.config.vc_call_vol_default=6
-ro.config.vc_call_vol_steps=7
+ro.config.media_vol_default=10
+ro.config.vc_call_vol_default=7
+ro.config.vc_call_vol_steps=11
 ro.odm.mm.vibrator.sys_f0_path=sys/bus/i2c/drivers/awinic_haptic/1-005a/f0_value
 ro.odm.mm.vibrator.si_sys_f0_path=sys/bus/i2c/drivers/sih_haptic_688X/0-006b/f0_value
 ro.odm.mm.vibrator.aac_sys_f0_path=sys/bus/i2c/drivers/haptic_rt/0-005f/f0_value
 ro.vendor.audio.camera_gain=true
-ro.vendor.audio.dolby.dax.support=true
 ro.vendor.audio.gain.support=true
 ro.vendor.audio.media.volume.steps=30
+ro.vendor.audio.media_vol_stepless=30
 ro.vendor.audio.meeting.mode=true
 ro.vendor.audio.offload_to_music=true
 ro.vendor.audio.reverse_mic=true
@@ -161,6 +160,15 @@ ro.surface_flinger.display_update_imminent_timeout_ms=100
 ro.vendor.mtk.gpu.service=1
 ro.vendor.mtk.gpud.mm.fbc.disable=false
 
+# Dolby
+ro.vendor.dolby.dax.version=DAX3_3.12.0.8_r1
+ro.vendor.audio.dolby.dax.version=DAX3_3.12.0.8_r1
+ro.audio.spatializer_enabled=true
+ro.vendor.audio.dolby.dax.support=true
+ro.vendor.audio.dolby.surround.enable=true
+ro.audio.spatializer_transaural_enabled_default=false
+vendor.audio.dolby.ds2.enabled=false
+vendor.audio.dolby.ds2.hardbypass=false
 
 # DRM
 drm.service.enabled=true
