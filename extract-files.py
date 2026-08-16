@@ -99,13 +99,11 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/mt6899/libpqconfig.so'
     ): blob_fixup()
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so'),
-    (
-        'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl',
-        'odm/lib64/hw/displayfeature.default.so'
-    ): blob_fixup()
+    'odm/lib64/hw/displayfeature.default.so': blob_fixup()
         .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so')
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl': blob_fixup()
+        .replace_needed('android.hardware.sensors-V2-ndk.so', 'android.hardware.sensors-V3-ndk.so')
         .add_needed('libui_shim.so'),
     (
         'odm/lib64/camera/plugins/capture/com.xiaomi.plugin.gainmap.so',
@@ -136,7 +134,6 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_unlock'),
     (
         'odm/lib64/libmiXmlParser.so',
-        'vendor/lib64/hw/audio.primary.mediatek.so',
         'vendor/lib64/hw/mt6899/vendor.mediatek.hardware.pq_aidl-impl.so',
         'vendor/lib64/libHardwareBacklightcore.so',
         'vendor/lib64/libaudiocloudctrl.so',
@@ -216,8 +213,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/mt6899/libcam.hal3a.so',
         'vendor/lib64/mt6899/libcam.hal3a.ctrl.so',
         'vendor/lib64/libcameraopt.so',
-        'vendor/lib64/libmialgoengine.so',
-        'vendor/lib64/libcom.xiaomi.grallocutils.so',
     ): blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
     (
@@ -238,9 +233,13 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libcodec2_fsr.so': blob_fixup()
         .call(blob_fixup_graphic_buffer_size)
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
-    ( 
-     'odm/lib64/camera/plugins/capture/com.xiaomi.plugin.filter.so',
-     'vendor/lib64/libcom.xiaomi.grallocutils.so','vendor/lib64/libmialgoengine.so'): blob_fixup()
+     'odm/lib64/camera/plugins/capture/com.xiaomi.plugin.filter.so': blob_fixup()
+        .call(blob_fixup_graphic_buffer_size),
+    (
+      'vendor/lib64/libcom.xiaomi.grallocutils.so',
+      'vendor/lib64/libmialgoengine.so'
+    ): blob_fixup()
+        .add_needed('libprocessgroup_shim.so')
         .call(blob_fixup_graphic_buffer_size),
     'vendor/lib64/libkeymint_V3.so': blob_fixup()
         .replace_needed('lib_android_keymaster_keymint_utils.so', 'lib_android_keymaster_keymint_utils_V3.so'),
@@ -253,8 +252,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libultrahdr_rodin.so': blob_fixup()
         .replace_needed('libjpegencoder.so', 'libjpegencoder_rodin.so')
         .replace_needed('libjpegdecoder.so', 'libjpegdecoder_rodin.so'),
-    'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so': blob_fixup()
-        .replace_needed('android.hardware.graphics.common-V4-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     (
         'vendor/lib64/vendor.xiaomi.hardware.camera.injection-V1-ndk.so',
         'vendor/lib64/vendor.xiaomi.hardware.camera.injection-client.so',
@@ -270,7 +267,8 @@ blob_fixups: blob_fixups_user_type = {
             'onrestart restart audioserver\n    onrestart restart vendor.sensors-hal-multihal\n    onrestart restart citsensorservice'
         ),
     'vendor/lib64/hw/audio.primary.mediatek.so': blob_fixup()
-        .replace_needed('libalsautils.so', 'libalsautils-mtk.so'),
+        .replace_needed('libalsautils.so', 'libalsautils-mtk.so')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
