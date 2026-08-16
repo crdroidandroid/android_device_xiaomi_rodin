@@ -2,3 +2,6 @@ allow mediacodec hal_aidl_dms_service:service_manager find;
 
 binder_call(mediacodec, hal_aidl_dms_default)
 binder_use(mediacodec)
+
+allow mediacodec fwk_sensor_service:service_manager find;
+allow mediacodec sysfs_leds:dir { search };

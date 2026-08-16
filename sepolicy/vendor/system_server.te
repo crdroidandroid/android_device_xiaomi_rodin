@@ -9,3 +9,5 @@ allow system_server hal_touchfeature_xiaomi_default:process signal;
 allow system_server proc_irq:dir { search };
 
 allow system_server vendor_hal_citsensorservice_xiaomi_default:binder call;
+
+allow system_server mtk_hal_mali_platform_default_service:service_manager find;
