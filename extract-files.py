@@ -217,6 +217,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libcodec2_aidl.so', 'libcodec2_aidl_prebuilt.so'),
     'vendor/bin/hw/vendor.dolby.media.c2-service-vision': blob_fixup()
         .replace_needed('libcodec2_aidl.so', 'libcodec2_aidl_prebuilt.so'),
+    'vendor/lib64/libcodec2_aidl_prebuilt.so': blob_fixup()
+        .add_needed('libcodec2_shim_blockpool.so')
+        .replace_needed('libcodec2_hal_common.so', 'libcodec2_hal_common_prebuilt.so')
+        .replace_needed('libui.so', 'libui-v35.so'),
     (
         'vendor/lib64/libcodec2_mtk_venc.so',
         'vendor/lib64/libcodec2_mtk_vdec.so',
@@ -225,6 +229,7 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libformatter.so', 'libformatter_mtk.so'),
     'vendor/bin/hw/android.hardware.security.keymint@3.0-service.mitee': blob_fixup()
         .replace_needed('lib_android_keymaster_keymint_utils.so', 'lib_android_keymaster_keymint_utils_V3.so')
+        .replace_needed('android.hardware.security.keymint-V3-ndk.so', 'android.hardware.security.keymint-V3-ndk-v35.so')
         .replace_needed('libkeymint.so', 'libkeymint_V3.so'),
     'vendor/etc/init/hw/init.batterysecret.rc': blob_fixup()
         .regex_replace('    seclabel u:r:batterysecret:s0\n', ''),
@@ -278,7 +283,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libkeymint_V3.so': blob_fixup()
         .replace_needed('lib_android_keymaster_keymint_utils.so', 'lib_android_keymaster_keymint_utils_V3.so'),
     'vendor/lib64/libkeymint_remote_prov_support_V3.so': blob_fixup()
-        .replace_needed('libbase.so', 'libbase-v35.so'),
+        .replace_needed('libbase.so', 'libbase-v35.so')
+        .replace_needed('android.hardware.security.keymint-V3-ndk.so', 'android.hardware.security.keymint-V3-ndk-v35.so')
+        .replace_needed('libcppcose_rkp.so', 'libcppcose_rkp-v35.so'),
     'vendor/lib64/libmicamera_hal_core.so': blob_fixup()
         .call(blob_fixup_graphic_buffer_size)
         .add_needed('libprocessgroup_shim.so')

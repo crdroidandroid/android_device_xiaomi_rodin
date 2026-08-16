@@ -1812,6 +1812,7 @@ vendor/etc/mtk_platform_codecs_config.xml
 vendor/etc/TL_settings.json
 vendor/lib64/libXMFaceFocus.so
 vendor/lib64/libcodec2_aidl.so:vendor/lib64/libcodec2_aidl_prebuilt.so;FIX_SONAME
+vendor/lib64/libcodec2_hal_common.so:vendor/lib64/libcodec2_hal_common_prebuilt.so;FIX_SONAME
 vendor/lib64/libcodec2_fsr.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
