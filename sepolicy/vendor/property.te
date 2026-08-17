@@ -16,7 +16,7 @@ vendor_restricted_prop(vendor_idmanager_prop)
 vendor_public_prop(vendor_mlipay_prop)
 
 # MTD service
-vendor_restricted_prop(vendor_mtdservice_prop)
+vendor_public_prop(vendor_mtdservice_prop)
 
 # Touchfeature
 vendor_public_prop(vendor_panel_info_prop)
