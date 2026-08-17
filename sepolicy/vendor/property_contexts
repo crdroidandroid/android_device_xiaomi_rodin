@@ -6,12 +6,19 @@ persist.vendor.batterysecret.       u:object_r:vendor_batterysecret_prop:s0
 persist.vendor.batteryantiaging          u:object_r:vendor_batteryantiaging_prop:s0
 
 # Camera
-persist.vendor.camera.       u:object_r:vendor_mtk_camera_prop:s0
-persist.vendor.XDRVersion    u:object_r:vendor_mtk_camera_prop:s0
-ro.vendor.dynamiccamera.     u:object_r:vendor_mtk_camera_prop:s0
-vendor.camera.               u:object_r:vendor_mtk_camera_prop:s0
-persist.vendor.cameraid.totalnum u:object_r:vendor_mtk_camera_prop:s0
-persist.vendor.EnableP3ColorSpace  u:object_r:vendor_mtk_camera_prop:s0
+persist.vendor.camera.mivi.groupsEnable                   u:object_r:vendor_camera_skynet_prop:s0
+persist.vendor.camera.mivi.loglevel                       u:object_r:vendor_camera_skynet_prop:s0
+persist.vendor.camera.mivi.offlineloglevel                u:object_r:vendor_camera_skynet_prop:s0
+persist.vendor.camera.offlinedebug.mask                   u:object_r:vendor_camera_skynet_prop:s0
+persist.vendor.debug.camera.log                           u:object_r:vendor_camera_skynet_prop:s0
+vendor.camera.sensor.logsystem                            u:object_r:vendor_camera_skynet_prop:s0
+vendor.camera.sensor.logsystem.unrelease                  u:object_r:vendor_camera_skynet_prop:s0
+vendor.debug.camera.coredevice.wpe.dump                   u:object_r:vendor_camera_skynet_prop:s0
+persist.vendor.mtk.camera.log_level                       u:object_r:vendor_camera_skynet_prop:s0
+ro.vendor.dynamiccamera.ability_level                     u:object_r:vendor_dynamiccamera_config_prop:s0 exact int
+persist.vendor.EnableP3ColorSpace                         u:object_r:vendor_camera_p3_prop:s0
+persist.vendor.XDRVersion                                 u:object_r:vendor_camera_xdr_prop:s0
+persist.vendor.cameraid.totalnum                          u:object_r:vendor_mtk_camera_prop:s0
 
 # CIT App
 vendor.audio.cit.spkcal.copy   u:object_r:vendor_audio_cit_prop:s0

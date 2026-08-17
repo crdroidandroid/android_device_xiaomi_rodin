@@ -23,3 +23,10 @@ allow mtk_hal_camera hal_graphics_allocator_default:fd use;
 allow mtk_hal_camera vendor_thermal_prop:file read;
 allow mtk_hal_camera graphics_config_prop:file read;
 allow mtk_hal_camera system_data_file:dir search;
+
+get_prop(mtk_hal_camera, vendor_camera_skynet_prop)
+set_prop(mtk_hal_camera, vendor_camera_skynet_prop)
+get_prop(mtk_hal_camera, vendor_dynamiccamera_config_prop)
+get_prop(mtk_hal_camera, vendor_camera_xdr_prop)
+set_prop(mtk_hal_camera, vendor_camera_xdr_prop)
+set_prop(mtk_hal_camera, vendor_camera_p3_prop)

@@ -6,3 +6,32 @@ ro.mi.os.                u:object_r:exported_system_prop:s0
 ro.miui.                 u:object_r:exported_system_prop:s0
 ro.product.marketname    u:object_r:build_prop:s0 exact string
 ro.product.mod_device    u:object_r:exported_default_prop:s0 exact string
+
+# --- Camera HAL ---
+camera.preview.debug.debugInfo_view                   u:object_r:exported_system_prop:s0 exact string
+camera.preview.debug.sat_info                         u:object_r:exported_system_prop:s0 exact string
+camera.preview.enable.log                             u:object_r:exported_system_prop:s0 exact string
+persist.vendor.camera.3rdhighResolutionBlob.scenes    u:object_r:exported_system_prop:s0
+persist.vendor.camera.3rdlive.scenes                  u:object_r:exported_system_prop:s0
+persist.vendor.camera.3rdvideo.scenes                 u:object_r:exported_system_prop:s0
+persist.vendor.camera.3rdvideocall.scenes             u:object_r:exported_system_prop:s0
+persist.vendor.camera.IsStreetModeSupported           u:object_r:camera_config_prop:s0 exact bool
+persist.vendor.camera.cameramind.supported            u:object_r:camera_config_prop:s0 exact bool
+persist.vendor.camera.cloud.                          u:object_r:exported_system_prop:s0
+persist.vendor.camera.facetracker.active              u:object_r:exported_system_prop:s0 exact int
+persist.vendor.camera.facetracker.enable              u:object_r:exported_system_prop:s0 exact int
+persist.vendor.camera.facetracker.rrzosize            u:object_r:exported_system_prop:s0 exact string
+persist.vendor.camera.facetracker.support             u:object_r:camera_config_prop:s0 exact int
+persist.vendor.camera.gadget                          u:object_r:exported_system_prop:s0
+persist.vendor.camera.gesture.emoji.active            u:object_r:exported_system_prop:s0 exact int
+persist.vendor.camera.gesture.emoji.enable            u:object_r:exported_system_prop:s0 exact int
+persist.vendor.camera.logentry                        u:object_r:exported_system_prop:s0
+persist.vendor.camera.selfie.unfold                   u:object_r:exported_system_prop:s0 exact int
+persist.vendor.camera.traceGroupsEnable               u:object_r:exported_system_prop:s0 exact string
+persist.vendor.cameraopt.loglevel                     u:object_r:exported_system_prop:s0
+persist.vendor.usb.camerahandle                       u:object_r:exported_system_prop:s0
+ro.product.camera.livephoto.support                   u:object_r:exported_system_prop:s0
+ro.vendor.camera.interpolation.mialgo.support         u:object_r:exported_system_prop:s0
+vendor.camera.sensor.logsystem.unrelease              u:object_r:exported_system_prop:s0 exact string
+vendor.sys.camerainfo                                 u:object_r:system_prop:s0
+persist.vendor.camera.facetracker.fpsrange            u:object_r:exported_system_prop:s0 exact string

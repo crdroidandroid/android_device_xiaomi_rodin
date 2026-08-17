@@ -21,3 +21,10 @@ set_prop(vendor_init, vendor_audio_cit_prop)
 # Connsys
 get_prop(vendor_init, vendor_mtk_coredump_prop)
 
+# camera
+get_prop(vendor_init, vendor_camera_skynet_prop)
+set_prop(vendor_init, vendor_camera_skynet_prop)
+get_prop(vendor_init, vendor_dynamiccamera_config_prop)
+set_prop(vendor_init, vendor_dynamiccamera_config_prop)
+get_prop(vendor_init, vendor_camera_p3_prop)
+set_prop(vendor_init, vendor_camera_p3_prop)

@@ -32,3 +32,18 @@ vendor_restricted_prop(vendor_us_proximity_prop)
 
 # CIT audio tests
 system_public_prop(vendor_audio_cit_prop)
+
+# --- vendor_camera_skynet_prop ---
+vendor_restricted_prop(vendor_camera_skynet_prop)
+typeattribute vendor_camera_skynet_prop mtk_core_property_type;
+
+# --- vendor_dynamiccamera_config_prop ---
+vendor_public_prop(vendor_dynamiccamera_config_prop)
+
+# --- vendor_camera_p3_prop ---
+vendor_restricted_prop(vendor_camera_p3_prop)
+typeattribute vendor_camera_p3_prop mtk_core_property_type;
+
+# --- vendor_camera_xdr_prop ---
+vendor_restricted_prop(vendor_camera_xdr_prop)
+typeattribute vendor_camera_xdr_prop mtk_core_property_type;
