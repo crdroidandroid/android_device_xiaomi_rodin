@@ -1,1 +1,9 @@
 allow init fpsensor_socket:sock_file create_file_perms;
+
+# Dolby Vision
+allow init vendorcodec:process transition;
+allow init vendorcodec:process { siginh rlimitinh };
+allow init vendorcodec_exec:file { read getattr map execute open };
+dontaudit init vendorcodec:process noatsecure;
+type_transition init vendorcodec_exec:process vendorcodec;
+
