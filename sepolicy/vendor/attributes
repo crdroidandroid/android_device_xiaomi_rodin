@@ -33,11 +33,6 @@ attribute hal_idmanager;
 attribute hal_idmanager_client;
 attribute hal_idmanager_server;
 
-# Misys
-attribute hal_misys_vendor;
-attribute hal_misys_vendor_client;
-attribute hal_misys_vendor_service;
-
 # Mlipay
 attribute hal_mlipay;
 attribute hal_mlipay_client;

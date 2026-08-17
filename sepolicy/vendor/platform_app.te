@@ -16,7 +16,6 @@ allow platform_app proc_pressure_cpu:file read;
 allow platform_app proc_pressure_io:file read;
 allow platform_app sysfs_therm:dir search;
 allow platform_app sysfs_therm:file { read open getattr };
-binder_call(platform_app, hal_misys_vendor_default)
 
 # prox sensor
 allow platform_app vendor_us_proximity_prop:file { read open getattr map };

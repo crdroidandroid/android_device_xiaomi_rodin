@@ -31,9 +31,6 @@ vendor.xiaomi.hardware.display.mihwcextension.IMiHwcExtension/default    u:objec
 vendor.xiaomi.hardware.idmanager.IIdManagerService/default    u:object_r:hal_idmanager_service:s0
 vendor.xiaomi.hardware.idmanager.ISecidService/default        u:object_r:hal_idmanager_service:s0
 
-# Misys
-vendor.xiaomi.hardware.misys.common.IMiSysImpl/default       u:object_r:hal_misys_vendor_service_custom:s0
-
 # Mlipay
 vendor.xiaomi.hardware.mlipay.IMlipayService/default        u:object_r:hal_mlipay_service:s0
 

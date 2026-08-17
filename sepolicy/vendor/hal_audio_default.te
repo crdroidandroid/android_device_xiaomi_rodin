@@ -13,3 +13,6 @@ get_prop(hal_audio_default, vendor_audio_cit_prop)
 allow hal_audio_default sysfs_fsm_re25:file rw_file_perms;
 allow hal_audio_default sysfs_fsm_f0:file rw_file_perms;
 allow hal_audio_default fs16xx_device:chr_file rw_file_perms;
+
+# bluetooth
+get_prop(hal_audio_default, vendor_mtk_bt_perf_prop)
