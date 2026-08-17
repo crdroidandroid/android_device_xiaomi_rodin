@@ -11,7 +11,6 @@ allow platform_app fingerprint_vendor_data_file:file { read };
 allow platform_app vendor_fingerprint_data_file_fpdump:file { read };
 
 # Meme cam
-r_dir_file(platform_app, vendor_camera_data_file)
 allow platform_app proc_pressure_cpu:file read;
 allow platform_app proc_pressure_io:file read;
 allow platform_app sysfs_therm:dir search;

@@ -11,7 +11,6 @@ type vendor_sysfs_usb_supply, fs_type, sysfs_type;
 
 # Camera
 type camera_persist_file, file_type;
-type vendor_camera_data_file, data_file_type, file_type;
 
 # CIT
 type vendor_audio_data_file, data_file_type, file_type;

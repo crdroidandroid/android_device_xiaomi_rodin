@@ -6,8 +6,6 @@ allow mtk_hal_camera procfs_memory:file r_file_perms;
 r_dir_file(mtk_hal_camera, camera_persist_file)
 allow mtk_hal_camera persist_data_file:lnk_file r_file_perms;
 allow mtk_hal_camera sysfs_therm:file rw_file_perms;
-allow mtk_hal_camera vendor_data_file:dir create_dir_perms;
-allow mtk_hal_camera vendor_data_file:file create_file_perms;
 allow mtk_hal_camera vendor_default_prop:file read;
 allow mtk_hal_camera camera_config_prop:file read;
 allow mtk_hal_camera camera_config_prop:file open;
@@ -21,8 +19,6 @@ dontaudit mtk_hal_camera default_prop:file { read write };
 allow mtk_hal_camera hal_graphics_allocator_default_tmpfs:file ioctl;
 allowxperm mtk_hal_camera hal_graphics_allocator_default_tmpfs:file ioctl { 0x6201 };
 allow mtk_hal_camera hal_graphics_allocator_default:fd use;
-allow mtk_hal_camera vendor_camera_data_file:dir { create rw_dir_perms };
-allow mtk_hal_camera vendor_camera_data_file:file create_file_perms;
 
 allow mtk_hal_camera vendor_thermal_prop:file read;
 allow mtk_hal_camera graphics_config_prop:file read;
