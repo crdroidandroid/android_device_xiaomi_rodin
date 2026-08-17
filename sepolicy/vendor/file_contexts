@@ -2,7 +2,7 @@
 /data/vendor/audio(/.*)?       u:object_r:mtk_audiohal_data_file:s0
 /data/vendor/dolby(/.*)?       u:object_r:vendor_data_file:s0
 /dev/socket/audio_hw_socket    u:object_r:audio_socket:s0
-/dev/fs16xx                    u:object_r:fs16xx_device:s0
+/dev/fs16xx(/.*)?                    u:object_r:fs16xx_device:s0
 
 # Batterysecret
 /vendor/bin/batterysecret    u:object_r:vendor_batterysecret_exec:s0
@@ -59,12 +59,6 @@
 # LED
 /sys/devices/platform/soc/11281000.i2c/i2c-11/11-0030/leds/aw21024_led(/.*)?      u:object_r:vendor_sysfs_led_file:s0
 
-# MIEV
-/dev/miev    u:object_r:miev_dev:s0
-
-# MIGT
-/dev/migt    u:object_r:migt_dev:s0
-
 # Mlipay
 /(odm|vendor/odm|system/vendor)/bin/mlipayd_mitee                                                      u:object_r:hal_mlipay_default_exec:s0
 
@@ -102,3 +96,43 @@
 
 # Vibrator
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service    u:object_r:hal_vibrator_default_exec:s0
+
+
+# Misc 
+/dev/audioswitch(/.*)?              u:object_r:audioswitch_device:s0
+/dev/gpu_pdma                       u:object_r:gpu_device:s0
+/dev/aol_flp                        u:object_r:aol_flp_device:s0
+/dev/apuext(/.*)?                   u:object_r:apuext_device:s0
+/dev/block/by-name/bk_07            u:object_r:ffu_partition:s0
+/dev/block/by-name/ffu              u:object_r:ffu_partition:s0
+/dev/block/by-name/gsort            u:object_r:gsort_block_device:s0
+/dev/block/by-name/pstore           u:object_r:pstore_block_device:s0
+/dev/camlog                         u:object_r:camlog_device:s0
+/dev/conn_dbg_dev(/.*)?             u:object_r:conn_dbg_dev_device:s0
+/dev/gz_ffa_dev(/.*)?               u:object_r:gzffa_device:s0
+/dev/ir_spi                         u:object_r:ir_spi_device:s0
+/dev/mbraink(/.*)?                  u:object_r:mtk_mbraink_device:s0
+/dev/pcie_smt(/.*)?                 u:object_r:pcie_smt_device:s0
+/dev/pn54x                          u:object_r:nfc_device:s0
+/dev/pn553                          u:object_r:nfc_device:s0
+/dev/pps0                           u:object_r:gps_ticksync_device:s0
+/dev/socket/frs_socket(/.*)?        u:object_r:frs_socket:s0
+/dev/socket/miwild                  u:object_r:miwild_socket:s0
+/dev/socket/slad                    u:object_r:slad_socket:s0
+/dev/thinmd_ee(/.*)?                u:object_r:thinmd_ee_device:s0
+/dev/trusty-ipc-dev1                u:object_r:tee_device:s0
+/dev/ttyACM1                        u:object_r:nfc_device:s0
+/dev/wwan.*                         u:object_r:mtk_wwan_device:s0
+/dev/wwanD0NWK                      u:object_r:nwkopt_device:s0
+/dev/coredump_wifi(/.*)?            u:object_r:coredump_wifi_device:s0
+/dev/sa_log_wifi                    u:object_r:sa_log_wifi_device:s0
+/dev/socket/minetd                  u:object_r:minetd_socket:s0
+/dev/fw_log_gpsmcu                  u:object_r:fw_log_gpsmcu_device:s0
+/dev/gpsmdl.*(/.*)?                 u:object_r:gpsmdl_device:s0
+/dev/gpsstrg.*(/.*)?                u:object_r:gpsstrg_device:s0
+/dev/block/by-name/logdump          u:object_r:vendor_logdump_partition:s0
+/dev/mtk_usb_offload(/.*)?          u:object_r:mtk_usb_offload_device:s0
+/dev/xiaomi-touch-knock             u:object_r:touchfeature_device:s0
+/dev/xiaomi-thp                     u:object_r:touchfeature_device:s0
+/dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/modem_1(_[ab])?  u:object_r:md_block_device:s0
+/dev/block/platform/mtk-\b(msdc|ufs)\b\.0/[0-9]+\.\b(msdc0|ufs0)\b/by-name/pstore           u:object_r:pstore_block_device:s0

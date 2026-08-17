@@ -1,0 +1,8 @@
+# --- hyper_bpfloader_socket ---
+type hyper_bpfloader_socket, coredomain_socket, file_type;
+
+# --- miuserfsd_socket ---
+type miuserfsd_socket, coredomain_socket, file_type;
+
+# --- rpmb_dev_system_socket ---
+type rpmb_dev_system_socket, core_data_file_type, data_file_type, file_type;

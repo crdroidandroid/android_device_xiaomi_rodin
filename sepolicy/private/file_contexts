@@ -1,0 +1,37 @@
+# MIEV
+/dev/miev    u:object_r:miev_dev:s0
+
+# MIGT
+/dev/migt    u:object_r:migt_dev:s0
+
+# Misc
+/dev/hbt                               u:object_r:hbt_device:s0
+/dev/iorap_dev                         u:object_r:lb_device:s0
+/dev/metis_link                        u:object_r:migt_dev:s0
+/dev/mi_frameload                      u:object_r:migt_dev:s0
+/dev/mi_group                          u:object_r:migt_dev:s0
+/dev/mi_sw_sync                        u:object_r:mi_sw_sync_dev:s0
+/dev/migt_reset                        u:object_r:migt_dev:s0
+/dev/millet_sched                      u:object_r:millet_dev:s0
+/dev/misysinfofreader                  u:object_r:misysinfofreader_device:s0
+/dev/msl(/.*)?                         u:object_r:mslg_device:s0
+/dev/shm(/.*)?                         u:object_r:mslg_device:s0
+/dev/socket/dynbpfloader               u:object_r:hyper_bpfloader_socket:s0
+/dev/socket/hyos_spawner               u:object_r:zygote_socket:s0
+/dev/socket/miuserfss                  u:object_r:miuserfsd_socket:s0
+/dev/socket/mqsasd_pr                  u:object_r:mqsasd_pr_socket:s0
+/dev/socket/otad                       u:object_r:otad_socket:s0
+/dev/socket/rpmb_mock_system           u:object_r:rpmb_dev_system_socket:s0
+/dev/socket/rpmb_mock_test_system      u:object_r:rpmb_dev_system_socket:s0
+/dev/socket/rpmb_mock_wv_system        u:object_r:rpmb_dev_system_socket:s0
+/dev/device_kperfevents                u:object_r:device_kperfevents_device:s0
+/dev/proc_kperfevents                  u:object_r:proc_kperfevents_device:s0
+/dev/socket/usap_pool_tertiary         u:object_r:zygote_socket:s0
+/dev/block/zram.*                      u:object_r:zram_device:s0
+/dev/mtd0                              u:object_r:mtdblock_device:s0
+/dev/zram-control                      u:object_r:zram_control_device:s0
+/dev/socket/zygote_tertiary            u:object_r:zygote_socket:s0
+/dev/xiaomi/memsw_state                u:object_r:mcd_device:s0
+/dev/xiaomi/wsevents                   u:object_r:mcd_device:s0
+/dev/xiaomi_memsw_state                u:object_r:mcd_device:s0
+/dev/xiaomi_wsevents                   u:object_r:mcd_device:s0

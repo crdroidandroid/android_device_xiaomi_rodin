@@ -12,3 +12,83 @@ type countrycode_block_device, dev_type;
 
 # TouchFeature
 type touchfeature_device, dev_type;
+
+# --- audioswitch_device ---
+type audioswitch_device, dev_type;
+
+# --- aol_flp_device ---
+type aol_flp_device, dev_type;
+
+# --- apuext_device ---
+type apuext_device, dev_type;
+
+# --- gsort_block_device ---
+type gsort_block_device, dev_type;
+
+# --- pstore_block_device ---
+type pstore_block_device, dev_type;
+
+# --- camlog_device ---
+type camlog_device, dev_type;
+
+# --- conn_dbg_dev_device ---
+type conn_dbg_dev_device, dev_type;
+
+# --- gzffa_device ---
+type gzffa_device, dev_type;
+
+# --- ir_spi_device ---
+type ir_spi_device, dev_type;
+
+# --- mtk_mbraink_device ---
+type mtk_mbraink_device, dev_type;
+
+# --- pcie_smt_device ---
+type pcie_smt_device, dev_type;
+
+# --- gps_ticksync_device ---
+type gps_ticksync_device, dev_type;
+
+# --- frs_socket ---
+type frs_socket, file_type;
+
+# --- miwild_socket ---
+type miwild_socket, file_type;
+
+# --- slad_socket ---
+type slad_socket, file_type;
+
+# --- mtk_wwan_device ---
+type mtk_wwan_device, dev_type;
+
+# --- coredump_wifi_device ---
+type coredump_wifi_device, dev_type;
+
+# --- sa_log_wifi_device ---
+type sa_log_wifi_device, dev_type;
+
+# --- minetd_socket ---
+type minetd_socket, file_type;
+
+# --- fw_log_gpsmcu_device ---
+type fw_log_gpsmcu_device, dev_type;
+
+# --- gpsmdl_device ---
+type gpsmdl_device, dev_type;
+
+# --- gpsstrg_device ---
+type gpsstrg_device, dev_type;
+
+# --- vendor_logdump_partition ---
+type vendor_logdump_partition, dev_type;
+
+# --- mtk_usb_offload_device ---
+type mtk_usb_offload_device, dev_type;
+
+# --- thinmd_ee_device ---
+type thinmd_ee_device, dev_type;
+
+#  --- ffu_partition.te --- 
+type ffu_partition, dev_type;
+
+

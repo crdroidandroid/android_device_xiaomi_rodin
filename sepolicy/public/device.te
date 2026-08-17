@@ -1,0 +1,35 @@
+# --- hbt_device ---
+type hbt_device, dev_type, mlstrustedobject;
+
+# --- lb_device ---
+type lb_device, dev_type;
+
+# --- mi_sw_sync_dev ---
+type mi_sw_sync_dev, dev_type;
+
+# --- millet_dev ---
+type millet_dev, dev_type, mlstrustedobject;
+
+# --- proc_kperfevents_device ---
+type proc_kperfevents_device, dev_type;
+
+# --- device_kperfevents_device ---
+type device_kperfevents_device, dev_type;
+
+# --- mcd_device ---
+type mcd_device, dev_type;
+
+# --- misysinfofreader_device ---
+type misysinfofreader_device, dev_type;
+
+# --- mslg_device ---
+type mslg_device, coredomain_socket, dev_type, mlstrustedobject;
+
+# --- mtdblock_device ---
+type mtdblock_device, dev_type;
+
+# --- zram_control_device ---
+type zram_control_device, dev_type;
+
+# --- zram_device ---
+type zram_device, dev_type;

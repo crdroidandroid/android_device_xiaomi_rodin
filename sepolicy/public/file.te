@@ -1,0 +1,5 @@
+# --- otad_socket ---
+type otad_socket, file_type;
+
+# --- mqsasd_pr_socket ---
+type mqsasd_pr_socket, coredomain_socket, file_type, mlstrustedobject;
