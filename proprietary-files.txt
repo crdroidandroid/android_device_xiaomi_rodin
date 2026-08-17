@@ -1799,6 +1799,8 @@ vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.mitee.xm
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.mitee.xml
 vendor/lib64/libkeymint.so:vendor/lib64/libkeymint_V3.so;FIX_SONAME
 vendor/lib64/libkeymint_remote_prov_support.so:vendor/lib64/libkeymint_remote_prov_support_V3.so;FIX_SONAME
+vendor/lib64/android.hardware.security.keymint-V3-ndk.so:vendor/lib64/android.hardware.security.keymint-V3-ndk-v35.so;FIX_SONAME
+vendor/lib64/libcppcose_rkp.so:vendor/lib64/libcppcose_rkp-v35.so;FIX_SONAME
 
 # Media - Codec2
 vendor/bin/hw/android.hardware.media.c2-mediatek-64b
