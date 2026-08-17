@@ -35,3 +35,23 @@ ro.vendor.camera.interpolation.mialgo.support         u:object_r:exported_system
 vendor.camera.sensor.logsystem.unrelease              u:object_r:exported_system_prop:s0 exact string
 vendor.sys.camerainfo                                 u:object_r:system_prop:s0
 persist.vendor.camera.facetracker.fpsrange            u:object_r:exported_system_prop:s0 exact string
+
+persist.vendor.camlog.camxinfologlevels             u:object_r:exported_system_prop:s0
+persist.vendor.camlog.camxverboseloglevels          u:object_r:exported_system_prop:s0
+persist.vendor.camlog.logSize                       u:object_r:exported_system_prop:s0
+persist.vendor.camlog.logmask                       u:object_r:exported_system_prop:s0
+persist.vendor.camlog.logswitch                     u:object_r:exported_system_prop:s0
+persist.vendor.camlog.offlinelogNum                 u:object_r:exported_system_prop:s0
+persist.vendor.camlog.overrideloglevels             u:object_r:exported_system_prop:s0
+persist.vendor.camlog.readback                      u:object_r:exported_system_prop:s0
+persist.vendor.camlog.readback.type                 u:object_r:exported_system_prop:s0
+persist.vendor.camlog.tuning                        u:object_r:exported_system_prop:s0
+
+persist.sys.boot_audio.enabled                      u:object_r:exported_system_prop:s0
+ro.audio.usb.period_us                              u:object_r:exported_default_prop:s0
+persist.vendor.audio.wanos.                         u:object_r:vendor_audio_wanos_prop:s0
+vendor.audio.wps.resume                             u:object_r:vendor_audio_wps_prop:s0
+persist.bluetooth.mtk.leaudio.tb.support            u:object_r:bluetooth_config_prop:s0
+persist.mtk.leaudio.proprietary.supported           u:object_r:bluetooth_config_prop:s0
+ro.bluetooth.leaudio_offload.supported              u:object_r:bluetooth_a2dp_offload_prop:s0
+vendor.audio.usb_cctoggle                           u:object_r:audio_prop:s0

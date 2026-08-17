@@ -47,3 +47,6 @@ typeattribute vendor_camera_p3_prop mtk_core_property_type;
 # --- vendor_camera_xdr_prop ---
 vendor_restricted_prop(vendor_camera_xdr_prop)
 typeattribute vendor_camera_xdr_prop mtk_core_property_type;
+
+# --- vendor_mtk_heif_decode_prop ---
+vendor_restricted_prop(vendor_mtk_heif_decode_prop)

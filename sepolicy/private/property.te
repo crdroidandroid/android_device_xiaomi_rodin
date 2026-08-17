@@ -1,0 +1,5 @@
+# --- vendor_audio_wanos_prop ---
+system_public_prop(vendor_audio_wanos_prop)
+
+# --- vendor_audio_wps_prop ---
+system_public_prop(vendor_audio_wps_prop)
