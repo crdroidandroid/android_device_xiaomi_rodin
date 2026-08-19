@@ -1713,6 +1713,7 @@ vendor/etc/vintf/manifest/arm.mali.platform-mediatek.xml
 vendor/etc/vintf/manifest/manifest_allocator.xml
 vendor/etc/vintf/manifest/mapper.mediatek.xml
 vendor/etc/mali_platform.config
+vendor/lib/egl/egl.cfg
 vendor/lib64/egl/mt6899/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_data.so

@@ -183,8 +183,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/bin/hw/vendor.dolby.media.c2-default-service-dax',
         'vendor/bin/hw/vendor.dolby.media.c2-service-vision',
         'vendor/lib64/c2.dolby.client.so',
-        'vendor/lib64/c2.dolby.hevc.dec.so',
-        'vendor/lib64/c2.dolby.hevc.sec.dec.so',
         'vendor/lib64/libcodec2_mtk_vdec.so',
         'vendor/lib64/libcodec2_mtk_venc.so'
     ): blob_fixup()
@@ -261,6 +259,14 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libcamera2ndk_vendor.so': blob_fixup()
         .replace_needed('android.frameworks.cameraservice.service-V2-ndk.so', 'android.frameworks.cameraservice.service-V3-ndk.so')
         .replace_needed('android.frameworks.cameraservice.device-V2-ndk', 'android.frameworks.cameraservice.device-V3-ndk'),
+    'vendor/lib64/libdlbdsservice.so': blob_fixup()
+        .replace_needed("libstagefright_foundation.so", "libstagefright_foundation-v33.so"),
+    (
+        'vendor/lib64/c2.dolby.hevc.dec.so',
+        'vendor/lib64/c2.dolby.hevc.sec.dec.so',
+    ): blob_fixup()
+        .replace_needed('libcodec2_aidl.so', 'libcodec2_aidl_prebuilt.so')
+        .replace_needed("libstagefright_foundation.so", "libstagefright_foundation-v33.so"),
     'vendor/etc/init/android.hardware.audio.service-aidl.mediatek.rc': blob_fixup()
         .regex_replace(
             'onrestart restart audioserver',
