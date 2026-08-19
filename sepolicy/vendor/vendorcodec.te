@@ -38,3 +38,12 @@ allowxperm vendorcodec proc_ged:file ioctl { 0x6700-0x6711 0x6764-0x676b 0x67c8 
 
 # --- vendorcodec_exec ---
 type vendorcodec_exec, exec_type, file_type, vendor_file_type;
+
+# --- additional ---
+allow vendorcodec system_data_file:dir search;
+allow vendorcodec unlabeled:filesystem { getattr }
+
+get_prop(vendorcodec, default_prop)
+get_prop(vendorcodec, vendor_default_prop)
+get_prop(vendorcodec, graphics_config_prop)
+get_prop(vendorcodec, graphics_config_writable_prop)
