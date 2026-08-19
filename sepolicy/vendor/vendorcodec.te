@@ -41,7 +41,7 @@ type vendorcodec_exec, exec_type, file_type, vendor_file_type;
 
 # --- additional ---
 allow vendorcodec system_data_file:dir search;
-allow vendorcodec unlabeled:filesystem { getattr }
+allow vendorcodec unlabeled:filesystem { getattr };
 
 get_prop(vendorcodec, default_prop)
 get_prop(vendorcodec, vendor_default_prop)

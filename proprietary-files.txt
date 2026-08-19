@@ -1534,6 +1534,8 @@ vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/vendor.dolby.dms-V1-ndk.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
+vendor/lib64/libstagefright_foundation.so:vendor/lib64/libstagefright_foundation-v35.so;FIX_SONAME
+vendor/lib64/libui.so:vendor/lib64/libui-v35.so;FIX_SONAME
 
 # Fingerprint
 odm/app/JVFactoryTest/JVFactoryTest.apk:system_ext/app/JVFactoryTest/JVFactoryTest.apk

@@ -175,7 +175,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so',
         'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so',
         'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so',
-        'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so'
+        'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so',
+        'vendor/lib64/libui-v35.so'
     ): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     (
@@ -186,6 +187,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libcodec2_mtk_vdec.so',
         'vendor/lib64/libcodec2_mtk_venc.so'
     ): blob_fixup()
+        .replace_needed('libcodec2_aidl.so', 'libcodec2_aidl_prebuilt.so'),
+    'vendor/bin/hw/vendor.dolby.media.c2-service-vision': blob_fixup()
         .replace_needed('libcodec2_aidl.so', 'libcodec2_aidl_prebuilt.so'),
     'vendor/bin/hw/android.hardware.security.keymint@3.0-service.mitee': blob_fixup()
         .replace_needed('lib_android_keymaster_keymint_utils.so', 'lib_android_keymaster_keymint_utils_V3.so')
@@ -260,13 +263,14 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.frameworks.cameraservice.service-V2-ndk.so', 'android.frameworks.cameraservice.service-V3-ndk.so')
         .replace_needed('android.frameworks.cameraservice.device-V2-ndk', 'android.frameworks.cameraservice.device-V3-ndk'),
     'vendor/lib64/libdlbdsservice.so': blob_fixup()
-        .replace_needed("libstagefright_foundation.so", "libstagefright_foundation-v33.so"),
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
     (
         'vendor/lib64/c2.dolby.hevc.dec.so',
         'vendor/lib64/c2.dolby.hevc.sec.dec.so',
     ): blob_fixup()
         .replace_needed('libcodec2_aidl.so', 'libcodec2_aidl_prebuilt.so')
-        .replace_needed("libstagefright_foundation.so", "libstagefright_foundation-v33.so"),
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v35.so')
+        .replace_needed('libui.so','libui-v35.so'),
     'vendor/etc/init/android.hardware.audio.service-aidl.mediatek.rc': blob_fixup()
         .regex_replace(
             'onrestart restart audioserver',
