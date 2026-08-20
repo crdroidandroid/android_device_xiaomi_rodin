@@ -1,12 +1,6 @@
 # DisplayFeature
 type vendor_displayfeature_device, dev_type;
 
-# MIEV
-type miev_dev, dev_type, mlstrustedobject;
-
-# MIGT
-type migt_dev, dev_type, mlstrustedobject;
-
 # Partitions
 type countrycode_block_device, dev_type;
 

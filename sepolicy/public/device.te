@@ -1,3 +1,9 @@
+# MIEV
+type miev_dev, dev_type, mlstrustedobject;
+
+# MIGT
+type migt_dev, dev_type, mlstrustedobject;
+
 # --- hbt_device ---
 type hbt_device, dev_type, mlstrustedobject;
 
