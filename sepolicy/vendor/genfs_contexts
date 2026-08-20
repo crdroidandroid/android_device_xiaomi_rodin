@@ -5,6 +5,10 @@ genfscon sysfs /class/fs16xx/fsm_f0 u:object_r:sysfs_fsm_f0:s0
 
 # Backlight
 genfscon sysfs /class/backlight		u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/mtk-leds1/leds/lcd-backlight1                                                                                 u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/mtk_leds1/leds/lcd-backlight1                                                                                 u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/soc:mtk-leds1/leds/lcd-backlight1                                                                         u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/soc:mtk_leds1/leds/lcd-backlight1                                                                         u:object_r:sysfs_leds:s0
 
 # Battery info
 genfscon sysfs /devices/platform/pd-adapter/Charging_Adapter                                                    u:object_r:sysfs_batteryinfo:s0
