@@ -11,3 +11,6 @@ allow system_server proc_irq:dir { search };
 allow system_server vendor_hal_citsensorservice_xiaomi_default:binder call;
 
 allow system_server mtk_hal_mali_platform_default_service:service_manager find;
+
+# Allow system_server to search /proc/dma_heap
+allow system_server proc_dmaheap:dir search;

@@ -33,3 +33,15 @@ type zram_control_device, dev_type;
 
 # --- zram_device ---
 type zram_device, dev_type;
+
+# --- dmabuf_heap_device ---
+typeattribute dmabuf_heap_device dev_type;
+typeattribute dmabuf_heap_device mlstrustedobject;
+
+# --- dmabuf_system_heap_device ---
+typeattribute dmabuf_system_heap_device dev_type;
+typeattribute dmabuf_system_heap_device mlstrustedobject;
+
+# --- dmabuf_system_secure_heap_device ---
+typeattribute dmabuf_system_secure_heap_device dev_type;
+typeattribute dmabuf_system_secure_heap_device mlstrustedobject;

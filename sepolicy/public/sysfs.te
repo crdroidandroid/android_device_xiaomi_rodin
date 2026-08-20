@@ -1,0 +1,13 @@
+# --- sysfs_dmabuf ---
+type sysfs_dmabuf, fs_type, sysfs_type;
+
+# --- sysfs_dmabuf_stats ---
+typeattribute sysfs_dmabuf_stats fs_type;
+typeattribute sysfs_dmabuf_stats sysfs_type;
+
+# --- debugfs_dmabuf ---
+type debugfs_dmabuf, debugfs_type, fs_type;
+
+# --- sysfs_dma_heap ---
+typeattribute sysfs_dma_heap fs_type;
+typeattribute sysfs_dma_heap sysfs_type;

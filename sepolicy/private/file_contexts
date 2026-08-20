@@ -35,3 +35,5 @@
 /dev/xiaomi/wsevents                   u:object_r:mcd_device:s0
 /dev/xiaomi_memsw_state                u:object_r:mcd_device:s0
 /dev/xiaomi_wsevents                   u:object_r:mcd_device:s0
+
+/sys/kernel/debug/dma_buf(/.*)?                                                                          u:object_r:debugfs_dmabuf:s0

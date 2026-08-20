@@ -1,0 +1,1 @@
+genfscon sysfs /kernel/dmabuf_hugetlb/enable    u:object_r:sysfs_dmabuf:s0
