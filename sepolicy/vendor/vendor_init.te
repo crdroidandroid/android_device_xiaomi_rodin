@@ -28,3 +28,5 @@ get_prop(vendor_init, vendor_dynamiccamera_config_prop)
 set_prop(vendor_init, vendor_dynamiccamera_config_prop)
 get_prop(vendor_init, vendor_camera_p3_prop)
 set_prop(vendor_init, vendor_camera_p3_prop)
+
+get_prop(vendor_init, powerctl_prop)

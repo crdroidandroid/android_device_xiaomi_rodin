@@ -1,0 +1,3 @@
+# MediaTek GPS daemon rules
+allow mnld hf_manager_device:chr_file rw_file_perms;
+binder_use(mnld)
