@@ -22,3 +22,5 @@ binder_call(hal_audio_default, system_suspend_server)
 allow hal_audio_default hal_system_suspend_service:service_manager find;
 allow hal_audio_default system_suspend_hwservice:hwservice_manager find;
 
+allow hal_audio_default sysfs:file rw_file_perms;
+

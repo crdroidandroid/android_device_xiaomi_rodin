@@ -46,3 +46,6 @@ allow vendorcodec unlabeled:filesystem { getattr };
 get_prop(vendorcodec, vendor_default_prop)
 get_prop(vendorcodec, graphics_config_prop)
 get_prop(vendorcodec, graphics_config_writable_prop)
+get_prop(vendorcodec, zygote_config_prop)
+
+allow vendorcodec mtk_hal_mali_platform_default_service:service_manager find;
