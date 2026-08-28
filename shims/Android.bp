@@ -1,0 +1,28 @@
+cc_library_shared {
+    name: "libcodec2_shim_blockpool",
+    vendor: true,
+    compile_multilib: "64",
+    srcs: ["Codec2BlockPoolShim.cpp"],
+    include_dirs: [
+        "frameworks/av/media/codec2/hal/plugin/internal",
+    ],
+	header_libs: [
+		"libcodec2_internal",
+	],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libbase",
+        "libcodec2",
+        "libcodec2_vndk",
+        "libcodec2_hidl_plugin",
+        "libnativewindow",
+		"libbinder_ndk",
+        "android.hardware.media.c2-V1-ndk",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+}

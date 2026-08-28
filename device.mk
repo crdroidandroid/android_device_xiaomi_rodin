@@ -131,10 +131,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/camerax-vendor-extensions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/camerax-vendor-extensions.xml
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.device.front_cam=20MP \
-    ro.device.rear_cam="Dual 50MP+8MP"
-
 # ConsumerIR
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.example
@@ -267,6 +263,9 @@ PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
 # Matlog
 TARGET_DISABLE_MATLOG := true
 
+# Legacy Dolby Vision Codec2 compatibility
+$(call soong_config_set_bool,codec2_compat,legacy_dolby_igba,true)
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
@@ -309,7 +308,6 @@ PRODUCT_PACKAGES += \
     RodinSystemUIOverlay
 
 PRODUCT_PACKAGES += \
-    RodinApertureOverlay \
     RodinLineageSettingsOverlay
 
 PRODUCT_PACKAGES += \
