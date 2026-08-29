@@ -22,6 +22,15 @@ PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.threads=true
 endif
 
+# FUN time
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.adb.secure=0 \
+    persist.sys.usb.config=adb \
+    persist.sys.disable_rescue=1 \
+    ro.logd.kernel=true \
+    persist.logd.logpersistd.enable=true \
+    persist.logd.logpersistd.buffer=all
+
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -307,7 +316,6 @@ PRODUCT_PACKAGES += \
     RodinSystemUIOverlay
 
 PRODUCT_PACKAGES += \
-    RodinApertureOverlay \
     RodinLineageSettingsOverlay
 
 PRODUCT_PACKAGES += \
