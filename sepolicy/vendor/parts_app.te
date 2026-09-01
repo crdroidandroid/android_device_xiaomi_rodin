@@ -22,3 +22,11 @@ allow parts_app proc_stat:file rw_file_perms;
 
 # CPU control
 allow parts_app vendor_sysfs_cpu_control:file rw_file_perms;
+
+# Fingerprint HAL
+hal_client_domain(parts_app, hal_fingerprint)
+allow parts_app hal_fingerprint_service:service_manager find;
+
+# Xiaomi fingerprint properties
+get_prop(parts_app, vendor_fingerprint_prop)
+
