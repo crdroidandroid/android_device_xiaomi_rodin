@@ -43,3 +43,4 @@ allow parts_app hal_fingerprint_service:service_manager find;
 
 # Xiaomi fingerprint properties
 get_prop(parts_app, vendor_fingerprint_prop)
+
