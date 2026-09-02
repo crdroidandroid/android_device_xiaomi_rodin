@@ -8,17 +8,103 @@
 
     <!-- ── Xiaomi Parts Hub ────────────────────────────────────── -->
     <string name="xiaomi_parts_title">Xiaomi Parts</string>
-    <string name="xiaomi_parts_summary">Display, Thermal &amp; Touch</string>
+    <string name="xiaomi_parts_summary">Display, performance, touch and diagnostics</string>
     <string name="xiaomi_parts_category_diagnostics">Diagnostics</string>
 
     <!-- ── HomeScreen category headers ─────────────────────── -->
     <string name="display_category">Display</string>
     <string name="performance_category">Performance</string>
+    <string name="system_category">System</string>
 
     <!-- ── Common UI ───────────────────────────────────────── -->
     <string name="dismiss">Dismiss</string>
     <string name="cancel">Cancel</string>
     <string name="navigate_up">Navigate up</string>
+
+    <!-- ── CPU control ──────────────────────────────────────── -->
+    <string name="cpu_control_title">CPU control</string>
+    <string name="cpu_control_summary">Performance profiles, frequencies and cores</string>
+    <string name="cpu_control_description">Profiles adapt to the frequencies exposed by the kernel. Android thermal protection remains active in every mode.</string>
+    <string name="cpu_profiles_category">Performance profile</string>
+    <string name="cpu_profile_economy">Economy</string>
+    <string name="cpu_profile_economy_summary">Efficiency cores only, frequencies capped for longer battery life</string>
+    <string name="cpu_profile_normal">Normal</string>
+    <string name="cpu_profile_normal_summary">All cores enabled with the kernel’s normal adaptive range</string>
+    <string name="cpu_profile_boost">Boost</string>
+    <string name="cpu_profile_boost_summary">All cores enabled with a higher frequency floor</string>
+    <string name="cpu_profile_extreme">Extreme</string>
+    <string name="cpu_profile_extreme_summary">Locks every cluster at its maximum frequency</string>
+    <string name="cpu_profile_custom">Custom</string>
+    <string name="cpu_profile_custom_summary">Manual frequency and core configuration</string>
+    <string name="cpu_extreme_warning_title">High power use</string>
+    <string name="cpu_extreme_warning">Extreme mode generates considerably more heat and battery drain. Thermal throttling is never disabled.</string>
+    <string name="cpu_frequencies_category">Manual frequency limits</string>
+    <string name="cpu_cores_category">CPU cores</string>
+    <string name="cpu_efficiency_cluster">Efficiency cluster</string>
+    <string name="cpu_performance_cluster">Performance cluster</string>
+    <string name="cpu_prime_cluster">Prime cluster</string>
+    <string name="cpu_cluster">Cluster %1$d</string>
+    <string name="cpu_frequency_range">%1$s – %2$s</string>
+    <string name="cpu_frequency_dialog_title">%1$s frequencies</string>
+    <string name="cpu_min_frequency">Minimum: %1$s</string>
+    <string name="cpu_max_frequency">Maximum: %1$s</string>
+    <string name="cpu_core">CPU %1$d</string>
+    <string name="cpu_core_online">Online</string>
+    <string name="cpu_core_offline">Offline</string>
+    <string name="cpu_core_required">Boot core — always online</string>
+    <string name="cpu_apply">Apply</string>
+    <string name="cpu_refresh">Refresh CPU state</string>
+    <string name="cpu_apply_failed">Some CPU settings could not be applied</string>
+    <string name="cpu_not_supported">CPU frequency control is not exposed by this kernel</string>
+
+    <!-- ── Battery status ─────────────────────────────────── -->
+    <string name="battery_status_title">Battery status</string>
+    <string name="battery_status_summary">Health, charging and live metrics</string>
+    <string name="battery_live_section">Battery</string>
+    <string name="battery_wear_section">Health</string>
+    <string name="battery_status_charging">Charging</string>
+    <string name="battery_status_discharging">Discharging</string>
+    <string name="battery_status_full">Full</string>
+    <string name="battery_status_not_charging">Not charging</string>
+    <string name="battery_status_unknown">Unknown</string>
+    <string name="battery_health_good">Good</string>
+    <string name="battery_health_overheat">Overheated</string>
+    <string name="battery_health_dead">Dead</string>
+    <string name="battery_health_over_voltage">Over voltage</string>
+    <string name="battery_health_cold">Cold</string>
+    <string name="battery_health_failure">Failure</string>
+    <string name="battery_status">Status</string>
+    <string name="battery_health">Health</string>
+    <string name="battery_temperature">Temperature</string>
+    <string name="battery_voltage">Voltage</string>
+    <string name="battery_current_now">Current now</string>
+    <string name="battery_power">Power</string>
+    <string name="battery_charge_counter">Charge counter</string>
+    <string name="battery_technology">Technology</string>
+    <string name="battery_plug_type">Power source</string>
+    <string name="battery_cycle_count">Cycle count</string>
+    <string name="battery_plug_ac">AC</string>
+    <string name="battery_plug_usb">USB</string>
+    <string name="battery_plug_wireless">Wireless</string>
+    <string name="battery_plug_dock">Dock</string>
+    <string name="battery_plug_none">Battery</string>
+
+    <!-- ── Memory manager ─────────────────────────────────── -->
+    <string name="memory_title">Memory manager</string>
+    <string name="memory_summary">RAM, swap and running processes</string>
+    <string name="memory_used">Used</string>
+    <string name="memory_free_summary">%1$s free</string>
+    <string name="memory_total">Total</string>
+    <string name="memory_available">Available</string>
+    <string name="memory_cached">Cached</string>
+    <string name="memory_swap">Swap free</string>
+    <string name="memory_processes">Processes</string>
+    <string name="memory_no_processes">No process information available.</string>
+    <string name="memory_unavailable">Memory information is not available on this device.</string>
+    <string name="memory_low_warning">Low memory — consider closing background apps</string>
+    <string name="memory_stop">Stop process</string>
+    <string name="memory_process_stopped">Process stopped</string>
+    <string name="memory_process_summary">PSS %1$s · RSS %2$s · CPU %3$s%%</string>
 
     <!-- ── Display Colours ────────────────────────────────── -->
     <string name="display_colours_title">Display colours</string>
@@ -61,6 +147,12 @@
     <string name="thermal_summary">Per-app performance and temperature</string>
     <string name="thermal_enable_title">Thermal profiles</string>
     <string name="thermal_enable_summary">Apply thermal profiles per app and while charging</string>
+    <string name="thermal_safety_label">Safety override</string>
+    <string name="thermal_disable_throttling_title">Disable thermal throttling</string>
+    <string name="thermal_disable_throttling_summary">Use the vendor no-limits profile until this option is turned off</string>
+    <string name="thermal_disable_warning_title">Disable thermal protection?</string>
+    <string name="thermal_disable_warning_body">The device can overheat, become unstable, damage the battery or shut down. Kernel emergency protections may remain active. Use this only for short tests and never leave the device unattended.</string>
+    <string name="thermal_disable_confirm">Disable anyway</string>
     <string name="thermal_global_label">Global profile</string>
     <string name="thermal_global_profile_title">Active profile</string>
     <string name="thermal_per_app_label">Per-app profiles</string>

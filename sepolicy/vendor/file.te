@@ -47,3 +47,6 @@ type vendor_proc_tp_file, fs_type, proc_type;
 type vendor_proc_tp_lockdown, fs_type, proc_type;
 type vendor_sysfs_touch, fs_type, sysfs_type;
 type sysfs_tp_virtual_prox, sysfs_type, fs_type;
+
+# XiaomiParts CPU controls
+type vendor_sysfs_cpu_control, fs_type, sysfs_type;

@@ -150,7 +150,11 @@ class ThermalService : Service() {
 
     override fun onDestroy() {
         dlog(TAG, "onDestroy")
-        thermalUtils.setDefaultThermalProfile()
+        if (thermalUtils.throttlingDisabled) {
+            thermalUtils.setNoLimitsThermalProfile()
+        } else {
+            thermalUtils.setDefaultThermalProfile()
+        }
         // Pass final = true so the ChargingMonitor HandlerThread is quit
         // cleanly and does not leak after the service is destroyed.
         chargingMonitor.stop(final = true)

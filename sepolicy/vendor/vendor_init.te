@@ -30,3 +30,4 @@ get_prop(vendor_init, vendor_camera_p3_prop)
 set_prop(vendor_init, vendor_camera_p3_prop)
 
 get_prop(vendor_init, powerctl_prop)
+allow vendor_init vendor_sysfs_cpu_control:file setattr;

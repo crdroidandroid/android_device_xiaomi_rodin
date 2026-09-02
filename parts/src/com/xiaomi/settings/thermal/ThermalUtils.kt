@@ -37,15 +37,30 @@ class ThermalUtils private constructor(private val context: Context) {
             field = value
             sharedPrefs.edit().putBoolean(THERMAL_ENABLED, value).apply()
             if (value) {
-                startService()
+                if (!throttlingDisabled) startService()
             } else {
                 stopService()
+                if (!throttlingDisabled) setDefaultThermalProfile()
+            }
+        }
+
+    var throttlingDisabled: Boolean = sharedPrefs.getBoolean(THERMAL_THROTTLING_DISABLED, false)
+        set(value) {
+            if (field == value) return
+            field = value
+            sharedPrefs.edit().putBoolean(THERMAL_THROTTLING_DISABLED, value).apply()
+            if (value) {
+                stopService()
+                setNoLimitsThermalProfile()
+            } else if (enabled) {
+                startService()
+            } else {
                 setDefaultThermalProfile()
             }
         }
 
     fun startService() {
-        if (!enabled) return
+        if (!enabled || throttlingDisabled) return
         runCatching {
             context.startServiceAsUser(serviceIntent, UserHandle.CURRENT)
         }
@@ -69,6 +84,22 @@ class ThermalUtils private constructor(private val context: Context) {
     fun setDefaultThermalProfile() {
         writeSconfig(ThermalState.DEFAULT.sconfig)
         dlog(TAG, "Default profile applied (sconfig=${ThermalState.DEFAULT.sconfig})")
+    }
+
+    fun setNoLimitsThermalProfile() {
+        writeSconfig(ThermalState.NOLIMITS.sconfig)
+        dlog(TAG, "No-limits thermal profile applied (sconfig=${ThermalState.NOLIMITS.sconfig})")
+    }
+
+    fun restoreStateAtBoot() {
+        when {
+            throttlingDisabled -> {
+                stopService()
+                setNoLimitsThermalProfile()
+            }
+            enabled -> startService()
+            else -> setDefaultThermalProfile()
+        }
     }
 
     private fun setThermalProfileInternal(packageName: String) {
@@ -233,6 +264,7 @@ class ThermalUtils private constructor(private val context: Context) {
     companion object {
         private const val TAG                  = "ThermalUtils"
         const val THERMAL_ENABLED              = "thermal_enabled"
+        const val THERMAL_THROTTLING_DISABLED  = "thermal_throttling_disabled"
         const val THERMAL_PACKAGE_PREFIX       = "thermal_package_"
         const val THERMAL_SCONFIG              = "/sys/devices/virtual/thermal/thermal_message/sconfig"
         const val SCONFIG_CHARGE               = "27"

@@ -162,3 +162,20 @@ genfscon sysfs /devices/platform/goodix_ts.0/wakeup/wakeup172/wakeup_count      
 
 # Xiaomi Parts App
 genfscon sysfs /devices/virtual/thermal/thermal_message/sconfig u:object_r:sysfs_therm:s0
+
+# XiaomiParts CPU frequency limits
+genfscon sysfs /devices/system/cpu/cpufreq/policy0/scaling_min_freq u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpufreq/policy0/scaling_max_freq u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpufreq/policy4/scaling_min_freq u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpufreq/policy4/scaling_max_freq u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpufreq/policy7/scaling_min_freq u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpufreq/policy7/scaling_max_freq u:object_r:vendor_sysfs_cpu_control:s0
+
+# XiaomiParts CPU hotplug controls (CPU0 is intentionally excluded)
+genfscon sysfs /devices/system/cpu/cpu1/online u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpu2/online u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpu3/online u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpu4/online u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpu5/online u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpu6/online u:object_r:vendor_sysfs_cpu_control:s0
+genfscon sysfs /devices/system/cpu/cpu7/online u:object_r:vendor_sysfs_cpu_control:s0

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Xiaomi Parts</string>
+
+    <string name="xiaomi_parts_title">Xiaomi Parts</string>
+    <string name="xiaomi_parts_summary">Schermo, prestazioni, tocco e diagnostica</string>
+    <string name="xiaomi_parts_category_diagnostics">Diagnostica</string>
+
+    <string name="display_category">Schermo</string>
+    <string name="performance_category">Prestazioni</string>
+    <string name="system_category">Sistema</string>
+
+    <string name="dismiss">Chiudi</string>
+    <string name="cancel">Annulla</string>
+    <string name="navigate_up">Torna indietro</string>
+
+    <!-- CPU -->
+    <string name="cpu_control_title">Controllo CPU</string>
+    <string name="cpu_control_summary">Profili prestazioni, frequenze e core</string>
+    <string name="cpu_control_description">I profili si adattano alle frequenze esposte dal kernel. La protezione termica di Android rimane attiva in ogni modalità.</string>
+    <string name="cpu_profiles_category">Profilo prestazioni</string>
+    <string name="cpu_profile_economy">Economica</string>
+    <string name="cpu_profile_economy_summary">Solo core efficienti e frequenze limitate per prolungare la durata della batteria</string>
+    <string name="cpu_profile_normal">Normale</string>
+    <string name="cpu_profile_normal_summary">Tutti i core attivi con il normale intervallo adattivo del kernel</string>
+    <string name="cpu_profile_boost">Boost</string>
+    <string name="cpu_profile_boost_summary">Tutti i core attivi con una frequenza minima più elevata</string>
+    <string name="cpu_profile_extreme">Estrema</string>
+    <string name="cpu_profile_extreme_summary">Blocca ogni cluster alla frequenza massima</string>
+    <string name="cpu_profile_custom">Personalizzato</string>
+    <string name="cpu_profile_custom_summary">Configurazione manuale di frequenze e core</string>
+    <string name="cpu_extreme_warning_title">Consumo elevato</string>
+    <string name="cpu_extreme_warning">La modalità Estrema genera molto più calore e consuma più batteria. La limitazione termica non viene mai disattivata.</string>
+    <string name="cpu_frequencies_category">Limiti manuali delle frequenze</string>
+    <string name="cpu_cores_category">Core CPU</string>
+    <string name="cpu_efficiency_cluster">Cluster efficienza</string>
+    <string name="cpu_performance_cluster">Cluster prestazioni</string>
+    <string name="cpu_prime_cluster">Cluster prime</string>
+    <string name="cpu_cluster">Cluster %1$d</string>
+    <string name="cpu_frequency_range">%1$s – %2$s</string>
+    <string name="cpu_frequency_dialog_title">Frequenze %1$s</string>
+    <string name="cpu_min_frequency">Minima: %1$s</string>
+    <string name="cpu_max_frequency">Massima: %1$s</string>
+    <string name="cpu_core">CPU %1$d</string>
+    <string name="cpu_core_online">Attivo</string>
+    <string name="cpu_core_offline">Disattivato</string>
+    <string name="cpu_core_required">Core di avvio — sempre attivo</string>
+    <string name="cpu_apply">Applica</string>
+    <string name="cpu_refresh">Aggiorna stato CPU</string>
+    <string name="cpu_apply_failed">Non è stato possibile applicare alcune impostazioni CPU</string>
+    <string name="cpu_not_supported">Il kernel non espone il controllo delle frequenze CPU</string>
+
+    <!-- Batteria -->
+    <string name="battery_status_title">Stato batteria</string>
+    <string name="battery_status_summary">Salute, ricarica e dati in tempo reale</string>
+    <string name="battery_live_section">Batteria</string>
+    <string name="battery_wear_section">Salute</string>
+    <string name="battery_status_charging">In carica</string>
+    <string name="battery_status_discharging">In scarica</string>
+    <string name="battery_status_full">Carica completa</string>
+    <string name="battery_status_not_charging">Non in carica</string>
+    <string name="battery_status_unknown">Sconosciuto</string>
+    <string name="battery_health_good">Buona</string>
+    <string name="battery_health_overheat">Surriscaldata</string>
+    <string name="battery_health_dead">Esaurita</string>
+    <string name="battery_health_over_voltage">Sovratensione</string>
+    <string name="battery_health_cold">Fredda</string>
+    <string name="battery_health_failure">Guasto</string>
+    <string name="battery_status">Stato</string>
+    <string name="battery_health">Salute</string>
+    <string name="battery_temperature">Temperatura</string>
+    <string name="battery_voltage">Tensione</string>
+    <string name="battery_current_now">Corrente attuale</string>
+    <string name="battery_power">Potenza</string>
+    <string name="battery_charge_counter">Carica residua</string>
+    <string name="battery_technology">Tecnologia</string>
+    <string name="battery_plug_type">Alimentazione</string>
+    <string name="battery_cycle_count">Cicli di ricarica</string>
+    <string name="battery_plug_ac">Rete elettrica</string>
+    <string name="battery_plug_usb">USB</string>
+    <string name="battery_plug_wireless">Wireless</string>
+    <string name="battery_plug_dock">Dock</string>
+    <string name="battery_plug_none">Batteria</string>
+
+    <!-- Memoria -->
+    <string name="memory_title">Gestione memoria</string>
+    <string name="memory_summary">RAM, swap e processi in esecuzione</string>
+    <string name="memory_used">Utilizzata</string>
+    <string name="memory_free_summary">%1$s libera</string>
+    <string name="memory_total">Totale</string>
+    <string name="memory_available">Disponibile</string>
+    <string name="memory_cached">Nella cache</string>
+    <string name="memory_swap">Swap libera</string>
+    <string name="memory_processes">Processi</string>
+    <string name="memory_no_processes">Nessuna informazione sui processi disponibile.</string>
+    <string name="memory_unavailable">Le informazioni sulla memoria non sono disponibili su questo dispositivo.</string>
+    <string name="memory_low_warning">Memoria quasi esaurita — valuta la chiusura delle app in background</string>
+    <string name="memory_stop">Termina processo</string>
+    <string name="memory_process_stopped">Processo terminato</string>
+    <string name="memory_process_summary">PSS %1$s · RSS %2$s · CPU %3$s%%</string>
+
+    <!-- Colori schermo -->
+    <string name="display_colours_title">Colori dello schermo</string>
+    <string name="display_colours_summary">Modalità colore e temperatura</string>
+    <string name="display_colours_description">Regola la modalità colore e il bilanciamento del bianco per ottenere un aspetto più naturale o più vivido.</string>
+    <string name="color_mode_vivid">Vivida</string>
+    <string name="color_mode_saturated">Satura</string>
+    <string name="color_mode_standard">Standard</string>
+    <string name="color_mode_original">Originale</string>
+    <string name="color_mode_p3">DCI-P3</string>
+    <string name="color_mode_srgb">sRGB</string>
+    <string name="display_colours_failed">Impossibile applicare la modalità colore</string>
+    <string name="color_mode_vivid_summary">Colori e contrasto intensificati</string>
+    <string name="color_mode_saturated_summary">Colori ricchi per l’uso quotidiano</string>
+    <string name="color_mode_standard_summary">Calibrazione di fabbrica dai colori realistici</string>
+    <string name="color_mode_original_summary">Calibrazione originale ad ampia gamma</string>
+    <string name="color_mode_p3_summary">Spazio colore cinematografico DCI-P3</string>
+    <string name="color_mode_srgb_summary">sRGB accurato per web e grafica</string>
+
+    <!-- Risoluzione -->
+    <string name="screen_resolution_title">Risoluzione dello schermo</string>
+    <string name="screen_resolution_home_summary">Modifica la risoluzione dello schermo</string>
+    <string name="screen_resolution_description">Una risoluzione più alta rende lo schermo più nitido, ma consuma più batteria. Le risoluzioni inferiori riducono i consumi.</string>
+    <string name="screen_resolution_failed">Impossibile applicare la risoluzione</string>
+    <string name="screen_resolution_1440p">2560 × 1440 (QHD+)</string>
+    <string name="screen_resolution_1440p_summary">Massima nitidezza — consumo maggiore</string>
+    <string name="screen_resolution_1220p">2712 × 1220 (Nativa)</string>
+    <string name="screen_resolution_1220p_summary">Risoluzione nativa del pannello</string>
+    <string name="screen_resolution_1080p">2400 × 1080 (FHD+)</string>
+    <string name="screen_resolution_1080p_summary">Equilibrio tra nitidezza e batteria</string>
+    <string name="screen_resolution_720p">1600 × 720 (HD+)</string>
+    <string name="screen_resolution_720p_summary">Massima durata della batteria</string>
+    <string name="screen_resolution_dialog_title">Cambiare risoluzione?</string>
+    <string name="screen_resolution_restart_hint_body">Dopo l’applicazione è consigliato riavviare l’interfaccia di sistema. Evita di modificare le dimensioni dello schermo nelle impostazioni del dispositivo: potrebbero verificarsi conflitti.</string>
+    <string name="screen_resolution_dialog_confirm">Applica</string>
+    <string name="screen_resolution_dialog_cancel">Annulla</string>
+
+    <!-- Gestione termica -->
+    <string name="thermal_title">Gestione termica</string>
+    <string name="thermal_summary">Prestazioni e temperatura per app</string>
+    <string name="thermal_enable_title">Profili termici</string>
+    <string name="thermal_enable_summary">Applica i profili termici alle singole app e durante la ricarica</string>
+    <string name="thermal_safety_label">Esclusione di sicurezza</string>
+    <string name="thermal_disable_throttling_title">Disattiva limitazione termica</string>
+    <string name="thermal_disable_throttling_summary">Usa il profilo vendor senza limiti finché questa opzione non viene disattivata</string>
+    <string name="thermal_disable_warning_title">Disattivare la protezione termica?</string>
+    <string name="thermal_disable_warning_body">Il dispositivo può surriscaldarsi, diventare instabile, danneggiare la batteria o spegnersi. Le protezioni di emergenza del kernel potrebbero rimanere attive. Usa questa opzione soltanto per test brevi e non lasciare mai il dispositivo incustodito.</string>
+    <string name="thermal_disable_confirm">Disattiva comunque</string>
+    <string name="thermal_global_label">Profilo globale</string>
+    <string name="thermal_global_profile_title">Profilo attivo</string>
+    <string name="thermal_per_app_label">Profili per app</string>
+    <string name="thermal_select_profile">Seleziona profilo</string>
+    <string name="thermal_apply">Applica</string>
+    <string name="thermal_no_apps">Nessuna app configurata</string>
+    <string name="thermal_failed_toast">Operazione termica non riuscita</string>
+    <string name="thermal_charging_toast_connected">Profilo di ricarica attivo</string>
+    <string name="thermal_charging_toast_disconnected">Profili per app ripristinati</string>
+    <string name="thermal_charging_banner_body">I profili per app sono sospesi durante la ricarica</string>
+    <string name="thermal_reset_title">Ripristina tutti i profili</string>
+    <string name="thermal_reset_summary">Ripristina i profili predefiniti per tutte le app</string>
+    <string name="thermal_reset_confirm">Ripristina</string>
+    <string name="thermal_reset_confirm_body">Tutte le personalizzazioni termiche per app verranno eliminate e i profili torneranno ai valori predefiniti rilevati automaticamente.</string>
+    <string name="thermal_add_app">Aggiungi app</string>
+    <string name="thermal_search_apps">Cerca app</string>
+    <string name="thermal_default">Predefinito</string>
+    <string name="thermal_nolimits">Senza limiti</string>
+    <string name="thermal_navigation">Navigazione</string>
+    <string name="thermal_dialer">Telefono</string>
+    <string name="thermal_video_call">Videochiamata</string>
+    <string name="thermal_camera">Fotocamera</string>
+    <string name="thermal_video">Video</string>
+    <string name="thermal_video_4k">Video 4K</string>
+    <string name="thermal_gaming">Gioco</string>
+    <string name="thermal_gaming_heavy">Gioco (intensivo)</string>
+    <string name="thermal_gaming_competitive">Gioco (competitivo)</string>
+    <string name="thermal_yuanshen">Yuanshen</string>
+    <string name="thermal_charge">Ricarica</string>
+
+    <!-- Tocco -->
+    <string name="touch_boost_title">Boost del tocco</string>
+    <string name="touch_boost_summary">Risposta al tocco più rapida</string>
+    <string name="touch_boost_description">Aumenta la frequenza di campionamento del controller touch, riducendo la latenza di risposta. Può aumentare leggermente il consumo durante l’uso.</string>
+    <string name="touch_boost_failed">Impossibile applicare il boost del tocco</string>
+
+    <!-- Diagnostica -->
+    <string name="fingerprint_calibration_title">Calibrazione impronta digitale</string>
+    <string name="fingerprint_calibration_summary">Ricalibra il sensore di impronte digitali</string>
+    <string name="fingerprint_calibration_not_found">Calibrazione impronta non disponibile</string>
+    <string name="speaker_calibration_title">Calibrazione altoparlanti</string>
+    <string name="speaker_calibration_summary">Test CIT di autocalibrazione degli altoparlanti</string>
+    <string name="speaker_calibration_not_found">Calibrazione altoparlanti non disponibile</string>
+</resources>

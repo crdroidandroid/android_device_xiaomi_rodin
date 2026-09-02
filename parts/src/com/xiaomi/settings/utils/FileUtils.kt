@@ -17,6 +17,12 @@ fun readOneLine(fileName: String): String? =
         .onFailure { e -> Log.e(TAG, "Could not read from file $fileName", e) }
         .getOrNull()
 
+/** Reads the entire contents of [fileName]. Returns null on any failure. */
+fun readFile(fileName: String): String? =
+    runCatching { File(fileName).readText() }
+        .onFailure { e -> Log.e(TAG, "Could not read file $fileName", e) }
+        .getOrNull()
+
 /** Writes [value] to [fileName]. Returns true on success, false on failure. */
 fun writeLine(fileName: String, value: String): Boolean =
     runCatching { File(fileName).writeText(value) }

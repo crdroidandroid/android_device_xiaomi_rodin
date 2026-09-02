@@ -31,3 +31,6 @@ allow parts_app system_app_data_file:file create_file_perms;
 allow parts_app system_app_data_file:lnk_file create_file_perms;
 allow parts_app sysfs_therm:file rw_file_perms;
 
+# Limit CPU writes to the frequency and online nodes explicitly labelled for
+# XiaomiParts. Generic CPU sysfs remains read-only through platform policy.
+allow parts_app vendor_sysfs_cpu_control:file rw_file_perms;

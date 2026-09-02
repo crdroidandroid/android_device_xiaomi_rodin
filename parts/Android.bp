@@ -47,11 +47,15 @@ android_app {
         // Navigation-Compose
         "androidx.navigation_navigation-compose",
 
+        // Run sysfs I/O away from the main thread
+        "kotlinx_coroutines_android",
+
         // AndroidX preference
         "androidx.preference_preference",
 
         // SettingsLib
         "SettingsLib",
+        "SpaLib",
     ],
 
     required: [

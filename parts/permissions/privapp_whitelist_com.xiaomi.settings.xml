@@ -25,6 +25,9 @@
         -->
         <permission name="android.permission.BATTERY_STATS"/>
 
+        <!-- Used by the memory screen to stop a user-selected background app. -->
+        <permission name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+
         <!-- ── Thermal ─────────────────────────────────────────────────── -->
         <!--
              PACKAGE_USAGE_STATS:
