@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import os
+import shutil
+
 from extract_utils.file import File
 from extract_utils.fixups_blob import (
     BlobFixupCtx,
@@ -59,6 +62,21 @@ def blob_fixup_graphic_buffer_size(
                 f.write(b'\x00\xa6\x81\x52')  # AArch64 mov w0, #0xd30
 
 
+def blob_fixup_camera_lut(
+    ctx: BlobFixupCtx,
+    file: File,
+    file_path: str,
+    *args,
+    **kwargs,
+):
+    lut_path = os.path.join(
+        ctx.module_dir,
+        'camera-luts',
+        os.path.basename(file.dst),
+    )
+    shutil.copyfile(lut_path, file_path)
+
+
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
 
@@ -79,6 +97,16 @@ lib_fixups: lib_fixups_user_type = {
 
 
 blob_fixups: blob_fixups_user_type = {
+    (
+        'odm/etc/camera/160_vivid.png',
+        'odm/etc/camera/161_wind.png',
+        'odm/etc/camera/162_nature.png',
+        'odm/etc/camera/163_free.png',
+        'odm/etc/camera/164_fc400.png',
+        'odm/etc/camera/165_c_50d.png',
+        'odm/etc/camera/166_revert.png',
+    ): blob_fixup()
+        .call(blob_fixup_camera_lut),
     (
         'odm/bin/hw/vendor.xiaomi.hw.touchfeature-service',
         'odm/lib64/libadaptivehdr.so',
