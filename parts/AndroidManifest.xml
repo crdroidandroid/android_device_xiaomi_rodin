@@ -98,6 +98,11 @@
                 android:name="com.android.settings.summary"
                 android:resource="@string/xiaomi_parts_summary" />
 
+            <!-- Launch the full Activity instead of embedding as a fragment -->
+            <meta-data
+                android:name="com.android.settings.ACTIVITY_ACTION"
+                android:value="android.intent.action.MAIN" />
+
             <meta-data
                 android:name="com.android.settings.icon"
                 android:resource="@drawable/ic_xiaomi_parts" />
