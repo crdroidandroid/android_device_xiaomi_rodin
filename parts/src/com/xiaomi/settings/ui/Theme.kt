@@ -24,6 +24,7 @@ fun XiaomiPartsTheme(content: @Composable () -> Unit) {
 /** Android motion tokens shared by navigation and state changes. */
 object Motion {
     private val EmphasizedDecelerate = CubicBezierEasing(0.05f, 0.7f, 0.1f, 1f)
+    private val StandardEasing = CubicBezierEasing(0.2f, 0f, 0f, 1f)
 
     fun <T> navSpatialSpec(): FiniteAnimationSpec<T> = spring(
         dampingRatio = 0.86f,
@@ -37,6 +38,14 @@ object Motion {
         dampingRatio = Spring.DampingRatioNoBouncy,
         stiffness = Spring.StiffnessMediumLow,
     )
+
+    fun <T> pressSpec(): FiniteAnimationSpec<T> = spring(
+        dampingRatio = Spring.DampingRatioNoBouncy,
+        stiffness = Spring.StiffnessMedium,
+    )
+
+    fun <T> liveValueSpec(): FiniteAnimationSpec<T> =
+        tween(durationMillis = 700, easing = StandardEasing)
 
     fun <T> shimmerSpec(): DurationBasedAnimationSpec<T> =
         tween(durationMillis = 2_800, easing = LinearEasing)
