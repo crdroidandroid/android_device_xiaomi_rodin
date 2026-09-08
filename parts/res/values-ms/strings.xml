@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Wayarles</string>
     <string name="battery_plug_dock">Dok</string>
     <string name="battery_plug_none">Bateri</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Monitor prestasi</string>
+    <string name="performance_summary">Beban CPU dan metrik langsung</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Suhu</string>
+    <string name="monitor_all_zones">Semua zon terma</string>
+    <string name="monitor_cpu_load">Beban CPU</string>
+    <string name="monitor_load_average">Purata beban (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Masa aktif</string>
+    <string name="monitor_freq_range">Julat %1$s – %2$s</string>
+    <string name="monitor_governor">Gabenor: %1$s</string>
+    <string name="monitor_gpu_freq">Frekuensi GPU</string>
+    <string name="monitor_gpu_load">Beban GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Data pemantauan tidak tersedia pada peranti ini.</string>
+
     <string name="memory_title">Pengurus memori</string>
     <string name="memory_summary">RAM, swap dan proses berjalan</string>
     <string name="memory_used">Digunakan</string>

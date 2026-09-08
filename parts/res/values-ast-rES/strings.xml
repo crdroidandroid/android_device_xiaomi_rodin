@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Wireless</string>
     <string name="battery_plug_dock">Dock</string>
     <string name="battery_plug_none">Battery</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Monitor de rendimientu</string>
+    <string name="performance_summary">Carga de CPU y métriques en tiempu real</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperatures</string>
+    <string name="monitor_all_zones">Toles zones térmiques</string>
+    <string name="monitor_cpu_load">Carga de CPU</string>
+    <string name="monitor_load_average">Carga media (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Tiempu d’actividá</string>
+    <string name="monitor_freq_range">Intervalu %1$s – %2$s</string>
+    <string name="monitor_governor">Gobernador: %1$s</string>
+    <string name="monitor_gpu_freq">Frecuencia de GPU</string>
+    <string name="monitor_gpu_load">Carga de GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Los datos de monitorización nun tán disponibles nesti dispositivu.</string>
+
     <string name="memory_title">Memory manager</string>
     <string name="memory_summary">RAM, swap and running processes</string>
     <string name="memory_used">Used</string>

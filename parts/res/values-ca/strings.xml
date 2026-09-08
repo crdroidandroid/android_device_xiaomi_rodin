@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Sense fil</string>
     <string name="battery_plug_dock">Moll</string>
     <string name="battery_plug_none">Bateria</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Monitor de rendiment</string>
+    <string name="performance_summary">Càrrega de la CPU i mètriques en directe</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperatures</string>
+    <string name="monitor_all_zones">Totes les zones tèrmiques</string>
+    <string name="monitor_cpu_load">Càrrega de la CPU</string>
+    <string name="monitor_load_average">Càrrega mitjana (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Temps en funcionament</string>
+    <string name="monitor_freq_range">Rang %1$s – %2$s</string>
+    <string name="monitor_governor">Governador: %1$s</string>
+    <string name="monitor_gpu_freq">Freqüència de la GPU</string>
+    <string name="monitor_gpu_load">Càrrega de la GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Les dades de monitoratge no estan disponibles en aquest dispositiu.</string>
+
     <string name="memory_title">Gestor de memòria</string>
     <string name="memory_summary">RAM, processos d\'intercanvi i execució</string>
     <string name="memory_used">Usat</string>

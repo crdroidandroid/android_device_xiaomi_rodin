@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Kablosuz</string>
     <string name="battery_plug_dock">Yuva</string>
     <string name="battery_plug_none">Pil</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Performans monitörü</string>
+    <string name="performance_summary">CPU yükü ve canlı ölçümler</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Sıcaklıklar</string>
+    <string name="monitor_all_zones">Tüm termal bölgeler</string>
+    <string name="monitor_cpu_load">CPU yükü</string>
+    <string name="monitor_load_average">Ortalama yük (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Çalışma süresi</string>
+    <string name="monitor_freq_range">Aralık %1$s – %2$s</string>
+    <string name="monitor_governor">Yönetici: %1$s</string>
+    <string name="monitor_gpu_freq">GPU frekansı</string>
+    <string name="monitor_gpu_load">GPU yükü: %1$d%%</string>
+    <string name="monitor_unavailable">Bu cihazda izleme verisi mevcut değil.</string>
+
     <string name="memory_title">Bellek yöneticisi</string>
     <string name="memory_summary">RAM, takas ve çalıştırma işlemleri</string>
     <string name="memory_used">Kullanılmış</string>

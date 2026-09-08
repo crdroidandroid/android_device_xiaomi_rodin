@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">אלחוטי</string>
     <string name="battery_plug_dock">מעגן</string>
     <string name="battery_plug_none">סוללה</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">ניטור ביצועים</string>
+    <string name="performance_summary">עומס CPU ומדדים חיים</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">טמפרטורות</string>
+    <string name="monitor_all_zones">כל האזורים התרמיים</string>
+    <string name="monitor_cpu_load">עומס המעבד</string>
+    <string name="monitor_load_average">עומס ממוצע (1 · 5 · 15)</string>
+    <string name="monitor_uptime">זמן פעולה</string>
+    <string name="monitor_freq_range">טווח %1$s – %2$s</string>
+    <string name="monitor_governor">בקר: %1$s</string>
+    <string name="monitor_gpu_freq">תדר GPU</string>
+    <string name="monitor_gpu_load">עומס GPU: %1$d%%</string>
+    <string name="monitor_unavailable">נתוני הניטור לא זמינים במכשיר זה.</string>
+
     <string name="memory_title">מנהל זיכרון</string>
     <string name="memory_summary">זיכרון RAM, החלפה והרצת תהליכים</string>
     <string name="memory_used">משומש</string>

@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Nirkabel</string>
     <string name="battery_plug_dock">Dermaga</string>
     <string name="battery_plug_none">Baterai</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Pemantau performa</string>
+    <string name="performance_summary">Beban CPU dan metrik langsung</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Suhu</string>
+    <string name="monitor_all_zones">Semua zona termal</string>
+    <string name="monitor_cpu_load">Beban CPU</string>
+    <string name="monitor_load_average">Rata-rata beban (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Waktu aktif</string>
+    <string name="monitor_freq_range">Rentang %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">Frekuensi GPU</string>
+    <string name="monitor_gpu_load">Beban GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Data pemantauan tidak tersedia di perangkat ini.</string>
+
     <string name="memory_title">Manajer memori</string>
     <string name="memory_summary">RAM, swap dan proses yang berjalan</string>
     <string name="memory_used">Digunakan</string>

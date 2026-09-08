@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">უსადენო</string>
     <string name="battery_plug_dock">დოკი</string>
     <string name="battery_plug_none">ბატარეა</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">შესრულების მონიტორი</string>
+    <string name="performance_summary">CPU დატვირთვა და ცოცხალი მეტრიკა</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">ტემპერატურები</string>
+    <string name="monitor_all_zones">ყველა თერმული ზონა</string>
+    <string name="monitor_cpu_load">CPU დატვირთვა</string>
+    <string name="monitor_load_average">საშუალო დატვირთვა (1 · 5 · 15)</string>
+    <string name="monitor_uptime">აპტაიმი</string>
+    <string name="monitor_freq_range">დიაპაზონი %1$s – %2$s</string>
+    <string name="monitor_governor">გამგებელი: %1$s</string>
+    <string name="monitor_gpu_freq">GPU სიხშირე</string>
+    <string name="monitor_gpu_load">GPU დატვირთვა: %1$d%%</string>
+    <string name="monitor_unavailable">მონიტორინგის მონაცემები მიუწვდომელია ამ მოწყობილობაზე.</string>
+
     <string name="memory_title">მეხსიერების მენეჯერი</string>
     <string name="memory_summary">ოპერატიული მეხსიერება, სვოპ და გაშვებული პროცესები</string>
     <string name="memory_used">მეორადი</string>

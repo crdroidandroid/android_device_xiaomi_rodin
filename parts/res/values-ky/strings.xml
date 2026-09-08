@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Зымсыз</string>
     <string name="battery_plug_dock">Док</string>
     <string name="battery_plug_none">Батарея</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Өндүрүмдүүлүк монитору</string>
+    <string name="performance_summary">CPU жүктөө жана жандуу көрсөткүчтөр</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Температуралар</string>
+    <string name="monitor_all_zones">Бардык жылуулук зоналары</string>
+    <string name="monitor_cpu_load">CPU жүгү</string>
+    <string name="monitor_load_average">Орточо жүктөм (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Иштөө убактысы</string>
+    <string name="monitor_freq_range">Диапазон %1$s – %2$s</string>
+    <string name="monitor_governor">Башкаруучу: %1$s</string>
+    <string name="monitor_gpu_freq">GPU жыштыгы</string>
+    <string name="monitor_gpu_load">GPU жүктөмү: %1$d%%</string>
+    <string name="monitor_unavailable">Бул түзмөктө мониторинг маалыматы жеткиликтүү эмес.</string>
+
     <string name="memory_title">Эстутум менеджери</string>
     <string name="memory_summary">RAM, алмашуу жана иштеп жаткан процесстер</string>
     <string name="memory_used">Колдонулган</string>

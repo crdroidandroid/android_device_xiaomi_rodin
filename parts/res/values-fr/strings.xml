@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Sans fil</string>
     <string name="battery_plug_dock">Quai</string>
     <string name="battery_plug_none">Batterie</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Moniteur de performance</string>
+    <string name="performance_summary">Charge du CPU et métriques en direct</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Températures</string>
+    <string name="monitor_all_zones">Toutes les zones thermiques</string>
+    <string name="monitor_cpu_load">Charge du CPU</string>
+    <string name="monitor_load_average">Charge moyenne (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Durée de fonctionnement</string>
+    <string name="monitor_freq_range">Plage %1$s – %2$s</string>
+    <string name="monitor_governor">Gouverneur : %1$s</string>
+    <string name="monitor_gpu_freq">Fréquence du GPU</string>
+    <string name="monitor_gpu_load">Charge du GPU : %1$d%%</string>
+    <string name="monitor_unavailable">Les données de surveillance ne sont pas disponibles sur cet appareil.</string>
+
     <string name="memory_title">Gestionnaire de mémoire</string>
     <string name="memory_summary">RAM, processus d\'échange et d\'exécution</string>
     <string name="memory_used">Utilisé</string>

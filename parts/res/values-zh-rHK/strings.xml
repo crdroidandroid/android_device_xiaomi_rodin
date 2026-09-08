@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">無線</string>
     <string name="battery_plug_dock">碼頭</string>
     <string name="battery_plug_none">電池</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">效能監測器</string>
+    <string name="performance_summary">CPU 負載與實時數據</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">溫度</string>
+    <string name="monitor_all_zones">所有散熱區域</string>
+    <string name="monitor_cpu_load">CPU 負載</string>
+    <string name="monitor_load_average">平均負載 (1 · 5 · 15)</string>
+    <string name="monitor_uptime">運行時間</string>
+    <string name="monitor_freq_range">範圍 %1$s – %2$s</string>
+    <string name="monitor_governor">處理器調控器: %1$s</string>
+    <string name="monitor_gpu_freq">GPU 頻率</string>
+    <string name="monitor_gpu_load">GPU 負載: %1$d%%</string>
+    <string name="monitor_unavailable">此裝置無法取得監測數據。</string>
+
     <string name="memory_title">記憶體管理器</string>
     <string name="memory_summary">RAM、交換與正在運作的進程</string>
     <string name="memory_used">二手</string>

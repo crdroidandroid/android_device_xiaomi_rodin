@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">ໄຮ້ສາຍ</string>
     <string name="battery_plug_dock">ຈອດ</string>
     <string name="battery_plug_none">ແບັດເຕີຣີ</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">ເຄື່ອງຕິດຕາມປະສິດທິພາບ</string>
+    <string name="performance_summary">ການໂຫຼດ CPU ແລະ ຂໍ້ມູນສົດ</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">ອຸນຫະພູມ</string>
+    <string name="monitor_all_zones">ທັງໝົດເຂດຄວາມຮ້ອນ</string>
+    <string name="monitor_cpu_load">ໂຫຼດ CPU</string>
+    <string name="monitor_load_average">ໂຫຼດສະເລ່ຍ (1 · 5 · 15)</string>
+    <string name="monitor_uptime">ເວລາເປີດ</string>
+    <string name="monitor_freq_range">ໄລຍະ %1$s – %2$s</string>
+    <string name="monitor_governor">ຜູ້ຈັດການ: %1$s</string>
+    <string name="monitor_gpu_freq">ຄວາມຖີ່ GPU</string>
+    <string name="monitor_gpu_load">ໂຫຼດ GPU: %1$d%%</string>
+    <string name="monitor_unavailable">ບໍ່ມີຂໍ້ມູນຕິດຕາມຢູ່ອຸປະກອນນີ້.</string>
+
     <string name="memory_title">ຜູ້ຈັດການຫນ່ວຍຄວາມຈໍາ</string>
     <string name="memory_summary">RAM, swap ແລະຂະບວນການແລ່ນ</string>
     <string name="memory_used">ໃຊ້ແລ້ວ</string>

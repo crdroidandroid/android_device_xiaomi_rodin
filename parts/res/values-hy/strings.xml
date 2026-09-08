@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Անլար</string>
     <string name="battery_plug_dock">Դոկ</string>
     <string name="battery_plug_none">Մարտկոց</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Կատարման մոնիտոր</string>
+    <string name="performance_summary">CPU-ի բեռնվածությունը և կենդանի չափումները</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Ջերմաստիճաններ</string>
+    <string name="monitor_all_zones">Բոլոր ջերմային գոտիները</string>
+    <string name="monitor_cpu_load">CPU բեռնվածություն</string>
+    <string name="monitor_load_average">Միջին բեռնվածություն (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Գործողության ժամանակ</string>
+    <string name="monitor_freq_range">Միջակայք %1$s – %2$s</string>
+    <string name="monitor_governor">Կարգավորում՝ %1$s</string>
+    <string name="monitor_gpu_freq">GPU հաճախականությունը</string>
+    <string name="monitor_gpu_load">GPU բեռնվածություն՝ %1$d%%</string>
+    <string name="monitor_unavailable">Մոնիտորինգի տվյալները հասանելի չեն այս սարքում:</string>
+
     <string name="memory_title">Հիշողության կառավարիչ</string>
     <string name="memory_summary">RAM, փոխանակում և գործարկում գործընթացներ</string>
     <string name="memory_used">Օգտագործված</string>

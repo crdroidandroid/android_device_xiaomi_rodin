@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Langaton</string>
     <string name="battery_plug_dock">Telakka</string>
     <string name="battery_plug_none">Akku</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Suorituskykymonitori</string>
+    <string name="performance_summary">CPU:n kuormitus ja reaaliaikaiset arvot</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Lämpötilat</string>
+    <string name="monitor_all_zones">Kaikki lämpövyöhykkeet</string>
+    <string name="monitor_cpu_load">CPU:n kuormitus</string>
+    <string name="monitor_load_average">Keskimääräinen rasitus (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Käynnissäoloaika</string>
+    <string name="monitor_freq_range">Alue %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU:n taajuus</string>
+    <string name="monitor_gpu_load">GPU:n kuormitus: %1$d%%</string>
+    <string name="monitor_unavailable">Valvontatiedot eivät ole käytettävissä tässä laitteessa.</string>
+
     <string name="memory_title">Muistinhallinta</string>
     <string name="memory_summary">RAM, vaihto ja prosessien suorittaminen</string>
     <string name="memory_used">Käytetty</string>

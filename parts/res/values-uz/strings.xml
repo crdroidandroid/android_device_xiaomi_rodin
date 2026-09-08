@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Simsiz</string>
     <string name="battery_plug_dock">Dok</string>
     <string name="battery_plug_none">Batareya</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Ishlash monitori</string>
+    <string name="performance_summary">CPU yuki va jonli ko\'rsatkichlar</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Haroratlar</string>
+    <string name="monitor_all_zones">Barcha termal zonalar</string>
+    <string name="monitor_cpu_load">CPU yuki</string>
+    <string name="monitor_load_average">O‘rtacha yuklanish (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Ish vaqti</string>
+    <string name="monitor_freq_range">Oraliq %1$s – %2$s</string>
+    <string name="monitor_governor">Boshqaruvchi: %1$s</string>
+    <string name="monitor_gpu_freq">GPU chastotasi</string>
+    <string name="monitor_gpu_load">GPU yuklanishi: %1$d%%</string>
+    <string name="monitor_unavailable">Bu qurilmada kuzatuv maʼlumotlari mavjud emas.</string>
+
     <string name="memory_title">Xotira menejeri</string>
     <string name="memory_summary">RAM, almashtirish va ishga tushirish jarayonlari</string>
     <string name="memory_used">Ishlatilgan</string>

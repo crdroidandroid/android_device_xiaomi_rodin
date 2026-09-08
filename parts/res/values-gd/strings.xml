@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Gun uèir</string>
     <string name="battery_plug_dock">Doc</string>
     <string name="battery_plug_none">Bataraidh</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Sgrùdaiche coileanaidh</string>
+    <string name="performance_summary">Eallach CPU agus meatairean beò</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Teòthachdan</string>
+    <string name="monitor_all_zones">A h-uile raon teirmeach</string>
+    <string name="monitor_cpu_load">Eallach CPU</string>
+    <string name="monitor_load_average">Eallach cuibheasach (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Ùine obrachaidh</string>
+    <string name="monitor_freq_range">Raon %1$s – %2$s</string>
+    <string name="monitor_governor">Riaghladair: %1$s</string>
+    <string name="monitor_gpu_freq">Tricead GPU</string>
+    <string name="monitor_gpu_load">Eallach GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Chan eil dàta sgrùdaidh ri fhaighinn air an inneal seo.</string>
+
     <string name="memory_title">Manaidsear cuimhne</string>
     <string name="memory_summary">RAM, suaip agus pròiseasan ruith</string>
     <string name="memory_used">Air a chleachdadh</string>

@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Wireless</string>
     <string name="battery_plug_dock">Dock</string>
     <string name="battery_plug_none">Baterya</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Monitor ng pagganap</string>
+    <string name="performance_summary">CPU load at live metrics</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperatura</string>
+    <string name="monitor_all_zones">Lahat ng thermal zones</string>
+    <string name="monitor_cpu_load">CPU load</string>
+    <string name="monitor_load_average">Average na load (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Oras ng pagtakbo</string>
+    <string name="monitor_freq_range">Saklaw %1$s – %2$s</string>
+    <string name="monitor_governor">Gobernador: %1$s</string>
+    <string name="monitor_gpu_freq">Frequency ng GPU</string>
+    <string name="monitor_gpu_load">GPU load: %1$d%%</string>
+    <string name="monitor_unavailable">Walang magagamit na monitoring data sa device na ito.</string>
+
     <string name="memory_title">Tagapamahala ng memorya</string>
     <string name="memory_summary">RAM, swap at pagpapatakbo ng mga proseso</string>
     <string name="memory_used">Ginamit</string>

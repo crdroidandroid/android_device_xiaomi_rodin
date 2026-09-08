@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Безжичен</string>
     <string name="battery_plug_dock">Док</string>
     <string name="battery_plug_none">Батерија</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Следење на перформанси</string>
+    <string name="performance_summary">Оптовареност на процесорот и податоци во живо</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Температури</string>
+    <string name="monitor_all_zones">Сите топлински зони</string>
+    <string name="monitor_cpu_load">Оптовареност на CPU</string>
+    <string name="monitor_load_average">Просечна оптовареност (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Време на работа</string>
+    <string name="monitor_freq_range">Опсег %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">Фреквенција на графичката единица</string>
+    <string name="monitor_gpu_load">Оптовареност на GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Податоците за следење не се достапни на овој уред.</string>
+
     <string name="memory_title">Менаџер за меморија</string>
     <string name="memory_summary">RAM меморија, размена и процеси кои работат</string>
     <string name="memory_used">Искористено</string>

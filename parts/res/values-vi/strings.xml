@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Không dây</string>
     <string name="battery_plug_dock">Bến tàu</string>
     <string name="battery_plug_none">Pin</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Trình giám sát hiệu năng</string>
+    <string name="performance_summary">Tải CPU và chỉ thị theo thời gian thực</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Nhiệt độ</string>
+    <string name="monitor_all_zones">Tất cả các vùng nhiệt</string>
+    <string name="monitor_cpu_load">Tải CPU</string>
+    <string name="monitor_load_average">Tải trung bình (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Thời gian hoạt động</string>
+    <string name="monitor_freq_range">Dải %1$s – %2$s</string>
+    <string name="monitor_governor">Bộ điều phối: %1$s</string>
+    <string name="monitor_gpu_freq">Tần số GPU</string>
+    <string name="monitor_gpu_load">Tải GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Không có dữ liệu giám sát khả dụng trên thiết bị này.</string>
+
     <string name="memory_title">Trình quản lý bộ nhớ</string>
     <string name="memory_summary">RAM, trao đổi và chạy các tiến trình</string>
     <string name="memory_used">Đã qua sử dụng</string>

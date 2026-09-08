@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Okungenantambo</string>
     <string name="battery_plug_dock">Idokhu</string>
     <string name="battery_plug_none">Ibhethri</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Ukugada ukusebenza</string>
+    <string name="performance_summary">Umthwalo we-CPU nokukala zamanje</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Amazinga okushisa</string>
+    <string name="monitor_all_zones">Zonke indawo zokushisa</string>
+    <string name="monitor_cpu_load">Umthwalo we-CPU</string>
+    <string name="monitor_load_average">Isilinganiso somthwalo (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Isikhathi sokusebenza</string>
+    <string name="monitor_freq_range">Ububanzi %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">Imvamisa ye-GPU</string>
+    <string name="monitor_gpu_load">Umthwalo we-GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Iminingwane yokuqapha ayitholakali kulo mshini.</string>
+
     <string name="memory_title">Umphathi wememori</string>
     <string name="memory_summary">RAM, shintshanisa futhi uqalise izinqubo</string>
     <string name="memory_used">Okusetshenzisiwe</string>

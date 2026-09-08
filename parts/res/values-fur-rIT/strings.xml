@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Cence fîi</string>
     <string name="battery_plug_dock">Dock</string>
     <string name="battery_plug_none">Batarie</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Monitor des prestazions</string>
+    <string name="performance_summary">Cjarie dal CPU e metricis in timp reâl</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperaduris</string>
+    <string name="monitor_all_zones">Dutis lis zonis termichis</string>
+    <string name="monitor_cpu_load">Cjarie dal CPU</string>
+    <string name="monitor_load_average">Cjarie medie (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Timp di ativitât</string>
+    <string name="monitor_freq_range">Interval %1$s – %2$s</string>
+    <string name="monitor_governor">Gjestôr: %1$s</string>
+    <string name="monitor_gpu_freq">Frecuence GPU</string>
+    <string name="monitor_gpu_load">Cjarie GPU: %1$d%%</string>
+    <string name="monitor_unavailable">I dâts di monitorament no son disponibii su chest dispositîf.</string>
+
     <string name="memory_title">Gjestôr di memorie</string>
     <string name="memory_summary">RAM, scambi e procès in esecuzion</string>
     <string name="memory_used">Doprât</string>

@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Бесправадная сетка</string>
     <string name="battery_plug_dock">Док</string>
     <string name="battery_plug_none">Акумулятар</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Маніторынг прадукцыйнасці</string>
+    <string name="performance_summary">Загрузка CPU і паказнікі ў рэальным часе</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Тэмпературы</string>
+    <string name="monitor_all_zones">Усе цеплавыя зоны</string>
+    <string name="monitor_cpu_load">Загрузка CPU</string>
+    <string name="monitor_load_average">Сярэдняя нагрузка (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Час бесперапыннай працы</string>
+    <string name="monitor_freq_range">Дыяпазон %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">Частата GPU</string>
+    <string name="monitor_gpu_load">Загружанасць GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Звесткі маніторынга недаступныя на гэтай прыладзе.</string>
+
     <string name="memory_title">Дыспетчар памяці</string>
     <string name="memory_summary">RAM, своп і запушчаныя працэсы</string>
     <string name="memory_used">Выкарыстоўваецца</string>

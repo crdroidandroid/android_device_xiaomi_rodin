@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Diwifr</string>
     <string name="battery_plug_dock">Doc</string>
     <string name="battery_plug_none">Batri</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Monitor perfformiad</string>
+    <string name="performance_summary">Llwyth CPU a metrigau byw</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Tymheredd</string>
+    <string name="monitor_all_zones">Pob parth thermol</string>
+    <string name="monitor_cpu_load">Llwyth CPU</string>
+    <string name="monitor_load_average">Llwyth cyfartalog (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Amser gweithredu</string>
+    <string name="monitor_freq_range">Ystod %1$s – %2$s</string>
+    <string name="monitor_governor">Llywodraethwr: %1$s</string>
+    <string name="monitor_gpu_freq">Amledd GPU</string>
+    <string name="monitor_gpu_load">Llwyth GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Nid yw data monitro ar gael ar y ddyfais hon.</string>
+
     <string name="memory_title">Rheolwr cof</string>
     <string name="memory_summary">RAM, cyfnewid a phrosesau rhedeg</string>
     <string name="memory_used">Wedi\'i ddefnyddio</string>

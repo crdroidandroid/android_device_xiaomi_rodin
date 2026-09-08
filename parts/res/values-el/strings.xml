@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Ασύρματο</string>
     <string name="battery_plug_dock">Αποβάθρα</string>
     <string name="battery_plug_none">Μπαταρία</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Παρακολούθηση απόδοσης</string>
+    <string name="performance_summary">Φορτίο CPU και ζωντανές μετρήσεις</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Θερμοκρασίες</string>
+    <string name="monitor_all_zones">Όλες οι θερμικές ζώνες</string>
+    <string name="monitor_cpu_load">Φορτίο CPU</string>
+    <string name="monitor_load_average">Μέσο φορτίο (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Διάρκεια λειτουργίας</string>
+    <string name="monitor_freq_range">Εύρος %1$s – %2$s</string>
+    <string name="monitor_governor">Ρυθμιστής: %1$s</string>
+    <string name="monitor_gpu_freq">Συχνότητα GPU</string>
+    <string name="monitor_gpu_load">Φορτίο GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Τα δεδομένα παρακολούθησης δεν είναι διαθέσιμα σε αυτήν τη συσκευή.</string>
+
     <string name="memory_title">Διαχείριση μνήμης</string>
     <string name="memory_summary">RAM, εναλλαγή και εκτέλεση διεργασιών</string>
     <string name="memory_used">Μεταχειρισμένο</string>

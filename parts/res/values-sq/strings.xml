@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Wireless</string>
     <string name="battery_plug_dock">Dok</string>
     <string name="battery_plug_none">Bateri</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Monitorues i performancës</string>
+    <string name="performance_summary">Ngarkesa e CPU dhe matje live</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperaturat</string>
+    <string name="monitor_all_zones">Të gjitha zonat termike</string>
+    <string name="monitor_cpu_load">Ngarkesa e CPU</string>
+    <string name="monitor_load_average">Ngarkesa mesatare (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Kohëzgjatja</string>
+    <string name="monitor_freq_range">Gama %1$s – %2$s</string>
+    <string name="monitor_governor">Qeveritari: %1$s</string>
+    <string name="monitor_gpu_freq">Frekuenca e GPU</string>
+    <string name="monitor_gpu_load">Ngarkesa e GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Të dhënat e monitorimit nuk janë të disponueshme në këtë pajisje.</string>
+
     <string name="memory_title">Menaxheri i kujtesës</string>
     <string name="memory_summary">RAM, ndërrimi dhe ekzekutimi i proceseve</string>
     <string name="memory_used">E përdorur</string>

@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">ገመድ አልባ</string>
     <string name="battery_plug_dock">መትከያ</string>
     <string name="battery_plug_none">ባትሪ</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">የአፈጻጸም መከታተያ</string>
+    <string name="performance_summary">የ CPU ጭነት እና ቀጥታ መለኪያ</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">ሙቀቶች</string>
+    <string name="monitor_all_zones">ሁሉም የሙቀት ዞኖች</string>
+    <string name="monitor_cpu_load">የ CPU ጭነት</string>
+    <string name="monitor_load_average">አማካይ ጭነት (1 · 5 · 15)</string>
+    <string name="monitor_uptime">የስራ ጊዜ</string>
+    <string name="monitor_freq_range">ክልል %1$s – %2$s</string>
+    <string name="monitor_governor">ገዥ: %1$s</string>
+    <string name="monitor_gpu_freq">የ GPU ድግግሞሽ</string>
+    <string name="monitor_gpu_load">የ GPU ጭነት: %1$d%%</string>
+    <string name="monitor_unavailable">የመከታተያ መረጃ በዚህ መሣሪያ ላይ አይገኝም፡፡</string>
+
     <string name="memory_title">የማህደረ ትውስታ አስተዳዳሪ</string>
     <string name="memory_summary">RAM፣ መለዋወጥ እና ማስኬድ ሂደቶች</string>
     <string name="memory_used">ጥቅም ላይ ውሏል</string>

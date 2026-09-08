@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">ବେତାର |</string>
     <string name="battery_plug_dock">ଡକ୍ |</string>
     <string name="battery_plug_none">ବ୍ୟାଟେରୀ |</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">କାର୍ଯ୍ୟଦକ୍ଷତା ମନିଟର</string>
+    <string name="performance_summary">CPU ଲୋଡ ଏବଂ ଜୀବନ୍ତ ମେଟେ୍ରିକ୍ସ</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">ତାପମାତ୍ରା</string>
+    <string name="monitor_all_zones">ସମସ୍ତ ଥର୍ମାଲ ଜୋନ</string>
+    <string name="monitor_cpu_load">CPU ଲୋଡ</string>
+    <string name="monitor_load_average">ହାରାହାରି ଲୋଡ (1 · 5 · 15)</string>
+    <string name="monitor_uptime">ଅପଟାଇମ</string>
+    <string name="monitor_freq_range">ସୀମା %1$s – %2$s</string>
+    <string name="monitor_governor">ଗଭର୍ନର: %1$s</string>
+    <string name="monitor_gpu_freq">GPU ଫ୍ରିକୱେନ୍ସି</string>
+    <string name="monitor_gpu_load">GPU ଲୋଡ: %1$d%%</string>
+    <string name="monitor_unavailable">ଏହି ଡିଭାଇସରେ ନିରୀକ୍ଷଣ ତଥ୍ୟ ଉପଲବ୍ଧ ନାହିଁ।</string>
+
     <string name="memory_title">ସ୍ମୃତି ପରିଚାଳକ |</string>
     <string name="memory_summary">RAM, ସ୍ୱାପ୍ ଏବଂ ଚାଲିବା ପ୍ରକ୍ରିୟା |</string>
     <string name="memory_used">ବ୍ୟବହୃତ |</string>

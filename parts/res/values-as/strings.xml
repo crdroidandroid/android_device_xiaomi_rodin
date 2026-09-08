@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">বেতাঁৰ</string>
     <string name="battery_plug_dock">ডক</string>
     <string name="battery_plug_none">বেটাৰী</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">পাৰফৰমেন্স মনিটৰ</string>
+    <string name="performance_summary">CPU লোড আৰু লাইভ মেট্রিকছ</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">তাপমাত্ৰাসমূহ</string>
+    <string name="monitor_all_zones">সবো থাৰ্মাল জ\'ন</string>
+    <string name="monitor_cpu_load">CPU লোড</string>
+    <string name="monitor_load_average">গড় লোড (1 · 5 · 15)</string>
+    <string name="monitor_uptime">আপটাইম</string>
+    <string name="monitor_freq_range">ৰেঞ্জ %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU ফ্রিকুয়েন্সি</string>
+    <string name="monitor_gpu_load">GPU লোড: %1$d%%</string>
+    <string name="monitor_unavailable">এই ডিভাইচত মনিটৰিং ডেটা উপলব্ধ নহয়।</string>
+
     <string name="memory_title">মেমৰি ব্যৱস্থাপক</string>
     <string name="memory_summary">RAM, শ্বেপ আৰু চলি থকা প্ৰক্ৰিয়াসমূহ</string>
     <string name="memory_used">ব্যৱহাৰ কৰা হৈছে</string>

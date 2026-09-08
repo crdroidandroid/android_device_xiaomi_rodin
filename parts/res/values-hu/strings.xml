@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Vezeték nélküli</string>
     <string name="battery_plug_dock">Dokk</string>
     <string name="battery_plug_none">Akkumulátor</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Teljesítményfigyelő</string>
+    <string name="performance_summary">CPU-terhelés és élő mérőszámok</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Hőmérsékletek</string>
+    <string name="monitor_all_zones">Minden hőzóna</string>
+    <string name="monitor_cpu_load">CPU-terhelés</string>
+    <string name="monitor_load_average">Átlagos terhelés (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Üzemidő</string>
+    <string name="monitor_freq_range">Tartomány: %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU-frekvencia</string>
+    <string name="monitor_gpu_load">GPU-terhelés: %1$d%%</string>
+    <string name="monitor_unavailable">A megfigyelési adatok nem érhetők el ezen az eszközön.</string>
+
     <string name="memory_title">Memóriakezelő</string>
     <string name="memory_summary">RAM, csere és folyamatok futtatása</string>
     <string name="memory_used">Használt</string>

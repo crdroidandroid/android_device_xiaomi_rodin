@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">무선</string>
     <string name="battery_plug_dock">도크</string>
     <string name="battery_plug_none">배터리</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">성능 모니터</string>
+    <string name="performance_summary">CPU 부하 및 실시간 지표</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">온도</string>
+    <string name="monitor_all_zones">모든 열 영역</string>
+    <string name="monitor_cpu_load">CPU 부하</string>
+    <string name="monitor_load_average">평균 부하 (1 · 5 · 15)</string>
+    <string name="monitor_uptime">가동 시간</string>
+    <string name="monitor_freq_range">범위 %1$s – %2$s</string>
+    <string name="monitor_governor">가버너: %1$s</string>
+    <string name="monitor_gpu_freq">GPU 주파수</string>
+    <string name="monitor_gpu_load">GPU 부하: %1$d%%</string>
+    <string name="monitor_unavailable">이 기기에서는 모니터링 데이터를 사용할 수 없습니다.</string>
+
     <string name="memory_title">메모리 관리자</string>
     <string name="memory_summary">RAM, 스왑 및 실행 프로세스</string>
     <string name="memory_used">중고</string>

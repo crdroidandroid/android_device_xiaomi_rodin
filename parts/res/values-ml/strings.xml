@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">വയർലെസ്</string>
     <string name="battery_plug_dock">ഡോക്ക്</string>
     <string name="battery_plug_none">ബാറ്ററി</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">പ്രകടന നിരീക്ഷണം</string>
+    <string name="performance_summary">CPU ലോഡും നിലവിലുള്ള അളവുകളും</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">താപനിലകൾ</string>
+    <string name="monitor_all_zones">എല്ലാ താപമേഖലകളും</string>
+    <string name="monitor_cpu_load">CPU ലോഡ്</string>
+    <string name="monitor_load_average">ശരാശരി ലോഡ് (1 · 5 · 15)</string>
+    <string name="monitor_uptime">പ്രവർത്തന സമയം</string>
+    <string name="monitor_freq_range">പരിധി %1$s – %2$s</string>
+    <string name="monitor_governor">ഗവർണർ: %1$s</string>
+    <string name="monitor_gpu_freq">GPU ഫ്രീക്വൻസി</string>
+    <string name="monitor_gpu_load">GPU ലോഡ്: %1$d%%</string>
+    <string name="monitor_unavailable">ഈ ഉപകരണത്തിൽ നിരീക്ഷണ ഡാറ്റ ലഭ്യമല്ല.</string>
+
     <string name="memory_title">മെമ്മറി മാനേജർ</string>
     <string name="memory_summary">റാം, സ്വാപ്പ്, റൺ ചെയ്യുന്ന പ്രക്രിയകൾ</string>
     <string name="memory_used">ഉപയോഗിച്ചു</string>

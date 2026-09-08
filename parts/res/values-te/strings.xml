@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">వైర్‌లెస్</string>
     <string name="battery_plug_dock">డాక్</string>
     <string name="battery_plug_none">బ్యాటరీ</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">పనితీరు పర్యవేక్షణ</string>
+    <string name="performance_summary">CPU భారం మరియు ప్రత్యక్ష కొలతలు</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">ఉష్ణోగ్రతలు</string>
+    <string name="monitor_all_zones">అన్ని థర్మల్ ప్రాంతాలు</string>
+    <string name="monitor_cpu_load">CPU భారం</string>
+    <string name="monitor_load_average">సగటు భారం (1 · 5 · 15)</string>
+    <string name="monitor_uptime">నడుస్తున్న సమయం</string>
+    <string name="monitor_freq_range">పరిధి %1$s – %2$s</string>
+    <string name="monitor_governor">గవర్నర్: %1$s</string>
+    <string name="monitor_gpu_freq">GPU ఫ్రీక్వాన్సీ</string>
+    <string name="monitor_gpu_load">GPU భారం: %1$d%%</string>
+    <string name="monitor_unavailable">ఈ పరికరంలో పర్యవేక్షణ సమాచారం అందుబాటులో లేదు.</string>
+
     <string name="memory_title">మెమరీ మేనేజర్</string>
     <string name="memory_summary">RAM, స్వాప్ మరియు రన్నింగ్ ప్రక్రియలు</string>
     <string name="memory_used">ఉపయోగించబడింది</string>

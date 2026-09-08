@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">ကြိုးမဲ့</string>
     <string name="battery_plug_dock">အထိုင်</string>
     <string name="battery_plug_none">ဘက်ထရီ</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">စွမ်းဆောင်ရည်စောင့်ကြည့်မှု</string>
+    <string name="performance_summary">CPU ဝန်နှင့် ခုချိန်တိုင်းတာမှုများ</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">အပူချိန်များ</string>
+    <string name="monitor_all_zones">အပူဇုန်အားလုံး</string>
+    <string name="monitor_cpu_load">CPU ဝန်</string>
+    <string name="monitor_load_average">ပျမ်းမျှဝန် (1 · 5 · 15)</string>
+    <string name="monitor_uptime">အသုံးပြုချိန်</string>
+    <string name="monitor_freq_range">အပိုင်း %1$s – %2$s</string>
+    <string name="monitor_governor">အုပ်ချုပ်သူ- %1$s</string>
+    <string name="monitor_gpu_freq">GPU ကြိမ်နှုန်း</string>
+    <string name="monitor_gpu_load">GPU ဝန်- %1$d%%</string>
+    <string name="monitor_unavailable">ဤစက်တွင် စောင့်ကြည့်ဒေတာ မရနိုင်ပါ။</string>
+
     <string name="memory_title">Memory မန်နေဂျာ</string>
     <string name="memory_summary">RAM၊ လဲလှယ်ခြင်းနှင့် လုပ်ဆောင်ခြင်း လုပ်ငန်းစဉ်များ</string>
     <string name="memory_used">သုံးတယ်။</string>

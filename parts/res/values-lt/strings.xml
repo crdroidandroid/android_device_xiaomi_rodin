@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Belaidis ryšys</string>
     <string name="battery_plug_dock">Dokas</string>
     <string name="battery_plug_none">Baterija</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Našumo monitorius</string>
+    <string name="performance_summary">CPU apkrova ir tiesioginiai rodikliai</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperatūros</string>
+    <string name="monitor_all_zones">Visos šiluminės zonos</string>
+    <string name="monitor_cpu_load">CPU apkrova</string>
+    <string name="monitor_load_average">Vidutinė apkrova (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Veikimo laikas</string>
+    <string name="monitor_freq_range">Diapazonas %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU dažnis</string>
+    <string name="monitor_gpu_load">GPU apkrova: %1$d%%</string>
+    <string name="monitor_unavailable">Šiame įrenginyje stebėsenos duomenys nėra prieinami.</string>
+
     <string name="memory_title">Atminties tvarkyklė</string>
     <string name="memory_summary">RAM, keitimas ir procesų vykdymas</string>
     <string name="memory_used">Naudota</string>

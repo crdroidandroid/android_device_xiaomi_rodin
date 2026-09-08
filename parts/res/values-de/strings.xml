@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Kabellos</string>
     <string name="battery_plug_dock">Dock</string>
     <string name="battery_plug_none">Batterie</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Leistungsmonitor</string>
+    <string name="performance_summary">CPU-Auslastung und Live-Werte</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperaturen</string>
+    <string name="monitor_all_zones">Alle thermischen Zonen</string>
+    <string name="monitor_cpu_load">CPU-Auslastung</string>
+    <string name="monitor_load_average">Durchschnittliche Last (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Betriebszeit</string>
+    <string name="monitor_freq_range">Bereich %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU-Frequenz</string>
+    <string name="monitor_gpu_load">GPU-Auslastung: %1$d%%</string>
+    <string name="monitor_unavailable">Überwachungsdaten sind auf diesem Gerät nicht verfügbar.</string>
+
     <string name="memory_title">Speichermanager</string>
     <string name="memory_summary">RAM, Swap und laufende Prozesse</string>
     <string name="memory_used">Gebraucht</string>

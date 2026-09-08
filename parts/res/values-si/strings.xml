@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">රැහැන් රහිත</string>
     <string name="battery_plug_dock">තටාකය</string>
     <string name="battery_plug_none">බැටරි</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">කාර්ය සාධන නිරීක්ෂකය</string>
+    <string name="performance_summary">CPU භාරය සහ සජීවී මිනුම්</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">උෂ්ණත්ව</string>
+    <string name="monitor_all_zones">සියලු තාප කලාප</string>
+    <string name="monitor_cpu_load">CPU භාරය</string>
+    <string name="monitor_load_average">සාමාන්‍ය භාරය (1 · 5 · 15)</string>
+    <string name="monitor_uptime">ක්‍රියාකාරී කාලය</string>
+    <string name="monitor_freq_range">පරාසය %1$s – %2$s</string>
+    <string name="monitor_governor">ගවර්නරය: %1$s</string>
+    <string name="monitor_gpu_freq">GPU සංඛ්‍යාතය</string>
+    <string name="monitor_gpu_load">GPU භාරය: %1$d%%</string>
+    <string name="monitor_unavailable">මෙම උපාංගයේ නිරීක්ෂණ දත්ත නොමැත.</string>
+
     <string name="memory_title">මතක කළමනාකරු</string>
     <string name="memory_summary">RAM, swap සහ ධාවන ක්‍රියාවලි</string>
     <string name="memory_used">භාවිතා කරන ලදී</string>

@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Draadloos</string>
     <string name="battery_plug_dock">Dok</string>
     <string name="battery_plug_none">Battery</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Werkverrigtingmonitor</string>
+    <string name="performance_summary">CPU-lading en lewendige metrieke</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperatuur</string>
+    <string name="monitor_all_zones">Alle termiese sones</string>
+    <string name="monitor_cpu_load">CPU-lading</string>
+    <string name="monitor_load_average">Gemiddelde lading (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Looptyd</string>
+    <string name="monitor_freq_range">Bereik %1$s – %2$s</string>
+    <string name="monitor_governor">Beheerder: %1$s</string>
+    <string name="monitor_gpu_freq">GPU-frekwensie</string>
+    <string name="monitor_gpu_load">GPU-lading: %1$d%%</string>
+    <string name="monitor_unavailable">Moniteringsdata is nie op hierdie toestel beskikbaar nie.</string>
+
     <string name="memory_title">Geheuebestuurder</string>
     <string name="memory_summary">RAM, ruil en loop prosesse</string>
     <string name="memory_used">Gebruik</string>

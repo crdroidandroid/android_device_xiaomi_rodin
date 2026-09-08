@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">ไร้สาย</string>
     <string name="battery_plug_dock">ท่าเรือ</string>
     <string name="battery_plug_none">แบตเตอรี่</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">ตัวตรวจสอบประสิทธิภาพ</string>
+    <string name="performance_summary">การรับโหลด CPU และค่าต่าง ๆ แบบเรียลไทม์</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">อุณหภูมิ</string>
+    <string name="monitor_all_zones">โซนความร้อนทั้งหมด</string>
+    <string name="monitor_cpu_load">โหลด CPU</string>
+    <string name="monitor_load_average">ค่าเฉลี่ยโหลด (1 · 5 · 15)</string>
+    <string name="monitor_uptime">เวลาทำงาน</string>
+    <string name="monitor_freq_range">ช่วง %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">ความถี่ GPU</string>
+    <string name="monitor_gpu_load">โหลด GPU: %1$d%%</string>
+    <string name="monitor_unavailable">ข้อมูลการตรวจสอบไม่พร้อมใช้งานบนอุปกรณ์นี้</string>
+
     <string name="memory_title">ผู้จัดการหน่วยความจำ</string>
     <string name="memory_summary">RAM สลับและรันกระบวนการ</string>
     <string name="memory_used">มือสอง</string>

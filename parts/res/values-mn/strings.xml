@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Утасгүй</string>
     <string name="battery_plug_dock">Док</string>
     <string name="battery_plug_none">Батерей</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Гүйцэтгэлийн хяналт</string>
+    <string name="performance_summary">CPU ачаалал ба амьд хэмжигдэхүүн</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Температурууд</string>
+    <string name="monitor_all_zones">Бүх дулааны бүсүүд</string>
+    <string name="monitor_cpu_load">CPU ачаалал</string>
+    <string name="monitor_load_average">Дундаж ачаалал (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Ажиллах хугацаа</string>
+    <string name="monitor_freq_range">Хүрээ %1$s – %2$s</string>
+    <string name="monitor_governor">Удирдагч: %1$s</string>
+    <string name="monitor_gpu_freq">GPU давтамж</string>
+    <string name="monitor_gpu_load">GPU ачаалал: %1$d%%</string>
+    <string name="monitor_unavailable">Хяналтын өгөгдөл энэ төхөөрөмж дээр байхгүй.</string>
+
     <string name="memory_title">Санах ойн менежер</string>
     <string name="memory_summary">RAM, своп болон ажиллаж байгаа процессууд</string>
     <string name="memory_used">Ашигласан</string>

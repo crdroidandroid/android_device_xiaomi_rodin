@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">وائرلیس</string>
     <string name="battery_plug_dock">گودی</string>
     <string name="battery_plug_none">بیٹری</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">پرفارمنس مانیٹر</string>
+    <string name="performance_summary">CPU لوڈ اور لائیو میٹرکس</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">درجہ حرار</string>
+    <string name="monitor_all_zones">تمام تھرمل زون</string>
+    <string name="monitor_cpu_load">CPU لوڈ</string>
+    <string name="monitor_load_average">اوسط لوڈ (1 · 5 · 15)</string>
+    <string name="monitor_uptime">مدت تشغیل</string>
+    <string name="monitor_freq_range">رینج %1$s – %2$s</string>
+    <string name="monitor_governor">گورنر: %1$s</string>
+    <string name="monitor_gpu_freq">GPU فریکوئنسی</string>
+    <string name="monitor_gpu_load">GPU لوڈ: %1$d%%</string>
+    <string name="monitor_unavailable">اس ڈیوائس پر مانیٹرنگ ڈیٹا دستیاب نہیں ہے۔</string>
+
     <string name="memory_title">میموری مینیجر</string>
     <string name="memory_summary">RAM، سویپ اور چلانے کے عمل</string>
     <string name="memory_used">استعمال کیا گیا۔</string>

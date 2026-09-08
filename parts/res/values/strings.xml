@@ -90,6 +90,22 @@
     <string name="battery_plug_none">Battery</string>
 
     <!-- ── Memory manager ─────────────────────────────────── -->
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Performance monitor</string>
+    <string name="performance_summary">CPU load and live metrics</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperatures</string>
+    <string name="monitor_all_zones">All thermal zones</string>
+    <string name="monitor_cpu_load">CPU load</string>
+    <string name="monitor_load_average">Load average (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Uptime</string>
+    <string name="monitor_freq_range">Range %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU frequency</string>
+    <string name="monitor_gpu_load">GPU load: %1$d%%</string>
+    <string name="monitor_unavailable">Monitoring data is not available on this device.</string>
+
     <string name="memory_title">Memory manager</string>
     <string name="memory_summary">RAM, swap and running processes</string>
     <string name="memory_used">Used</string>

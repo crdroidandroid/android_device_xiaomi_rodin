@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">ਵਾਇਰਲੈੱਸ</string>
     <string name="battery_plug_dock">ਡੌਕ</string>
     <string name="battery_plug_none">ਬੈਟਰੀ</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">ਪ੍ਰਦਰਸ਼ਨ ਮਾਨੀਟਰ</string>
+    <string name="performance_summary">CPU ਲੋਡ ਅਤੇ ਲਾਈਵ ਮੈਟ੍ਰਿਕਸ</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">ਤਾਪਮਾਨ</string>
+    <string name="monitor_all_zones">ਸਾਰੇ ਥਰਮਲ ਜ਼ੋਨ</string>
+    <string name="monitor_cpu_load">CPU ਲੋਡ</string>
+    <string name="monitor_load_average">ਲੋਡ ਔਸਤ (1 · 5 · 15)</string>
+    <string name="monitor_uptime">ਅਪਟਾਈਮ</string>
+    <string name="monitor_freq_range">ਰੇਂਜ %1$s – %2$s</string>
+    <string name="monitor_governor">ਗਵਰਨਰ: %1$s</string>
+    <string name="monitor_gpu_freq">GPU ਫ੍ਰੀਕੁਐਂਸੀ</string>
+    <string name="monitor_gpu_load">GPU ਲੋਡ: %1$d%%</string>
+    <string name="monitor_unavailable">ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਮਾਨੀਟਰਿੰਗ ਡਾਟਾ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।</string>
+
     <string name="memory_title">ਮੈਮੋਰੀ ਮੈਨੇਜਰ</string>
     <string name="memory_summary">RAM, ਸਵੈਪ ਅਤੇ ਚੱਲ ਰਹੀਆਂ ਪ੍ਰਕਿਰਿਆਵਾਂ</string>
     <string name="memory_used">ਵਰਤਿਆ ਗਿਆ</string>

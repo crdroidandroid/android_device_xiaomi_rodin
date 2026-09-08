@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">ឥតខ្សែ</string>
     <string name="battery_plug_dock">ចត</string>
     <string name="battery_plug_none">ថ្ម</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">អ្នកតាមដានដំណើរការ</string>
+    <string name="performance_summary">បន្ទុក CPU និងលក្ខណៈពេលវេលា</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">សីតុណ្ហភាព</string>
+    <string name="monitor_all_zones">គ្រប់តំបន់កម្តៅ</string>
+    <string name="monitor_cpu_load">បន្ទុក CPU</string>
+    <string name="monitor_load_average">ការផ្ទុកជាមធ្យម (1 · 5 · 15)</string>
+    <string name="monitor_uptime">រយៈពេលដំណើរការ</string>
+    <string name="monitor_freq_range">ជួរ %1$s – %2$s</string>
+    <string name="monitor_governor">អ្នកគ្រប់គ្រង: %1$s</string>
+    <string name="monitor_gpu_freq">ប្រេកង់ GPU</string>
+    <string name="monitor_gpu_load">បន្ទុក GPU: %1$d%%</string>
+    <string name="monitor_unavailable">ទិន្នន័យតាមដានមិនអាចប្រើលើឧបករណ៍នេះបានទេ។</string>
+
     <string name="memory_title">កម្មវិធីគ្រប់គ្រងអង្គចងចាំ</string>
     <string name="memory_summary">RAM ប្តូរ និងដំណើរការដំណើរការ</string>
     <string name="memory_used">ប្រើ</string>

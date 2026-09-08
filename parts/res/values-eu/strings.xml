@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Haririk gabekoa</string>
     <string name="battery_plug_dock">Kaia</string>
     <string name="battery_plug_none">Bateria</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Errendimenduko monitoria</string>
+    <string name="performance_summary">CPU karga eta denbora errealeko metrikak</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Tenperaturak</string>
+    <string name="monitor_all_zones">Zona termiko guztiak</string>
+    <string name="monitor_cpu_load">CPU karga</string>
+    <string name="monitor_load_average">Karga bitartekoa (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Funtzionamendu denbora</string>
+    <string name="monitor_freq_range">Tartea %1$s – %2$s</string>
+    <string name="monitor_governor">Gobernatzaile: %1$s</string>
+    <string name="monitor_gpu_freq">GPU maiztasuna</string>
+    <string name="monitor_gpu_load">GPU karga: %1$d%%</string>
+    <string name="monitor_unavailable">Monitorizazjako datuok ez daude erabilgarri gailu honetan.</string>
+
     <string name="memory_title">Memoria kudeatzailea</string>
     <string name="memory_summary">RAM, trukatzeko eta martxan dauden prozesuak</string>
     <string name="memory_used">Erabili</string>

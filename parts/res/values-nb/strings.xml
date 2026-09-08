@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Trådløs</string>
     <string name="battery_plug_dock">Dock</string>
     <string name="battery_plug_none">Batteri</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Ytelsesmonitor</string>
+    <string name="performance_summary">CPU-belastning og sanntidsmålinger</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperaturer</string>
+    <string name="monitor_all_zones">Alle termiske soner</string>
+    <string name="monitor_cpu_load">CPU-belastning</string>
+    <string name="monitor_load_average">Snittbelastning (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Oppetid</string>
+    <string name="monitor_freq_range">Område %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU-frekvens</string>
+    <string name="monitor_gpu_load">GPU-belastning: %1$d%%</string>
+    <string name="monitor_unavailable">Overvåkingsdata er ikke tilgjengelig på denne enheten.</string>
+
     <string name="memory_title">Minnebehandling</string>
     <string name="memory_summary">RAM, swap og kjørende prosesser</string>
     <string name="memory_used">Brukt</string>

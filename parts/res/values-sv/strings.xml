@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Trådlös</string>
     <string name="battery_plug_dock">Dock</string>
     <string name="battery_plug_none">Batteri</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Prestandamonitor</string>
+    <string name="performance_summary">CPU-belastning och live-mätningar</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperaturer</string>
+    <string name="monitor_all_zones">Alla termiska zoner</string>
+    <string name="monitor_cpu_load">CPU-belastning</string>
+    <string name="monitor_load_average">Medellast (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Upptid</string>
+    <string name="monitor_freq_range">Intervall %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU-frekvens</string>
+    <string name="monitor_gpu_load">GPU-belastning: %1$d%%</string>
+    <string name="monitor_unavailable">Övervakningsdata finns inte tillgänglig på den här enheten.</string>
+
     <string name="memory_title">Minneshanterare</string>
     <string name="memory_summary">RAM, swap och köra processer</string>
     <string name="memory_used">Används</string>

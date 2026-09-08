@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Bezvadu</string>
     <string name="battery_plug_dock">Doks</string>
     <string name="battery_plug_none">Akumulators</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Veiktspējas monitors</string>
+    <string name="performance_summary">CPU slodze un tiešie rādītāji</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperatūras</string>
+    <string name="monitor_all_zones">Visas termālās zonas</string>
+    <string name="monitor_cpu_load">CPU slodze</string>
+    <string name="monitor_load_average">Vidējā slodze (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Darba laiks</string>
+    <string name="monitor_freq_range">Diapazons %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU frekvence</string>
+    <string name="monitor_gpu_load">GPU slodze: %1$d%%</string>
+    <string name="monitor_unavailable">Šajā ierīcē uzraudzības dati nav pieejami.</string>
+
     <string name="memory_title">Atmiņas pārvaldnieks</string>
     <string name="memory_summary">RAM, mijmaiņas un procesu palaišana</string>
     <string name="memory_used">Lietots</string>

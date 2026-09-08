@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Þráðlaust</string>
     <string name="battery_plug_dock">Bryggja</string>
     <string name="battery_plug_none">Rafhlaða</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Afkastamælir</string>
+    <string name="performance_summary">CPU-álag og rauntímamælingar</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Hitastig</string>
+    <string name="monitor_all_zones">Öll hitasvæði</string>
+    <string name="monitor_cpu_load">CPU-álag</string>
+    <string name="monitor_load_average">Meðalálag (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Upptími</string>
+    <string name="monitor_freq_range">Svið %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU-tíðni</string>
+    <string name="monitor_gpu_load">GPU-álag: %1$d%%</string>
+    <string name="monitor_unavailable">Vöktunargögn eru ekki í boði á þessu tæki.</string>
+
     <string name="memory_title">Minnisstjóri</string>
     <string name="memory_summary">vinnsluminni, skipta og keyra ferli</string>
     <string name="memory_used">Notað</string>

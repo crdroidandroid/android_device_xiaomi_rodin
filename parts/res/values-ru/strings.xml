@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Беспроводная связь</string>
     <string name="battery_plug_dock">Док</string>
     <string name="battery_plug_none">Батарея</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Мониторинг производительности</string>
+    <string name="performance_summary">Загрузка CPU и показатели в реальном времени</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Температуры</string>
+    <string name="monitor_all_zones">Все тепловые зоны</string>
+    <string name="monitor_cpu_load">Загрузка CPU</string>
+    <string name="monitor_load_average">Средняя загрузка (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Время работы</string>
+    <string name="monitor_freq_range">Диапазон %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">Частота GPU</string>
+    <string name="monitor_gpu_load">Загрузка GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Данные мониторинга на этом устройстве недоступны.</string>
+
     <string name="memory_title">Менеджер памяти</string>
     <string name="memory_summary">ОЗУ, подкачка и запущенные процессы</string>
     <string name="memory_used">Б/У</string>

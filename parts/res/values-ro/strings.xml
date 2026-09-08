@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Wireless</string>
     <string name="battery_plug_dock">Dock</string>
     <string name="battery_plug_none">Baterie</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Monitor de performanță</string>
+    <string name="performance_summary">Monitorizează utilizarea procesorului, GPU-ului și temperatura sistemului</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperaturi</string>
+    <string name="monitor_all_zones">Toate zonele</string>
+    <string name="monitor_cpu_load">Încărcare CPU</string>
+    <string name="monitor_load_average">Sarcina medie (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Timp de rulare</string>
+    <string name="monitor_freq_range">Interval frecvență: %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">Frecvență GPU</string>
+    <string name="monitor_gpu_load">Încărcare GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Indisponibil</string>
+
     <string name="memory_title">Manager memorie</string>
     <string name="memory_summary">RAM, procese de schimb și rulare</string>
     <string name="memory_used">Folosit</string>

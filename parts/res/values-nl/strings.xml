@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Draadloos</string>
     <string name="battery_plug_dock">Dock</string>
     <string name="battery_plug_none">Batterij</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Prestatiemonitor</string>
+    <string name="performance_summary">CPU-belasting en live-metingen</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperaturen</string>
+    <string name="monitor_all_zones">Alle thermische zones</string>
+    <string name="monitor_cpu_load">CPU-belasting</string>
+    <string name="monitor_load_average">Gemiddelde belasting (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Uptime</string>
+    <string name="monitor_freq_range">Bereik %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">GPU-frequentie</string>
+    <string name="monitor_gpu_load">GPU-belasting: %1$d%%</string>
+    <string name="monitor_unavailable">Monitoringsgegevens zijn op dit apparaat niet beschikbaar.</string>
+
     <string name="memory_title">Geheugenbeheer</string>
     <string name="memory_summary">RAM, swap en lopende processen</string>
     <string name="memory_used">Gebruikt</string>

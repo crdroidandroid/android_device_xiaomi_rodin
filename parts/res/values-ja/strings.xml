@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">ワイヤレス</string>
     <string name="battery_plug_dock">ドック</string>
     <string name="battery_plug_none">バッテリー</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">パフォーマンスモニター</string>
+    <string name="performance_summary">CPU負荷とリアルタイムのメトリクス</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">温度</string>
+    <string name="monitor_all_zones">すべてのサーマルゾーン</string>
+    <string name="monitor_cpu_load">CPU負荷</string>
+    <string name="monitor_load_average">負荷平均 (1 · 5 · 15)</string>
+    <string name="monitor_uptime">稼働時間</string>
+    <string name="monitor_freq_range">範囲 %1$s – %2$s</string>
+    <string name="monitor_governor">ガバナー: %1$s</string>
+    <string name="monitor_gpu_freq">GPU周波数</string>
+    <string name="monitor_gpu_load">GPU負荷: %1$d%%</string>
+    <string name="monitor_unavailable">この端末ではモニターデータを利用できません。</string>
+
     <string name="memory_title">メモリマネージャー</string>
     <string name="memory_summary">RAM、スワップ、および実行中のプロセス</string>
     <string name="memory_used">中古品</string>

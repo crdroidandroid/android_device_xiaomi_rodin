@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">无线</string>
     <string name="battery_plug_dock">码头</string>
     <string name="battery_plug_none">电池</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">性能监视器</string>
+    <string name="performance_summary">CPU 负载和实时指标</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">温度</string>
+    <string name="monitor_all_zones">所有散热区域</string>
+    <string name="monitor_cpu_load">CPU 负载</string>
+    <string name="monitor_load_average">平均负载 (1 · 5 · 15)</string>
+    <string name="monitor_uptime">运行时长</string>
+    <string name="monitor_freq_range">范围 %1$s – %2$s</string>
+    <string name="monitor_governor">处理器调速器: %1$s</string>
+    <string name="monitor_gpu_freq">GPU 频率</string>
+    <string name="monitor_gpu_load">GPU 负载: %1$d%%</string>
+    <string name="monitor_unavailable">此设备无法获取监控数据。</string>
+
     <string name="memory_title">内存管理器</string>
     <string name="memory_summary">RAM、交换和正在运行的进程</string>
     <string name="memory_used">二手</string>

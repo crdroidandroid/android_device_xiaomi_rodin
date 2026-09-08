@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">வயர்லெஸ்</string>
     <string name="battery_plug_dock">கப்பல்துறை</string>
     <string name="battery_plug_none">பேட்டரி</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">செயல்திறன் கண்காணிப்பு</string>
+    <string name="performance_summary">CPU சுமை மற்றும் நேரடி அளவியல்</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">வெப்பநிலைகள்</string>
+    <string name="monitor_all_zones">அனைத்து வெப்ப மண்டலங்கள்</string>
+    <string name="monitor_cpu_load">CPU சுமை</string>
+    <string name="monitor_load_average">சராசரி சுமை (1 · 5 · 15)</string>
+    <string name="monitor_uptime">இயங்கும் நேரம்</string>
+    <string name="monitor_freq_range">வரம்பு %1$s – %2$s</string>
+    <string name="monitor_governor">கவர்னர்: %1$s</string>
+    <string name="monitor_gpu_freq">GPU அதிர்வெண்</string>
+    <string name="monitor_gpu_load">GPU சுமை: %1$d%%</string>
+    <string name="monitor_unavailable">இந்த சாதனத்தில் கண்காணிப்பு தரவு கிடைக்கவில்லை.</string>
+
     <string name="memory_title">நினைவக மேலாளர்</string>
     <string name="memory_summary">ரேம், ஸ்வாப் மற்றும் இயங்கும் செயல்முறைகள்</string>
     <string name="memory_used">பயன்படுத்தப்பட்டது</string>

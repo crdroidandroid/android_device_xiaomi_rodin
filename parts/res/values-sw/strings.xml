@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Bila waya</string>
     <string name="battery_plug_dock">Gati</string>
     <string name="battery_plug_none">Betri</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Kifuatili cha utendaji</string>
+    <string name="performance_summary">Mzigo wa CPU na vipimo vya wakati halisi</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Joto</string>
+    <string name="monitor_all_zones">Kanda zote za joto</string>
+    <string name="monitor_cpu_load">Mzigo wa CPU</string>
+    <string name="monitor_load_average">Wastani wa mzigo (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Muda ulio wazi</string>
+    <string name="monitor_freq_range">Masafa %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">Masafa ya GPU</string>
+    <string name="monitor_gpu_load">Mzigo wa GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Data ya ufuatiliaji haipatikani kwenye kifaa hiki.</string>
+
     <string name="memory_title">Meneja wa kumbukumbu</string>
     <string name="memory_summary">RAM, kubadilishana na kuendesha michakato</string>
     <string name="memory_used">Imetumika</string>

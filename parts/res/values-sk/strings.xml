@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Bezdrôtové</string>
     <string name="battery_plug_dock">Dock</string>
     <string name="battery_plug_none">Batéria</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Monitor výkonu</string>
+    <string name="performance_summary">Záťaž procesora a živé dáta</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Teploty</string>
+    <string name="monitor_all_zones">Všetky teplotné zóny</string>
+    <string name="monitor_cpu_load">Záťaž CPU</string>
+    <string name="monitor_load_average">Priemerná záťaž (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Čas behu</string>
+    <string name="monitor_freq_range">Rozsah %1$s – %2$s</string>
+    <string name="monitor_governor">Governor: %1$s</string>
+    <string name="monitor_gpu_freq">Frekvencia GPU</string>
+    <string name="monitor_gpu_load">Záťaž GPU: %1$d%%</string>
+    <string name="monitor_unavailable">Dáta monitora nie sú na tomto zariadení dostupné.</string>
+
     <string name="memory_title">Správca pamäte</string>
     <string name="memory_summary">RAM, swap a spustené procesy</string>
     <string name="memory_used">Použité</string>

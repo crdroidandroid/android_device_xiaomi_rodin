@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">لاسلكي</string>
     <string name="battery_plug_dock">قفص الاتهام</string>
     <string name="battery_plug_none">البطارية</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">مراقب الأداء</string>
+    <string name="performance_summary">حمل المعالج والمقاييس اللحظية</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">درجات الحرارة</string>
+    <string name="monitor_all_zones">جميع المناطق الحرارية</string>
+    <string name="monitor_cpu_load">حمل المعالج</string>
+    <string name="monitor_load_average">متوسط الحمل (1 · 5 · 15)</string>
+    <string name="monitor_uptime">مدة التشغيل</string>
+    <string name="monitor_freq_range">النطاق %1$s – %2$s</string>
+    <string name="monitor_governor">المحكّم: %1$s</string>
+    <string name="monitor_gpu_freq">تردد معالج الرسومات</string>
+    <string name="monitor_gpu_load">حمل معالج الرسومات: %1$d%%</string>
+    <string name="monitor_unavailable">بيانات المراقبة غير متاحة على هذا الجهاز.</string>
+
     <string name="memory_title">مدير الذاكرة</string>
     <string name="memory_summary">ذاكرة الوصول العشوائي وعمليات المبادلة والتشغيل</string>
     <string name="memory_used">مستعمل</string>

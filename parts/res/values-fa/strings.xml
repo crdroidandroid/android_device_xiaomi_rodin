@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">بی سیم</string>
     <string name="battery_plug_dock">بارانداز</string>
     <string name="battery_plug_none">باتری</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">مانیتور عملکرد</string>
+    <string name="performance_summary">بار پردازنده و شاخصهای زنده</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">دماها</string>
+    <string name="monitor_all_zones">همه مناطق حرارتی</string>
+    <string name="monitor_cpu_load">بار پردازنده</string>
+    <string name="monitor_load_average">میانگین بار (1 · 5 · 15)</string>
+    <string name="monitor_uptime">زمان روشن بودن</string>
+    <string name="monitor_freq_range">بازه %1$s – %2$s</string>
+    <string name="monitor_governor">مدیر فرکانس: %1$s</string>
+    <string name="monitor_gpu_freq">فرکانس GPU</string>
+    <string name="monitor_gpu_load">بار GPU: %1$d%%</string>
+    <string name="monitor_unavailable">دادههای نظارت روی این دستگاه فعال نیست.</string>
+
     <string name="memory_title">مدیر حافظه</string>
     <string name="memory_summary">RAM، تعویض و اجرای فرآیندها</string>
     <string name="memory_used">استفاده شده</string>

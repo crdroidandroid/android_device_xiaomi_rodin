@@ -87,6 +87,22 @@
     <string name="battery_plug_none">Batteria</string>
 
     <!-- Memoria -->
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Monitor prestazioni</string>
+    <string name="performance_summary">Carico della CPU e statistiche in tempo reale</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Temperature</string>
+    <string name="monitor_all_zones">Tutte le zone termiche</string>
+    <string name="monitor_cpu_load">Carico della CPU</string>
+    <string name="monitor_load_average">Carico medio (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Tempo di accensione</string>
+    <string name="monitor_freq_range">Intervallo %1$s – %2$s</string>
+    <string name="monitor_governor">Governatore: %1$s</string>
+    <string name="monitor_gpu_freq">Frequenza della GPU</string>
+    <string name="monitor_gpu_load">Carico della GPU: %1$d%%</string>
+    <string name="monitor_unavailable">I dati di monitoraggio non sono disponibili su questo dispositivo.</string>
+
     <string name="memory_title">Gestione memoria</string>
     <string name="memory_summary">RAM, swap e processi in esecuzione</string>
     <string name="memory_used">Utilizzata</string>

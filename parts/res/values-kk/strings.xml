@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">Сымсыз</string>
     <string name="battery_plug_dock">Док</string>
     <string name="battery_plug_none">Батарея</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">Өнімділік мониторы</string>
+    <string name="performance_summary">CPU жүктемесі және тірі көрсеткіштер</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">Температуралар</string>
+    <string name="monitor_all_zones">Барлық жылу аймақтары</string>
+    <string name="monitor_cpu_load">CPU жүктемесі</string>
+    <string name="monitor_load_average">Орташа жүктеме (1 · 5 · 15)</string>
+    <string name="monitor_uptime">Жұмыс уақыты</string>
+    <string name="monitor_freq_range">Аралық %1$s – %2$s</string>
+    <string name="monitor_governor">Басқарушы: %1$s</string>
+    <string name="monitor_gpu_freq">GPU жиілігі</string>
+    <string name="monitor_gpu_load">GPU жүктемесі: %1$d%%</string>
+    <string name="monitor_unavailable">Бұл құрылғыда бақылау деректері қолжетімді емес.</string>
+
     <string name="memory_title">Жад менеджері</string>
     <string name="memory_summary">ЖЖҚ, своп және іске қосу процестері</string>
     <string name="memory_used">Пайдаланылған</string>

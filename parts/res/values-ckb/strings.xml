@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">بێ وایەر</string>
     <string name="battery_plug_dock">دۆک</string>
     <string name="battery_plug_none">پاتری</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">چاودێری ئەدای کارکردن</string>
+    <string name="performance_summary">باری سی پی یو و پێوەرە زیندووەکان</string>
+    <string name="monitor_cpu_section">سی پی یو</string>
+    <string name="monitor_gpu_section">جی پی یو</string>
+    <string name="monitor_temp_section">پلەکانی گەرمی</string>
+    <string name="monitor_all_zones">هەموو ناوچە گەرمییەکان</string>
+    <string name="monitor_cpu_load">باری سی پی یو</string>
+    <string name="monitor_load_average">تێکڕای بار (1 · 5 · 15)</string>
+    <string name="monitor_uptime">ماوەی کارکردن</string>
+    <string name="monitor_freq_range">مەودا %1$s – %2$s</string>
+    <string name="monitor_governor">بەڕێوەبەر: %1$s</string>
+    <string name="monitor_gpu_freq">فرێکوێنسی جی پی یو</string>
+    <string name="monitor_gpu_load">باری جی پی یو: %1$d%%</string>
+    <string name="monitor_unavailable">داتای چاودێری لەم ئامێرەدا بەردەست نییە.</string>
+
     <string name="memory_title">بەڕێوەبەری بیرگە</string>
     <string name="memory_summary">ڕام و سواپ و پرۆسەکانی جێبەجێکردن</string>
     <string name="memory_used">بەکارهاتووە</string>

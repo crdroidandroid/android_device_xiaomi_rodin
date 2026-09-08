@@ -75,6 +75,22 @@
     <string name="battery_plug_wireless">ವೈರ್‌ಲೆಸ್</string>
     <string name="battery_plug_dock">ಡಾಕ್</string>
     <string name="battery_plug_none">ಬ್ಯಾಟರಿ</string>
+    <!-- ── Performance monitor ────────────────────────────── -->
+    <string name="performance_title">ಕಾರ್ಯಕ್ಷಮತೆ ಮಾನಿಟರ್</string>
+    <string name="performance_summary">CPU ಲೋಡ್ ಮತ್ತು ಲೈವ್ ಮೆಟ್ರಿಕ್</string>
+    <string name="monitor_cpu_section">CPU</string>
+    <string name="monitor_gpu_section">GPU</string>
+    <string name="monitor_temp_section">ಉಷ್ಣಾತಗಳು</string>
+    <string name="monitor_all_zones">ಎಲ್ಲಾ ಥರ್ಮಲ್ ವಲಯಗಳು</string>
+    <string name="monitor_cpu_load">CPU ಲೋಡ್</string>
+    <string name="monitor_load_average">ಲೋಡ್ ಸರಾಸರಿ (1 · 5 · 15)</string>
+    <string name="monitor_uptime">ಅಪ್‌ಟೈಮ್</string>
+    <string name="monitor_freq_range">ವ್ಯಾಪ್ತಿ %1$s – %2$s</string>
+    <string name="monitor_governor">ಗವರ್ನರ್: %1$s</string>
+    <string name="monitor_gpu_freq">GPU ಆವರ್ತನ</string>
+    <string name="monitor_gpu_load">GPU ಲೋಡ್: %1$d%%</string>
+    <string name="monitor_unavailable">ಈ ಸಾಧನದಲ್ಲಿ ಮಾನಿಟರಿಂಗ್ ಡೇಟಾ ಲಭ್ಯವಿಲ್ಲ.</string>
+
     <string name="memory_title">ಮೆಮೊರಿ ಮ್ಯಾನೇಜರ್</string>
     <string name="memory_summary">RAM, ಸ್ವಾಪ್ ಮತ್ತು ಚಾಲನೆಯಲ್ಲಿರುವ ಪ್ರಕ್ರಿಯೆಗಳು</string>
     <string name="memory_used">ಬಳಸಲಾಗಿದೆ</string>
