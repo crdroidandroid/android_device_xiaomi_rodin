@@ -327,8 +327,7 @@ PRODUCT_BUILD_PVMFW_IMAGE := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot-service.example_recovery \
-    fastbootd
+    android.hardware.fastboot-service.example_recovery
 
 # Parts
 PRODUCT_PACKAGES += \
