@@ -1,0 +1,33 @@
+app_domain(parts_app)
+
+# Core framework services (including the newly needed ones)
+allow parts_app {
+    activity_service
+    activity_task_service
+    app_function_service
+    audio_service
+    autofill_service
+    batteryproperties_service
+    batterystats_service
+    clipboard_service
+    content_capture_service
+    gpu_service
+    legacy_permission_service
+    media_session_service
+    netstats_service
+    protolog_configuration_service
+    sensitive_content_protection_service
+    telecom_service
+    thermal_service
+    uimode_service
+    vibrator_manager_service
+    voiceinteraction_service
+}:service_manager find;
+
+# App data
+allow parts_app system_app_data_file:dir create_dir_perms;
+allow parts_app system_app_data_file:file create_file_perms;
+allow parts_app system_app_data_file:lnk_file create_file_perms;
+
+# Silence default_prop read spam from UI toolkit/RenderThread
+dontaudit parts_app default_prop:file read;
