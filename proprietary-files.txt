@@ -1289,10 +1289,6 @@ odm/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB_aov/mt6899/ISP_info.db;SYML
 vendor/bin/batterysecret
 vendor/etc/init/hw/init.batterysecret.rc
 
-# Chipset info
-vendor/bin/chipinfo
-vendor/etc/init/chipinfo_init.rc
-
 # Connectivity
 vendor/bin/conninfra_loader
 vendor/etc/init/init.connfem.rc
