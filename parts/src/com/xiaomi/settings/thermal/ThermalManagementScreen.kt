@@ -6,18 +6,9 @@
 
 package com.xiaomi.settings.thermal
 
-import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.os.BatteryManager
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.expandVertically
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -40,38 +31,28 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Apps
-import androidx.compose.material.icons.filled.BatteryChargingFull
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.RestartAlt
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.VerticalDivider
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.getValue
@@ -96,7 +77,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.core.graphics.drawable.toBitmap
 import com.xiaomi.settings.R
-import com.xiaomi.settings.ui.Motion
 import com.xiaomi.settings.ui.PartsCategoryTitle
 import com.xiaomi.settings.ui.PartsInfoCard
 import com.xiaomi.settings.ui.PartsPageGutter
@@ -124,11 +104,6 @@ private fun appIcon(packageName: String): ImageBitmap? {
     return bitmap
 }
 
-private fun readIsCharging(context: Context): Boolean {
-    val sticky = context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
-    return (sticky?.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) ?: 0) != 0
-}
-
 @Composable
 @ReadOnlyComposable
 private fun groupedShape(index: Int, total: Int): Shape {
@@ -142,35 +117,23 @@ private fun groupedShape(index: Int, total: Int): Shape {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalAnimationApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ThermalManagementScreen(onBack: () -> Unit) {
     val context      = LocalContext.current
     val thermalUtils = remember { ThermalUtils.getInstance(context) }
     val scope        = rememberCoroutineScope()
 
-    var thermalEnabled   by remember { mutableStateOf(thermalUtils.enabled) }
+    var thermalEnabled     by remember { mutableStateOf(thermalUtils.enabled) }
     var throttlingDisabled by remember { mutableStateOf(thermalUtils.throttlingDisabled) }
-    var appList          by remember { mutableStateOf<List<AppThermalEntry>>(emptyList()) }
-    var isCharging       by remember { mutableStateOf(readIsCharging(context)) }
-    var showResetDialog  by remember { mutableStateOf(false) }
-    var pendingApp       by remember { mutableStateOf<AppThermalEntry?>(null) }
-    var showAddSheet     by remember { mutableStateOf(false) }
-    var pendingNewApp    by remember { mutableStateOf<InstalledAppEntry?>(null) }
+    var appList            by remember { mutableStateOf<List<AppThermalEntry>>(emptyList()) }
+    var showResetDialog    by remember { mutableStateOf(false) }
+    var pendingApp         by remember { mutableStateOf<AppThermalEntry?>(null) }
+    var showAddSheet       by remember { mutableStateOf(false) }
+    var pendingNewApp      by remember { mutableStateOf<InstalledAppEntry?>(null) }
 
-    val controlsEnabled = thermalEnabled && !isCharging && !throttlingDisabled
+    val controlsEnabled = thermalEnabled && !throttlingDisabled
     val addSheetState   = rememberModalBottomSheetState(skipPartiallyExpanded = true)
-
-    DisposableEffect(Unit) {
-        val receiver = object : BroadcastReceiver() {
-            override fun onReceive(ctx: Context, intent: Intent) {
-                isCharging = (intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0)) != 0
-            }
-        }
-        @Suppress("UnspecifiedRegisterReceiverFlag")
-        context.registerReceiver(receiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
-        onDispose { context.unregisterReceiver(receiver) }
-    }
 
     LaunchedEffect(Unit) {
         appList = withContext(Dispatchers.IO) {
@@ -178,7 +141,7 @@ fun ThermalManagementScreen(onBack: () -> Unit) {
         }
     }
 
-    val profiles         = remember { ThermalService.profiles() }
+    val profiles = remember { ThermalService.profiles() }
     PartsScaffold(
         title = stringResource(R.string.thermal_title),
         onBack = onBack,
@@ -201,27 +164,12 @@ fun ThermalManagementScreen(onBack: () -> Unit) {
                 bottom = innerPadding.calculateBottomPadding() + 88.dp,
             ),
         ) {
-            item(key = "charging-banner") {
-                AnimatedVisibility(
-                    visible = isCharging && !throttlingDisabled,
-                    enter   = expandVertically(animationSpec = Motion.defaultEffectsSpec()) + fadeIn(),
-                    exit    = shrinkVertically(animationSpec = Motion.defaultEffectsSpec()) + fadeOut(),
-                ) {
-                    PartsInfoCard(
-                        title = stringResource(R.string.thermal_charging_toast_connected),
-                        body = stringResource(R.string.thermal_charging_banner_body),
-                        icon = Icons.Filled.BatteryChargingFull,
-                        accent = true,
-                    )
-                }
-            }
-
             item(key = "enable+info") {
                 PartsPreferenceGroup {
                     PartsSwitchPreference(
                         title = stringResource(R.string.thermal_enable_title),
                         checked = thermalEnabled,
-                        enabled = !isCharging && !throttlingDisabled,
+                        enabled = !throttlingDisabled,
                         onCheckedChange = { checked ->
                             thermalEnabled = checked
                             thermalUtils.enabled = checked
@@ -382,7 +330,6 @@ fun ThermalManagementScreen(onBack: () -> Unit) {
             },
         )
     }
-
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
