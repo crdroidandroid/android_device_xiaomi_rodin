@@ -20,3 +20,7 @@ allow vendor_mi_thermald sysfs_devices_system_cpu:file rw_file_perms;
 
 allow vendor_mi_thermald thermal_core_data_file:dir rw_dir_perms;
 allow vendor_mi_thermald thermal_core_data_file:file create_file_perms;
+
+allow vendor_mi_thermald sysfs_battery_supply:dir r_dir_perms;
+allow vendor_mi_thermald sysfs_battery_supply:file rw_file_perms;
+

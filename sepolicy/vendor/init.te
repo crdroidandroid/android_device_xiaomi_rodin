@@ -6,3 +6,7 @@ allow init vendorcodec:process { siginh rlimitinh };
 allow init vendorcodec_exec:file { read getattr map execute open };
 dontaudit init vendorcodec:process noatsecure;
 type_transition init vendorcodec_exec:process vendorcodec;
+
+# Charger
+allow init sysfs_usbpd_device:file setattr;
+allow init sysfs_battery_supply:file setattr;

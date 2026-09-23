@@ -12,6 +12,23 @@
 /data/vendor/batteryantiaging(/.*)?                                                          u:object_r:batteryantiaging_cache_file:s0
 /(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.batteryantiaging-service               u:object_r:hal_batteryantiaging_default_exec:s0
 
+# charger
+/sys/devices/platform/pd_adapter/Charging_Adapter/pd_adapter(/.*)?                           u:object_r:sysfs_usbpd_device:s0
+/sys/devices/platform/11015000.i2c0/i2c-0/0-0035/power_supply/Charger_Identify(/.*)?         u:object_r:sysfs_usb_supply:s0
+/sys/devices/platform/11e00000.i2c/i2c-0/0-0035/power_supply/xmusb350(/.*)?                  u:object_r:sysfs_usb_supply:s0
+/sys/devices/platform/11e00000.i2c/i2c-0/0-0035/switching_charger/xmusb350(/.*)?             u:object_r:sysfs_usb_supply:s0
+/sys/devices/platform/charger/power_supply/usb(/.*)?                                         u:object_r:sysfs_usb_supply:s0
+/sys/devices/platform/mt_charger/power_supply/ac(/.*)?                                       u:object_r:sysfs_usb_supply:s0
+/sys/devices/platform/mt_charger/power_supply/charger(/.*)?                                  u:object_r:sysfs_usb_supply:s0
+/sys/devices/platform/mt_charger/power_supply/main(/.*)?                                     u:object_r:sysfs_usb_supply:s0
+/sys/devices/platform/soc/11280000.i2c/i2c-10/10-0055/power_supply/bms(/.*)?                 u:object_r:sysfs_usb_supply:s0
+/sys/devices/platform/xagapro_charger/power_supply/usb(/.*)?                                 u:object_r:sysfs_usb_supply:s0
+/sys/devices/platform/battery-manager/power_supply/battery(/.*)?                                                                                u:object_r:sysfs_battery_supply:s0
+/sys/devices/platform/11e01000.i2c/i2c-5/5-0034/11e01000.i2c:mt6375@34:mtk_gauge/power_supply/battery(/.*)?                                     u:object_r:sysfs_battery_supply:s0
+/sys/devices/platform/soc/11280000.i2c/i2c-5/5-0034/11280000.i2c:mt6375@34:mtk_gauge/power_supply/battery(/.*)?                                 u:object_r:sysfs_battery_supply:s0
+
+
+
 # Camera
 /odm/bin/crossbuild/DataSet/SQLiteModule/db(/.*)?                                                      u:object_r:vendor_bin_crossbuild_file:s0
 

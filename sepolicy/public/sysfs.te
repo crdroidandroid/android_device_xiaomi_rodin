@@ -11,3 +11,6 @@ type debugfs_dmabuf, debugfs_type, fs_type;
 # --- sysfs_dma_heap ---
 typeattribute sysfs_dma_heap fs_type;
 typeattribute sysfs_dma_heap sysfs_type;
+
+# --- sysfs_battery_supply ---
+type sysfs_battery_supply, fs_type, sysfs_type;

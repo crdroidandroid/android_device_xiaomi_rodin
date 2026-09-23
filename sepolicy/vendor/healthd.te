@@ -1,0 +1,7 @@
+# Charger
+allow healthd sysfs_usb_supply:dir r_dir_perms;
+allow healthd sysfs_usb_supply:file r_file_perms;
+allow healthd sysfs_usb_supply:lnk_file r_file_perms;
+allow healthd sysfs_battery_supply:dir r_dir_perms;
+allow healthd sysfs_battery_supply:file r_file_perms;
+allow healthd sysfs_battery_supply:lnk_file r_file_perms;
