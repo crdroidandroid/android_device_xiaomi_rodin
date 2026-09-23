@@ -1,0 +1,3 @@
+binder_call(hal_contexthub_default, system_suspend_server)
+allow hal_contexthub_default hal_system_suspend_service:service_manager find;
+allow hal_contexthub_default system_suspend_hwservice:hwservice_manager find;

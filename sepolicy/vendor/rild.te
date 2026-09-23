@@ -1,1 +1,5 @@
 allow rild gsi_metadata_file:dir search;
+
+binder_call(rild, system_suspend_server)
+allow rild hal_system_suspend_service:service_manager find;
+allow rild system_suspend_hwservice:hwservice_manager find;

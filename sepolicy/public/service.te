@@ -3,3 +3,14 @@ type vendor_hal_displayfeature_service, protected_service, service_manager_type,
 
 # TouchFeature
 type hal_touchfeature_xiaomi_service, protected_service, service_manager_type, hal_service_type;
+
+# --- hal_system_suspend_service ---
+typeattribute hal_system_suspend_service hal_service_type;
+typeattribute hal_system_suspend_service protected_service;
+typeattribute hal_system_suspend_service service_manager_type;
+
+# --- system_suspend_control_internal_service ---
+typeattribute system_suspend_control_internal_service service_manager_type;
+
+# --- system_suspend_control_service ---
+typeattribute system_suspend_control_service service_manager_type;

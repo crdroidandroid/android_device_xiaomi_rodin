@@ -8,3 +8,7 @@ allow tee fingerprint_vendor_data_file:dir { ioctl read write getattr lock open 
 allow tee proc_mitee_log:file { read getattr open };
 allow tee mitee_data_file:dir create_dir_perms;
 allow tee mitee_data_file:file create_file_perms;
+
+binder_call(tee, system_suspend_server)
+allow tee hal_system_suspend_service:service_manager find;
+allow tee system_suspend_hwservice:hwservice_manager find;

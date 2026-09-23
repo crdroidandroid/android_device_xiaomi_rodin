@@ -1,0 +1,3 @@
+# --- system_suspend_hwservice ---
+typeattribute system_suspend_hwservice hwservice_manager_type;
+typeattribute system_suspend_hwservice protected_hwservice;

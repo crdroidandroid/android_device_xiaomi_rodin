@@ -1,0 +1,8 @@
+# --- system_suspend ---
+typeattribute system_suspend coredomain;
+typeattribute system_suspend domain;
+
+# --- system_suspend_exec ---
+typeattribute system_suspend_exec exec_type;
+typeattribute system_suspend_exec file_type;
+typeattribute system_suspend_exec system_file_type;

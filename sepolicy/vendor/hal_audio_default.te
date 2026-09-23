@@ -17,3 +17,8 @@ allow hal_audio_default fs16xx_device:chr_file rw_file_perms;
 
 # bluetooth
 get_prop(hal_audio_default, vendor_mtk_bt_perf_prop)
+
+binder_call(hal_audio_default, system_suspend_server)
+allow hal_audio_default hal_system_suspend_service:service_manager find;
+allow hal_audio_default system_suspend_hwservice:hwservice_manager find;
+

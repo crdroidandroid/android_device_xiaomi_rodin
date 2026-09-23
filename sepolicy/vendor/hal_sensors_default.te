@@ -43,3 +43,7 @@ allow hal_sensors_default sysfs_wake_lock:file r_file_perms;
 allow hal_sensors_default hal_audio_default:unix_stream_socket connectto;
 
 allow vendor_hal_citsensorservice_xiaomi_default hal_sensors_default:binder { call transfer };
+
+binder_call(hal_sensors_default, system_suspend_server)
+allow hal_sensors_default hal_system_suspend_service:service_manager find;
+allow hal_sensors_default system_suspend_hwservice:hwservice_manager find;
