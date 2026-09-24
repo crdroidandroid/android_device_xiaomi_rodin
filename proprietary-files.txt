@@ -1,5 +1,5 @@
 # All proprietary files from this list, unless pinned and noted otherwise,
-# are from POCO X7 PRO OS3.0.300.0.WOJMIXM
+# are from POCO X7 PRO OS3.0.302.0.WOJMIXM
 
 # AEE
 vendor/lib64/libaedv.so
