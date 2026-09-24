@@ -1343,6 +1343,7 @@ vendor/etc/vintf/manifest/manifest_mtkgpuserv.xml
 vendor/lib64/libmtkgpuserv.so
 vendor/lib64/libmtkgpuservsdk_vendor.so
 vendor/lib64/vendor.mediatek.hardware.gpuserv-V2-ndk.so
+vendor/priv-app/GpuGameDriver.mt6899/GpuGameDriver.mt6899.apk
 
 # Display - Picture Quality
 odm/etc/cust_color.xml
