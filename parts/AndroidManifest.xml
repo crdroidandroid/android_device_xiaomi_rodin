@@ -63,7 +63,7 @@
             </intent-filter>
         </activity>
 
-<!-- Single Settings homepage tile for modern ROMs -->
+        <!-- Settings > System tile injection -->
         <activity-alias
             android:name=".XiaomiPartsSettingsTile"
             android:targetActivity=".XiaomiPartsActivity"
@@ -71,24 +71,19 @@
             android:icon="@drawable/ic_xiaomi_parts"
             android:exported="true">
 
-            <!-- Pure IA_SETTINGS injection, just like Digital Wellbeing -->
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
+            <!-- Moves tile into Settings -> System -->
             <meta-data
                 android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.homepage" />
-
-            <!-- THIS IS THE FIX: Tells Android to wrap this item in a fully rounded Card -->
-            <meta-data
-                android:name="com.android.settings.group_key"
-                android:value="top_level_xiaomi_parts_group" />
+                android:value="com.android.settings.category.ia.system" />
 
             <meta-data
                 android:name="com.android.settings.order"
-                android:value="110" />
+                android:value="100" />
 
             <meta-data
                 android:name="com.android.settings.title"
@@ -98,7 +93,7 @@
                 android:name="com.android.settings.summary"
                 android:resource="@string/xiaomi_parts_summary" />
 
-            <!-- Launch the full Activity instead of embedding as a fragment -->
+            <!-- Launch the full Activity -->
             <meta-data
                 android:name="com.android.settings.ACTIVITY_ACTION"
                 android:value="android.intent.action.MAIN" />
@@ -106,24 +101,11 @@
             <meta-data
                 android:name="com.android.settings.icon"
                 android:resource="@drawable/ic_xiaomi_parts" />
-            
-            <meta-data
-                android:name="com.android.settings.icon_color_scheme" 
-                android:value="cyan"/>
-
-            <meta-data
-                android:name="com.android.settings.bg.hint"
-                android:resource="@color/settings_background_icon_color" />
-
-            <meta-data
-                android:name="com.android.settings.bg.argb"
-                android:value="-16725933" />
 
             <meta-data
                 android:name="com.android.settings.keyhint"
-                android:value="top_level_xiaomi_parts" />
+                android:value="system_xiaomi_parts" />
 
-            <!-- Optional: Prevents the tile from duplicating if the user has a Work Profile -->
             <meta-data
                 android:name="com.android.settings.profile"
                 android:value="primary_profile_only" />

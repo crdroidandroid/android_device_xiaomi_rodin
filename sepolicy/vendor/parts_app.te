@@ -34,3 +34,10 @@ allow parts_app sysfs_therm:file rw_file_perms;
 # Limit CPU writes to the frequency and online nodes explicitly labelled for
 # XiaomiParts. Generic CPU sysfs remains read-only through platform policy.
 allow parts_app vendor_sysfs_cpu_control:file rw_file_perms;
+
+# Fingerprint HAL
+hal_client_domain(parts_app, hal_fingerprint)
+allow parts_app hal_fingerprint_service:service_manager find;
+
+# Xiaomi fingerprint properties
+get_prop(parts_app, vendor_fingerprint_prop)
