@@ -32,6 +32,7 @@ from extract_utils.utils import (
 namespace_imports = [
     'device/xiaomi/rodin',
     'hardware/mediatek',
+    'hardware/mediatek/libion_mtk',
     'hardware/mediatek/libmtkperf_client',
     'hardware/xiaomi',
     'vendor/mediatek/ims'
