@@ -117,6 +117,8 @@ TARGET_SCREEN_WIDTH := 1280
 # Miui Camera
 $(call inherit-product-if-exists, device/xiaomi/rodin-miuicamera/device.mk)
 
+$(call soong_config_set,libcameraservice,ext_lib,//$(LOCAL_PATH):libcameraservice_extension.xiaomi_rodin)
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \

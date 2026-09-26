@@ -141,6 +141,13 @@ on post-fs-data
     chown system system /sys/class/thermal/thermal_message/temp_aware
 #END Thermal
 
+on property:sys.boot_completed=1
+    # Torch
+    chown cameraserver cameraserver /sys/class/flashlight_core/flashlight/torchbrightness
+    chmod 0660 /sys/class/flashlight_core/flashlight/torchbrightness
+    chown cameraserver cameraserver /sys/class/flashlight_core/flashlight/flashlight_capability
+    chmod 0444 /sys/class/flashlight_core/flashlight/flashlight_capability
+
 #MIUI ADD: Audio_MIUIAudioFrame
 # smart pa calibration
     chmod 0660 /dev/fs16xx
@@ -209,12 +216,6 @@ on property:sys.boot_completed=1
 # enable mTHP
     write /sys/kernel/mm/transparent_hugepage/hugepages-32kB/enabled always
     write /sys/kernel/mm/transparent_hugepage/hugepages-16kB/enabled always
-
-# MIUI ADD:Adapt_MIodm
-    #camera flash led
-    chown system system /sys/class/flashlight_core/flashlight/torchbrightness
-    chmod 0664 /sys/class/flashlight_core/flashlight/torchbrightness
-#END Adapt_MIodm
 
 service vendor_tcpdump /vendor/bin/tcpdump-vendor -i any -W 3 -C 5 -s 134 -w /data/vendor/wlan_logs/tcpdump.pcap -Z system
        class main

@@ -82,6 +82,10 @@
 # Thermal
 /vendor/bin/mi_thermald    u:object_r:vendor_mi_thermald_exec:s0
 
+# Torch
+/sys/class/flashlight_core/flashlight/torchbrightness u:object_r:sysfs_torch:s0
+/sys/class/flashlight_core/flashlight/flashlight_capability u:object_r:sysfs_torch:s0
+
 # TouchFeature
 /data/vendor/touch(/.*)?                                u:object_r:vendor_data_touchreport_file:s0
 /data/vendor/touch_state(/.*)?                          u:object_r:vendor_data_touchreport_file:s0
