@@ -1,0 +1,1 @@
+get_prop(mediaserver, vendor_mtk_audiohal_prop)

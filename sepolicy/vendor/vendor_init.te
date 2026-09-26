@@ -31,3 +31,9 @@ set_prop(vendor_init, vendor_camera_p3_prop)
 
 get_prop(vendor_init, powerctl_prop)
 allow vendor_init vendor_sysfs_cpu_control:file setattr;
+
+# Xiaomi tap sensor
+set_prop(vendor_init, vendor_sensors_prop)
+
+# MTK video decoder
+set_prop(vendor_init, vendor_mtk_video_prop)
