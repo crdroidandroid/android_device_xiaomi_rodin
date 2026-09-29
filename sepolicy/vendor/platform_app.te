@@ -28,3 +28,9 @@ allow platform_app vendor_sysfs_displayfeature:file rw_file_perms;
 allow platform_app vendor_fingerprint_prop:file read;
 allow platform_app_36 vendor_sysfs_displayfeature:dir { search };
 allow platform_app_36 vendor_sysfs_displayfeature:file rw_file_perms;
+
+# fingerprint factorytest (platform_app_36)
+hal_client_domain(platform_app_36, hal_fingerprint)
+binder_call(platform_app_36, hal_fingerprint_default)
+binder_call(hal_fingerprint_default, platform_app_36)
+get_prop(platform_app_36, vendor_fingerprint_prop)
