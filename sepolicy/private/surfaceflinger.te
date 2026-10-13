@@ -1,0 +1,2 @@
+allow surfaceflinger sysfs_dmabuf_stats:dir r_dir_perms;
+allow surfaceflinger sysfs_dmabuf_stats:file r_file_perms;

@@ -1,2 +1,5 @@
 allow init proc:file w_file_perms;
 allow init socket_device:sock_file { create setattr unlink };
+
+allow init sysfs_dmabuf:dir search;
+allow init sysfs_dmabuf:file { rw_file_perms setattr };
