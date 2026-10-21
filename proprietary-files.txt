@@ -1777,7 +1777,6 @@ vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc
 vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
 vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
 vendor/etc/vintf/manifest/manifest_media_c2_default.xml
-vendor/etc/mtk_platform_codecs_config.xml
 vendor/etc/TL_settings.json
 vendor/lib64/libXMFaceFocus.so
 vendor/lib64/libcodec2_aidl.so:vendor/lib64/libcodec2_aidl_prebuilt.so;FIX_SONAME
