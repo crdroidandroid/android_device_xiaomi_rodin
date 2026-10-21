@@ -34,3 +34,13 @@ hal_client_domain(platform_app_36, hal_fingerprint)
 binder_call(platform_app_36, hal_fingerprint_default)
 binder_call(hal_fingerprint_default, platform_app_36)
 get_prop(platform_app_36, vendor_fingerprint_prop)
+
+
+# Access fingerprint data for calibration results
+allow platform_app_36 vendor_data_file:dir search;
+allow platform_app_36 fingerprint_vendor_data_file:dir rw_dir_perms;
+allow platform_app_36 fingerprint_vendor_data_file:file create_file_perms;
+allow platform_app_36 vendor_fingerprint_data_file:dir rw_dir_perms;
+allow platform_app_36 vendor_fingerprint_data_file:file create_file_perms;
+allow platform_app_36 vendor_fingerprint_data_file_fpdump:dir rw_dir_perms;
+allow platform_app_36 vendor_fingerprint_data_file_fpdump:file rw_file_perms;

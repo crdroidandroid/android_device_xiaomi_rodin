@@ -12,6 +12,7 @@ allow parts_app {
     clipboard_service
     content_capture_service
     gpu_service
+    hint_service
     legacy_permission_service
     media_session_service
     netstats_service
