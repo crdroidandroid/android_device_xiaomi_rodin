@@ -21,9 +21,6 @@
 /dev/socket/miuserfss                  u:object_r:miuserfsd_socket:s0
 /dev/socket/mqsasd_pr                  u:object_r:mqsasd_pr_socket:s0
 /dev/socket/otad                       u:object_r:otad_socket:s0
-/dev/socket/rpmb_mock_system           u:object_r:rpmb_dev_system_socket:s0
-/dev/socket/rpmb_mock_test_system      u:object_r:rpmb_dev_system_socket:s0
-/dev/socket/rpmb_mock_wv_system        u:object_r:rpmb_dev_system_socket:s0
 /dev/device_kperfevents                u:object_r:device_kperfevents_device:s0
 /dev/proc_kperfevents                  u:object_r:proc_kperfevents_device:s0
 /dev/socket/usap_pool_tertiary         u:object_r:zygote_socket:s0
