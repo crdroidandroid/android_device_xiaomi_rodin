@@ -7,6 +7,9 @@ DEVICE_PATH := device/xiaomi/rodin
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 BUILD_BROKEN_DUP_RULES := true
 
+# Allow non-prefixed vendor properties required by hardcoded MediaTek audio blobs
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv9-2a

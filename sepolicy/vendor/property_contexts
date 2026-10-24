@@ -251,3 +251,8 @@ ro.vendor.touch.touchscheduler.enable    u:object_r:vendor_touchfeature_prop:s0
 ro.vendor.touchfeature.type              u:object_r:vendor_touchfeature_prop:s0
 vendor.panel.                            u:object_r:vendor_panel_info_prop:s0
 vendor.touchfeature.                     u:object_r:vendor_touchfeature_prop:s0
+
+# Explicitly label hardcoded MTK audio properties as vendor_mtk_audio_prop
+AUDIO_FEATURE_REVERSE_MIC_DIRECTION_SUPPORT   u:object_r:vendor_mtk_audio_prop:s0
+AUDIO_FEATURE_SEPARATE_RCV_SPK_CALL_TX        u:object_r:vendor_mtk_audio_prop:s0
+AUDIO_CAMERA_GAIN                             u:object_r:vendor_mtk_audio_prop:s0
