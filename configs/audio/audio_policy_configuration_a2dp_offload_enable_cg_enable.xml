@@ -59,9 +59,9 @@
             <mixPorts>
                 <mixPort name="primary output" role="source" flags="AUDIO_OUTPUT_FLAG_PRIMARY" recommendedMuteDurationMs="130">
                     <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
-                             samplingRates="44100 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                             samplingRates="44100 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="44100 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
                 </mixPort>
                 <mixPort name="deep_buffer" role="source" flags="AUDIO_OUTPUT_FLAG_DEEP_BUFFER">
                     <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
@@ -85,9 +85,9 @@
                 </mixPort>
                 <mixPort name="voip_rx" role="source" flags="AUDIO_OUTPUT_FLAG_VOIP_RX">
                     <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
-                           samplingRates="16000 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                           samplingRates="8000 16000 32000 44100 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                           samplingRates="16000 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                           samplingRates="8000 16000 32000 44100 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
                 </mixPort>
                 <mixPort name="mmap_no_irq_out" role="source" flags="AUDIO_OUTPUT_FLAG_DIRECT AUDIO_OUTPUT_FLAG_MMAP_NOIRQ">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -335,11 +335,11 @@
                 <route type="mix" sink="BLE Broadcast"
                        sources="primary output,deep_buffer,fast,compress_offload"/>
                 <route type="mix" sink="BT A2DP Out"
-                       sources="primary output,deep_buffer,fast,compress_offload,spatializer output"/>
+                       sources="primary output,deep_buffer,fast,compress_offload,voip_rx,spatializer output"/>
                 <route type="mix" sink="BT A2DP Headphones"
-                       sources="primary output,deep_buffer,fast,compress_offload,spatializer output"/>
+                       sources="primary output,deep_buffer,fast,compress_offload,voip_rx,spatializer output"/>
                 <route type="mix" sink="BT A2DP Speaker"
-                       sources="primary output,deep_buffer,fast,compress_offload,spatializer output"/>
+                       sources="primary output,deep_buffer,fast,compress_offload,voip_rx,spatializer output"/>
                 <route type="mix" sink="BLE Headset Out"
                        sources="primary output,deep_buffer,fast,compress_offload,voip_rx,Voice Call In,spatializer output"/>
                 <route type="mix" sink="BLE Speaker Out"

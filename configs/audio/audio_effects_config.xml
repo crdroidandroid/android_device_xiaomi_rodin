@@ -107,9 +107,11 @@
     </effects>
 
     <postprocess>
+        <!-- Disabled dlb_music_listener to prevent parameter update storm on app switch
         <stream type="music">
-            <apply effect="dlb_music_listener"/> <!--DOLBY ADD-->
+            <apply effect="dlb_music_listener"/>
         </stream>
+        -->
         <stream type="ring">
             <apply effect="dlb_ring_listener"/> <!--DOLBY ADD-->
         </stream>
