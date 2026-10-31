@@ -133,7 +133,6 @@
 /dev/block/by-name/gsort            u:object_r:gsort_block_device:s0
 /dev/block/by-name/pstore           u:object_r:pstore_block_device:s0
 /dev/camlog                         u:object_r:camlog_device:s0
-/dev/conn_dbg_dev(/.*)?             u:object_r:conn_dbg_dev_device:s0
 /dev/gz_ffa_dev(/.*)?               u:object_r:gzffa_device:s0
 /dev/ir_spi                         u:object_r:ir_spi_device:s0
 /dev/mbraink(/.*)?                  u:object_r:mtk_mbraink_device:s0

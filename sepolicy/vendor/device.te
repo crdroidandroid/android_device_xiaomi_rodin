@@ -25,9 +25,6 @@ type pstore_block_device, dev_type;
 # --- camlog_device ---
 type camlog_device, dev_type;
 
-# --- conn_dbg_dev_device ---
-type conn_dbg_dev_device, dev_type;
-
 # --- gzffa_device ---
 type gzffa_device, dev_type;
 
